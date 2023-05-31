@@ -13,14 +13,19 @@ export default function HomePage() {
 
   return (
     <>
-      {/* <ArtPieces pieces={data} /> */}
-      {data.map((piece) => {
-        <ArtPiecePreview
-          image={piece.imageSource}
-          title={piece.name}
-          artist={piece.artist}
-        />;
-      })}
+      <ArtPieces pieces={data} />
+      <ul>
+        {data.map((piece) => {
+          return (
+            <ArtPiecePreview
+              key={piece.id}
+              image={piece.imageSource}
+              title={piece.name}
+              artist={piece.artist}
+            />
+          );
+        })}
+      </ul>
     </>
   );
 }
