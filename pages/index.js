@@ -1,15 +1,16 @@
-import useSWR from "swr";
+// import useSWR from "swr";
 import ArtPieces from "../components/ArtPieces";
 import SpotLight from "../components/SpotLight";
 import ArtPiecePreview from "../components/ArtPiecePreview";
 
-export default function HomePage() {
+// export default function HomePage({ data }) {
+export default function SpotlightPage({ data }) {
   // const { data } = useSWR("https://example-apis.vercel.app/api/art", fetcher);
-  const { data } = useSWR("https://example-apis.vercel.app/api/art");
+  // const { data } = useSWR("https://example-apis.vercel.app/api/art");
 
-  if (!data) {
-    return;
-  }
+  // if (!data) {
+  //   return;
+  // }
 
   // console.log(data[0].artist);
 
@@ -17,6 +18,7 @@ export default function HomePage() {
     <>
       <SpotLight pieces={data} />
       <ArtPieces pieces={data} />
+      {/* <Spotlight pieces={data} /> */}
     </>
   );
 }

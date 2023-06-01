@@ -26,5 +26,9 @@ export default createGlobalStyle`
 
   img {
     object-fit: cover;
+    // outline-image: linear-gradient(brown, white);
+    // outline-width: 20px;
+    // outline-style: solid;
+    outline: 20px solid brown;
   }
 `;
