@@ -10,4 +10,6 @@ export default function Layout({ children }) {
   );
 }
 
-const Content = styled.div``;
+const Content = styled.div`
+  padding: 10%;
+`;
