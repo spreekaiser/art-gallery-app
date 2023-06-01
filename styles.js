@@ -24,6 +24,12 @@ export default createGlobalStyle`
     list-style: none;
   }
 
+  .favoriteDiv{
+    position: relative;
+  width: 360px;
+  height: 240px;
+  }
+
   img {
     object-fit: cover;
     // outline-image: linear-gradient(brown, white);

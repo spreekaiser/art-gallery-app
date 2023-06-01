@@ -1,5 +1,4 @@
 import Image from "next/image";
-import FavoriteButton from "../FavoriteButton";
 // import FavoriteIcon from "../../assets/heart.svg";
 import styled from "styled-components";
 import Link from "next/link";
@@ -17,7 +16,6 @@ export default function ArtPiecePreview({ image, title, artist, slug }) {
         slug={slug}
         artist={artist}
       ></PieceContainer>
-      {/* <h4>{artist}</h4> */}
     </StyledListItem>
   );
 }

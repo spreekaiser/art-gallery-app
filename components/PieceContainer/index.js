@@ -6,12 +6,12 @@ import styled from "styled-components";
 export default function PieceContainer({ title, image, slug, artist }) {
   return (
     <>
-      <StyledContainer>
+      <div className="favoriteDiv">
         <Link href={`art-pieces/${slug}`}>
           <Image src={image} alt={title} width={359} height={240} />
         </Link>
         <FavoriteButton />
-      </StyledContainer>
+      </div>
       <h4>@{artist}</h4>
     </>
   );

@@ -33,6 +33,7 @@ export default function SpotLight({ pieces }) {
         title={picture.name}
         image={picture.imageSource}
         artist={picture.artist}
+        slug={picture.slug}
       ></PieceContainer>
       {/* <h4>@{picture.artist}</h4> */}
     </div>
