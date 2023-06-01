@@ -1,5 +1,6 @@
 import Image from "next/image";
 import FavoriteButton from "../FavoriteButton";
+// import FavoriteIcon from "../../assets/heart.svg";
 import styled from "styled-components";
 
 export default function ArtPiecePreview({ image, title, artist }) {
@@ -18,9 +19,11 @@ export default function ArtPiecePreview({ image, title, artist }) {
 }
 
 const StyledListItem = styled.li`
-  position: relative;
+  /* position: relative; */
 `;
 
 const PieceContainer = styled.div`
   position: relative;
+  width: 360px;
+  height: 240px;
 `;
