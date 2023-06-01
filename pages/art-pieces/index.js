@@ -1,9 +1,9 @@
 import ArtPieces from "../../components/ArtPieces";
 
-export default function ArtPiecesPage({ data }) {
+export default function ArtPiecesPage({ pieces }) {
   return (
     <>
-      <ArtPieces pieces={data} />
+      <ArtPieces pieces={pieces} />
     </>
   );
 }
