@@ -4,7 +4,7 @@ export default function ArtPieces({ pieces }) {
   return (
     <ul>
       {pieces.map((piece) => {
-        console.log(piece);
+        // console.log(piece);
         return (
           <ArtPiecePreview
             key={piece.imageSource}
