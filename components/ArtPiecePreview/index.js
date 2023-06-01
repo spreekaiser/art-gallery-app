@@ -25,7 +25,7 @@ const StyledListItem = styled.li`
   /* position: relative; */
 `;
 
-const PieceContainer = styled.div`
+export const PieceContainer = styled.div`
   position: relative;
   width: 360px;
   height: 240px;

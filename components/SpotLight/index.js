@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import FavoriteButton from "../FavoriteButton";
 import styled from "styled-components";
+import PieceContainer from "../ArtPiecePreview";
 
 export default function SpotLight({ pieces }) {
   //   console.log("SpotLight: ", pieces);
@@ -39,9 +40,3 @@ export default function SpotLight({ pieces }) {
     </div>
   );
 }
-
-const PieceContainer = styled.div`
-  position: relative;
-  width: 360px;
-  height: 240px;
-`;
