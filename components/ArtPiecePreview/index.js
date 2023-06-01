@@ -10,11 +10,14 @@ export default function ArtPiecePreview({ image, title, artist, slug }) {
 
   return (
     <StyledListItem>
-      <Link href={`art-pieces/${slug}`}>
-        <h3>{title}</h3>
-        <PieceContainer title={title} image={image}></PieceContainer>
-        <h4>@{artist}</h4>
-      </Link>
+      <h3>{title}</h3>
+      <PieceContainer
+        title={title}
+        image={image}
+        slug={slug}
+        artist={artist}
+      ></PieceContainer>
+      {/* <h4>{artist}</h4> */}
     </StyledListItem>
   );
 }

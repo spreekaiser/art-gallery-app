@@ -7,7 +7,7 @@ import PieceContainer from "../ArtPiecePreview";
 export default function SpotLight({ pieces }) {
   const [randomIndex, setRandomIndex] = useState(getRandomNumber());
 
-  console.log("SpotLight: ", pieces);
+  // console.log("SpotLight: ", pieces);
 
   function getRandomNumber() {
     const randomNumber = Math.round(Math.random() * (pieces.length - 1));
@@ -29,13 +29,12 @@ export default function SpotLight({ pieces }) {
   return (
     <div className="spotlight">
       <h1>Art Gallery</h1>
-      <h3>{pieces[randomIndex].name}</h3>
       <PieceContainer
         title={picture.name}
         image={picture.imageSource}
+        artist={picture.artist}
       ></PieceContainer>
-
-      <h4>{pieces[randomIndex].artist}</h4>
+      {/* <h4>@{picture.artist}</h4> */}
     </div>
   );
 }

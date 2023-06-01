@@ -7,7 +7,6 @@ export default function SpotlightPage({ pieces }) {
   return (
     <>
       <SpotLight pieces={pieces} />
-      {/* <ArtPieces pieces={data} /> */}
     </>
   );
 }
