@@ -2,10 +2,23 @@ import Image from "next/image";
 // import FavoriteIcon from "../../assets/heart.svg";
 import styled from "styled-components";
 import Link from "next/link";
+import { useImmerLocalStorageState } from "../../lib/hook/useImmerLocalStorageState";
 import PieceContainer from "../PieceContainer";
 
 export default function ArtPiecePreview({ image, title, artist, slug }) {
   // console.log(image);
+
+  const [artPiecesInfo, updateArtPiecesInfo] = useImmerLocalStorageState(
+    "art-pieces-info",
+    {
+      defaultValue: [],
+    }
+  );
+
+  function handleToggleFavorite(slug) {
+    //
+    updateArtPiecesInfo([...artPiecesInfo, slug]);
+  }
 
   return (
     <StyledListItem>

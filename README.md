@@ -172,12 +172,12 @@ Download and extract the [Resources](#resources) into your project folder.
 #### Tasks
 
 - [x] Create an additional state `artPiecesInfo` to save further information for art pieces
-- [ ] Make the `artPiecesInfo` state globally available for all pages
+- [x] Make the `artPiecesInfo` state globally available for all pages
 - [ ] Store the favorite flag in the `artPiecesInfo`
 - [ ] Reference art pieces by `slug` in the additional state
 - [x] Create the component `FavoriteButton`
 - [x] `FavoriteButton` props: `isFavorite`, `onToggleFavorite`
-- [ ] Render the `FavoriteButton` component in the `Spotlight`, `ArtPiecePreview` and `ArtPieceDetails` component
+- [(x)] Render the `FavoriteButton` component in the `Spotlight`, `ArtPiecePreview` and `ArtPieceDetails` component
 - [ ] All acceptance criteria marked with 🖼️ are covered by component testing
 
 ---
