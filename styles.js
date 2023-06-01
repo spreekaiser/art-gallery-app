@@ -12,7 +12,7 @@ export default createGlobalStyle`
 
   body {
     margin: 0;
-    padding: 10%;
+    /* padding: 10%; */
     font-family: system-ui;
   }
 
@@ -29,6 +29,11 @@ export default createGlobalStyle`
     // outline-image: linear-gradient(brown, white);
     // outline-width: 20px;
     // outline-style: solid;
-    outline: 20px solid brown;
+    border: 20px solid brown;
+  }
+
+  a {
+    text-decoration: none;
+    color: unset
   }
 `;
