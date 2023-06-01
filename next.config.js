@@ -14,7 +14,10 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ["example-apis.vercel.app"],
+    domains: [
+      "example-apis.vercel.app",
+      // "w3.org",
+    ],
   },
 };
 
