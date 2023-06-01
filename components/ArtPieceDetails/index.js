@@ -1,1 +1,4 @@
-export default function ArtPieceDetails() {}
+export default function ArtPieceDetails({ pieces }) {
+  return;
+  <></>;
+}
