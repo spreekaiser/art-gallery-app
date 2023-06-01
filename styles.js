@@ -12,6 +12,7 @@ export default createGlobalStyle`
 
   body {
     margin: 0;
+    padding: 10%;
     font-family: system-ui;
   }
 
