@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import Navigation from "../Navigation";
 
-export default function Layout({ children }) {
+export default function Layout({ children, pieces }) {
   return (
     <div>
-      <Content>{children}</Content>
+      <Content pieces={pieces}>{children}</Content>
       <Navigation />
     </div>
   );
