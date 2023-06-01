@@ -1,9 +1,9 @@
 import Image from "next/image";
-import FavoriteButton from "../FavoriteButton";
 // import FavoriteIcon from "../../assets/heart.svg";
 import styled from "styled-components";
 import Link from "next/link";
 import { useImmerLocalStorageState } from "../../lib/hook/useImmerLocalStorageState";
+import PieceContainer from "../PieceContainer";
 
 export default function ArtPiecePreview({ image, title, artist, slug }) {
   // console.log(image);
@@ -22,25 +22,17 @@ export default function ArtPiecePreview({ image, title, artist, slug }) {
 
   return (
     <StyledListItem>
-      <Link href={`art-pieces/${slug}`}>
-        <h3>{title}</h3>
-        <PieceContainer>
-          <Image src={image} alt={title} width={360} height={240} />
-          <FavoriteButton />
-        </PieceContainer>
-        <h4>@{artist}</h4>
-      </Link>
-      <button onClick={() => handleToggleFavorite(slug)}>Geil!</button>
+      <h3>{title}</h3>
+      <PieceContainer
+        title={title}
+        image={image}
+        slug={slug}
+        artist={artist}
+      ></PieceContainer>
     </StyledListItem>
   );
 }
 
 const StyledListItem = styled.li`
   /* position: relative; */
-`;
-
-export const PieceContainer = styled.div`
-  position: relative;
-  width: 360px;
-  height: 240px;
 `;

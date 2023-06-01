@@ -11,23 +11,21 @@ export default function App({ Component, pageProps }) {
   const { data } = useSWR("https://example-apis.vercel.app/api/art", fetcher);
   // const { data } = useSWR("https://example-apis.vercel.app/api/art");
 
-  // react context api ODER zustand
 
-  const [pieces, setPieces] = useState([]);
-  useEffect(() => {
-    setPieces(data);
-  }, [data]);
+  // const [pieces, setPieces] = useState([]);
 
-  if (!pieces) {
+  if (!data) {
     return;
   }
+  // setPieces(data);
+  console.log(data);
 
   return (
     <>
       <Layout>
         <GlobalStyle />
         {/* <SWRConfig value={{ fetcher, refreshInterval: 10000 }}> */}
-        <Component {...pageProps} pieces={pieces} />
+        <Component {...pageProps} pieces={data} />
         {/* </SWRConfig> */}
       </Layout>
     </>

@@ -5,7 +5,9 @@ import styled from "styled-components";
 export default function FavoriteButton({ isFavorite, onToggleFavorite }) {
   return (
     <>
-      <StyledFavoriteIcon />
+      <button>
+        <StyledFavoriteIcon onClick={() => alert("huhu")} />
+      </button>
     </>
   );
 }
@@ -14,7 +16,7 @@ const StyledFavoriteIcon = styled(FavoriteIcon)`
   position: absolute;
   top: 25px;
   right: 25px;
-
+  z-index: 1;
   stroke: white;
   stroke: crimson;
   stroke-width: 0.2rem;

@@ -5,8 +5,9 @@ import styled from "styled-components";
 import PieceContainer from "../ArtPiecePreview";
 
 export default function SpotLight({ pieces }) {
-  //   console.log("SpotLight: ", pieces);
   const [randomIndex, setRandomIndex] = useState(getRandomNumber());
+
+  // console.log("SpotLight: ", pieces);
 
   function getRandomNumber() {
     const randomNumber = Math.round(Math.random() * (pieces.length - 1));
@@ -22,21 +23,19 @@ export default function SpotLight({ pieces }) {
     };
   });
 
+  const picture = pieces[randomIndex];
+  // console.log(pieces[randomIndex].imageSource);
+
   return (
     <div className="spotlight">
       <h1>Art Gallery</h1>
-      <h3>{pieces[randomIndex].name}</h3>
-      <PieceContainer>
-        <Image
-          src={pieces[randomIndex].imageSource}
-          alt={pieces[randomIndex].name}
-          width={360}
-          height={240}
-        />
-        <FavoriteButton />
-      </PieceContainer>
-
-      <h4>{pieces[randomIndex].artist}</h4>
+      <PieceContainer
+        title={picture.name}
+        image={picture.imageSource}
+        artist={picture.artist}
+        slug={picture.slug}
+      ></PieceContainer>
+      {/* <h4>@{picture.artist}</h4> */}
     </div>
   );
 }
