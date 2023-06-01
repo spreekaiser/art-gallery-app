@@ -109,10 +109,10 @@ Download and extract the [Resources](#resources) into your project folder.
 #### Tasks
 
 - [x] Move the data fetching logic to `pages/_app`
-- [ ] Find a solution for global state handling to have the art pieces available on all pages
+- [x] Find a solution for global state handling to have the art pieces available on all pages
 - [(x)] Adapt the page `pages/index`: rename the function to `SpotlightPage` and have it render only the `Spotlight` component
 - [x] Create the page `pages/art-pieces/index` that renders the `ArtPieces` component
-- [(x)] Create the component `Navigation` that renders all navigation links
+- [x] Create the component `Navigation` that renders all navigation links
 - [x] Create the component `Layout` that renders the `Navigation` component
 - [x] Apply the `Layout` component in `pages/_app`
 - [ ] All acceptance criteria marked with 🖼️ are covered by component testing
