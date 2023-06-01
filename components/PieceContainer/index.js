@@ -10,7 +10,7 @@ export default function PieceContainer({ title, image, slug, artist }) {
         <Link href={`art-pieces/${slug}`}>
           <Image src={image} alt={title} width={359} height={240} />
         </Link>
-        <FavoriteButton />
+        <FavoriteButton slug={slug} />
       </div>
       <h4>@{artist}</h4>
     </>

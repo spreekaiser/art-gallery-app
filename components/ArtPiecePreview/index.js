@@ -8,17 +8,20 @@ import PieceContainer from "../PieceContainer";
 export default function ArtPiecePreview({ image, title, artist, slug }) {
   // console.log(image);
 
-  const [artPiecesInfo, updateArtPiecesInfo] = useImmerLocalStorageState(
-    "art-pieces-info",
-    {
-      defaultValue: [],
-    }
-  );
+  // const [artPiecesInfo, updateArtPiecesInfo] = useImmerLocalStorageState(
+  //   "art-pieces-info",
+  //   {
+  //     defaultValue: [],
+  //   }
+  // );
 
-  function handleToggleFavorite(slug) {
-    //
-    updateArtPiecesInfo([...artPiecesInfo, slug]);
-  }
+  // function handleToggleFavorite(slug) {
+  //   if (artPiecesInfo.includes(slug)) {
+  //     updateArtPiecesInfo(artPiecesInfo.filter((element) => element !== slug));
+  //   } else {
+  //     updateArtPiecesInfo([...artPiecesInfo, slug]);
+  //   }
+  // }
 
   return (
     <StyledListItem>
@@ -29,6 +32,7 @@ export default function ArtPiecePreview({ image, title, artist, slug }) {
         slug={slug}
         artist={artist}
       ></PieceContainer>
+      <button onClick={() => handleToggleFavorite(slug)}>Geil!</button>
     </StyledListItem>
   );
 }

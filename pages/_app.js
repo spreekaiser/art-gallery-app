@@ -11,14 +11,13 @@ export default function App({ Component, pageProps }) {
   const { data } = useSWR("https://example-apis.vercel.app/api/art", fetcher);
   // const { data } = useSWR("https://example-apis.vercel.app/api/art");
 
-
   // const [pieces, setPieces] = useState([]);
 
   if (!data) {
     return;
   }
+
   // setPieces(data);
-  console.log(data);
 
   return (
     <>

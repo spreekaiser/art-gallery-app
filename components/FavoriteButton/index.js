@@ -1,13 +1,31 @@
 import Image from "next/image";
 import FavoriteIcon from "../../assets/heart.svg";
 import styled from "styled-components";
+import { useImmerLocalStorageState } from "../../lib/hook/useImmerLocalStorageState";
 
-export default function FavoriteButton({ isFavorite, onToggleFavorite }) {
+let isFavorite = false;
+// export default function FavoriteButton({ isFavorite, onToggleFavorite, slug }) {
+export default function FavoriteButton({ onToggleFavorite, slug }) {
+  const [artPiecesInfo, updateArtPiecesInfo] = useImmerLocalStorageState(
+    "art-pieces-info",
+    {
+      // defaultValue: [],
+      defaultValue: [],
+    }
+  );
+
+  function handleToggleFavorite(slug) {
+    if (artPiecesInfo.includes(slug)) {
+      updateArtPiecesInfo(artPiecesInfo.filter((element) => element !== slug));
+    } else {
+      updateArtPiecesInfo([...artPiecesInfo, slug]);
+    }
+  }
+
   return (
     <>
-      <button>
-        <StyledFavoriteIcon onClick={() => alert("huhu")} />
-      </button>
+      {/* <StyledFavoriteIcon onClick={() => alert("huhu")} /> */}
+      <StyledFavoriteIcon onClick={() => handleToggleFavorite(slug)} />
     </>
   );
 }
@@ -16,22 +34,17 @@ const StyledFavoriteIcon = styled(FavoriteIcon)`
   position: absolute;
   top: 25px;
   right: 25px;
-  z-index: 1;
   stroke: white;
   stroke: crimson;
   stroke-width: 0.2rem;
-  /* stroke-opacity: 0.7; */
-  /* fill: crimson; */
-  fill: transparent;
+  /* fill: transparent; */
+  fill: ${(props) => (props.isFavorite ? "crismon" : "transparent")};
 
   height: 40px;
   width: 40px;
 
   &:hover {
-    /* stroke: crimson; */
     fill: crimson;
-    /* stroke: white; */
-    /* stroke-width: 0.3rem; */
     cursor: pointer;
   }
 `;
