@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import FavoriteButton from "../FavoriteButton";
+import styled from "styled-components";
 
 export default function SpotLight({ pieces }) {
   //   console.log("SpotLight: ", pieces);
@@ -23,13 +25,23 @@ export default function SpotLight({ pieces }) {
     <div className="spotlight">
       <h1>Art Gallery</h1>
       <h3>{pieces[randomIndex].name}</h3>
-      <Image
-        src={pieces[randomIndex].imageSource}
-        alt={pieces[randomIndex].name}
-        width={360}
-        height={240}
-      />
+      <PieceContainer>
+        <Image
+          src={pieces[randomIndex].imageSource}
+          alt={pieces[randomIndex].name}
+          width={360}
+          height={240}
+        />
+        <FavoriteButton />
+      </PieceContainer>
+
       <h4>{pieces[randomIndex].artist}</h4>
     </div>
   );
 }
+
+const PieceContainer = styled.div`
+  position: relative;
+  width: 360px;
+  height: 240px;
+`;

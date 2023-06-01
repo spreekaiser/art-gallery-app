@@ -26,6 +26,12 @@ export default function App({ Component, pageProps }) {
         <Component {...pageProps} pieces={pieces} />
         {/* </SWRConfig> */}
       </Layout>
+      {/* <Image
+        src="/../../assets/heart.svg"
+        width={100}
+        height={100}
+        alt="test"
+      /> */}
     </>
   );
 }
