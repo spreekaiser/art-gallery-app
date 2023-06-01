@@ -7,7 +7,7 @@ export default function ArtPieceDetails({ pieces }) {
     <>
       <h2>{title}</h2>
       <PieceContainer>
-        <Image src={image} alt={title} width={359} height={240} />
+        <Image src={image} alt={title} width={360} height={240} />
         <FavoriteButton />
       </PieceContainer>
       <h3>@{artist}</h3>

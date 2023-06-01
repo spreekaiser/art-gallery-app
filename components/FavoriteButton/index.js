@@ -16,14 +16,20 @@ const StyledFavoriteIcon = styled(FavoriteIcon)`
   right: 25px;
 
   stroke: white;
-  stroke-opacity: 0.7;
-  fill: crimson;
+  stroke: crimson;
+  stroke-width: 0.2rem;
+  /* stroke-opacity: 0.7; */
+  /* fill: crimson; */
+  fill: transparent;
 
   height: 40px;
   width: 40px;
 
   &:hover {
-    stroke: crimson;
+    /* stroke: crimson; */
+    fill: crimson;
+    /* stroke: white; */
+    /* stroke-width: 0.3rem; */
     cursor: pointer;
   }
 `;
