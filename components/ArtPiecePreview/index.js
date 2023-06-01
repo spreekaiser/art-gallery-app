@@ -3,9 +3,22 @@ import FavoriteButton from "../FavoriteButton";
 // import FavoriteIcon from "../../assets/heart.svg";
 import styled from "styled-components";
 import Link from "next/link";
+import { useImmerLocalStorageState } from "../../lib/hook/useImmerLocalStorageState";
 
 export default function ArtPiecePreview({ image, title, artist, slug }) {
   // console.log(image);
+
+  const [artPiecesInfo, updateArtPiecesInfo] = useImmerLocalStorageState(
+    "art-pieces-info",
+    {
+      defaultValue: [],
+    }
+  );
+
+  function handleToggleFavorite(slug) {
+    //
+    updateArtPiecesInfo([...artPiecesInfo, slug]);
+  }
 
   return (
     <StyledListItem>
@@ -17,6 +30,7 @@ export default function ArtPiecePreview({ image, title, artist, slug }) {
         </PieceContainer>
         <h4>@{artist}</h4>
       </Link>
+      <button onClick={() => handleToggleFavorite(slug)}>Geil!</button>
     </StyledListItem>
   );
 }
