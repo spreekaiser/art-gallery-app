@@ -3,13 +3,12 @@ import FavoriteIcon from "../../assets/heart.svg";
 import styled from "styled-components";
 import { useImmerLocalStorageState } from "../../lib/hook/useImmerLocalStorageState";
 
-let isFavorite = false;
+// let isFavorite = false;
 // export default function FavoriteButton({ isFavorite, onToggleFavorite, slug }) {
 export default function FavoriteButton({ onToggleFavorite, slug }) {
   const [artPiecesInfo, updateArtPiecesInfo] = useImmerLocalStorageState(
     "art-pieces-info",
     {
-      // defaultValue: [],
       defaultValue: [],
     }
   );
