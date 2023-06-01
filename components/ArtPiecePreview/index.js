@@ -32,7 +32,9 @@ export default function ArtPiecePreview({ image, title, artist, slug }) {
         slug={slug}
         artist={artist}
       ></PieceContainer>
-      <button onClick={() => handleToggleFavorite(slug)}>Geil!</button>
+      {/***  test button   ***/}
+      {/* <button onClick={() => handleToggleFavorite(slug)}>Geil!</button> */}
+      {/***  test button   ***/}
     </StyledListItem>
   );
 }
