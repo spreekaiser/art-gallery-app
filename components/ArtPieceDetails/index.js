@@ -1,16 +1,18 @@
 import Image from "next/image";
-import PieceContainer from "../ArtPiecePreview";
+import CommentForm from "../../components/CommentForm";
 import FavoriteButton from "../FavoriteButton";
 
-export default function ArtPieceDetails({ pieces }) {
+export default function ArtPieceDetails({ image, title, artist }) {
   return (
     <>
       <h2>{title}</h2>
-      <PieceContainer>
+      <div className="favoriteDiv">
         <Image src={image} alt={title} width={360} height={240} />
         <FavoriteButton />
-      </PieceContainer>
-      <h3>@{artist}</h3>
+      </div>
+      <h3>of {artist}</h3>
+
+      <CommentForm />
     </>
   );
 }
