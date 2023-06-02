@@ -6,22 +6,6 @@ import { useImmerLocalStorageState } from "../../lib/hook/useImmerLocalStorageSt
 import PieceContainer from "../PieceContainer";
 
 export default function ArtPiecePreview({ image, title, artist, slug, handleToggleFavorite, artPiecesInfo }) {
-  // console.log(image);
-
-  // const [artPiecesInfo, updateArtPiecesInfo] = useImmerLocalStorageState(
-  //   "art-pieces-info",
-  //   {
-  //     defaultValue: [],
-  //   }
-  // );
-
-  // function handleToggleFavorite(slug) {
-  //   if (artPiecesInfo.includes(slug)) {
-  //     updateArtPiecesInfo(artPiecesInfo.filter((element) => element !== slug));
-  //   } else {
-  //     updateArtPiecesInfo([...artPiecesInfo, slug]);
-  //   }
-  // }
 
   return (
     <StyledListItem>
@@ -34,9 +18,6 @@ export default function ArtPiecePreview({ image, title, artist, slug, handleTogg
         handleToggleFavorite={handleToggleFavorite}
 artPiecesInfo={artPiecesInfo} 
       ></PieceContainer>
-      {/***  test button   ***/}
-      {/* <button onClick={() => handleToggleFavorite(slug)}>Geil!</button> */}
-      {/***  test button   ***/}
     </StyledListItem>
   );
 }
