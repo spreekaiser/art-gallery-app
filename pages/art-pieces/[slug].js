@@ -22,9 +22,15 @@ export default function DetailsPage({
         image={selectedImage.imageSource}
         title={selectedImage.name}
         artist={selectedImage.artist}
+
+
+
         slug={slug}
-        handleToggleFavorite={handleToggleFavorite}
+
+        handleToggleFavorite={handleToggleFavorite} 
+
         artPiecesInfo={artPiecesInfo}
+
       />
     </div>
   );
