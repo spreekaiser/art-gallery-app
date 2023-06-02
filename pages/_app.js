@@ -39,11 +39,6 @@ export default function App({ Component, pageProps }) {
     console.log('isFavorite', isFavorite);
   }
   
-  // if slug is in localstorage set isFavorite true
-  // 
-
-  // setPieces(data);
-
   return (
     <>
       <Layout>
