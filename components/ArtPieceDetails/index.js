@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Comments from "../Comments";
 import CommentForm from "../../components/CommentForm";
 import FavoriteButton from "../FavoriteButton";
 
-export default function ArtPieceDetails({ image, title, artist }) {
+export default function ArtPieceDetails({ image, title, artist, slug }) {
   return (
     <>
       <h2>{title}</h2>
@@ -11,8 +12,8 @@ export default function ArtPieceDetails({ image, title, artist }) {
         <FavoriteButton />
       </div>
       <h3>of {artist}</h3>
-
-      <CommentForm />
+      <Comments slug={slug} />
+      <CommentForm slug={slug} />
     </>
   );
 }

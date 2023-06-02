@@ -18,6 +18,7 @@ export default function DetailsPage({ pieces }) {
         image={selectedImage.imageSource}
         title={selectedImage.name}
         artist={selectedImage.artist}
+        slug={slug}
       />
     </div>
   );

@@ -1,15 +1,25 @@
 import { useImmerLocalStorageState } from "../../lib/hook/useImmerLocalStorageState";
+import { useImmer } from "use-immer";
 
-export default function CommentForm() {
+export default function CommentForm({ slug }) {
   const [artPiecesComments, updateArtPiecesComments] =
     useImmerLocalStorageState("art-pieces-comments", {
-      comments: {},
+      defaultValue: {},
     });
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("Hello commit", artPiecesInfo);
-    updateArtPiecesComments();
+    const comment = document.getElementById("commentInput").value;
+    console.log("Hello comments: ", artPiecesComments);
+    console.log("is Slug here: ", slug);
+    if (!artPiecesComments[slug]) {
+      updateArtPiecesComments({ [slug]: [comment] });
+    } else {
+      updateArtPiecesComments({
+        [slug]: [...artPiecesComments[slug], comment],
+      });
+    }
+    // console.log(artPiecesComments);
   }
   return (
     <form onSubmit={handleSubmit}>
