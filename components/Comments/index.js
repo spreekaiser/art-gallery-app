@@ -1,6 +1,6 @@
 import { useImmerLocalStorageState } from "../../lib/hook/useImmerLocalStorageState";
 
-export default function Comments({ slug }) {
+export default function Comments({ title }) {
   const [artPiecesComments, updateArtPiecesComments] =
     useImmerLocalStorageState("art-pieces-comments", {
       defaultValue: {},
@@ -10,12 +10,11 @@ export default function Comments({ slug }) {
   //     console.log("comment in maping: ", comment);
   //     return comment;
   //   });
-  let id = 0;
   return (
     <ul>
-      {(artPiecesComments[slug] || []).map((comment) => {
+      {(artPiecesComments[title] || []).map((comment, index) => {
         // console.log("comment in maping: ", comment);
-        return <li key={id++}>{comment}</li>;
+        return <li key={index}>{comment}</li>;
       })}
     </ul>
   );

@@ -30,21 +30,26 @@ export default function App({ Component, pageProps }) {
     // if artPieceSlug is in localStorage, delete it from localStorage
     if (artPiecesInfo.includes(slug)) {
       updateArtPiecesInfo(artPiecesInfo.filter((element) => element !== slug));
-      isFavorite = false
+      isFavorite = false;
       // else add artPieceSlug to localStorage
     } else {
       updateArtPiecesInfo([...artPiecesInfo, slug]);
-      isFavorite = true
+      isFavorite = true;
     }
-    console.log('isFavorite', isFavorite);
+    // console.log('isFavorite', isFavorite);
   }
-  
+
   return (
     <>
       <Layout>
         <GlobalStyle />
         {/* <SWRConfig value={{ fetcher, refreshInterval: 10000 }}> */}
-        <Component {...pageProps} pieces={data} handleToggleFavorite={handleToggleFavorite} artPiecesInfo={artPiecesInfo} />
+        <Component
+          {...pageProps}
+          pieces={data}
+          handleToggleFavorite={handleToggleFavorite}
+          artPiecesInfo={artPiecesInfo}
+        />
         {/* </SWRConfig> */}
       </Layout>
     </>

@@ -23,8 +23,8 @@ export default function ArtPieceDetails({
         />
       </div>
       <h3>of {artist}</h3>
-      <Comments slug={slug} />
-      <CommentForm slug={slug} />
+      <Comments title={title} />
+      <CommentForm title={title} />
     </>
   );
 }
