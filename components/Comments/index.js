@@ -14,7 +14,7 @@ export default function Comments({ slug }) {
   return (
     <ul>
       {(artPiecesComments[slug] || []).map((comment) => {
-        console.log("comment in maping: ", comment);
+        // console.log("comment in maping: ", comment);
         return <li key={id++}>{comment}</li>;
       })}
     </ul>

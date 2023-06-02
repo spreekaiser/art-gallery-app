@@ -3,14 +3,25 @@ import Link from "next/link";
 import FavoriteButton from "../FavoriteButton";
 import styled from "styled-components";
 
-export default function PieceContainer({ title, image, slug, artist, handleToggleFavorite, artPiecesInfo }) {
+export default function PieceContainer({
+  title,
+  image,
+  slug,
+  artist,
+  handleToggleFavorite,
+  artPiecesInfo,
+}) {
   return (
     <>
       <div className="favoriteDiv">
         <Link href={`art-pieces/${slug}`}>
           <Image src={image} alt={title} width={359} height={240} />
         </Link>
-        <FavoriteButton slug={slug} onToggleFavorite={handleToggleFavorite} artPiecesInfo={artPiecesInfo} />
+        <FavoriteButton
+          slug={slug}
+          handleToggleFavorite={handleToggleFavorite}
+          artPiecesInfo={artPiecesInfo}
+        />
       </div>
       <h4>@{artist}</h4>
     </>

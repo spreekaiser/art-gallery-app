@@ -17,6 +17,7 @@ export default function ArtPieceDetails({
       <div className="favoriteDiv">
         <Image src={image} alt={title} width={360} height={240} />
         <FavoriteButton
+          slug={slug}
           handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
         />
