@@ -7,7 +7,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
 
     //! for production only
-    ${'' /* outline: 1px dashed salmon; */}
+    ${"" /* outline: 1px dashed salmon; */}
   }
 
   body {
@@ -42,4 +42,16 @@ export default createGlobalStyle`
     text-decoration: none;
     color: unset
   }
+
+  .commentList {
+    margin-top: 1em;
+    height: 2.5em;
+    padding: 0.5em;
+    border: 0.5px solid gray;
+    border-radius: 50px;
+    background-color: lightgray;
+    width: max-content;
+  }
+
+
 `;
