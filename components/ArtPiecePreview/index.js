@@ -5,8 +5,14 @@ import Link from "next/link";
 import { useImmerLocalStorageState } from "../../lib/hook/useImmerLocalStorageState";
 import PieceContainer from "../PieceContainer";
 
-export default function ArtPiecePreview({ image, title, artist, slug, handleToggleFavorite, artPiecesInfo }) {
-
+export default function ArtPiecePreview({
+  image,
+  title,
+  artist,
+  slug,
+  handleToggleFavorite,
+  artPiecesInfo,
+}) {
   return (
     <StyledListItem>
       <h3>{title}</h3>
@@ -16,7 +22,7 @@ export default function ArtPiecePreview({ image, title, artist, slug, handleTogg
         slug={slug}
         artist={artist}
         handleToggleFavorite={handleToggleFavorite}
-artPiecesInfo={artPiecesInfo} 
+        artPiecesInfo={artPiecesInfo}
       ></PieceContainer>
     </StyledListItem>
   );

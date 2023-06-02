@@ -9,7 +9,7 @@ export default function DetailsPage({
   const router = useRouter();
   const { slug } = router.query;
 
-  // console.log("Slug: ", pieces);
+  console.log("Slug: ", artPiecesInfo);
 
   const selectedImage = pieces.find((piece) => piece.slug === slug);
   if (!selectedImage) {
@@ -22,15 +22,9 @@ export default function DetailsPage({
         image={selectedImage.imageSource}
         title={selectedImage.name}
         artist={selectedImage.artist}
-
-
-
         slug={slug}
-
-        handleToggleFavorite={handleToggleFavorite} 
-
+        handleToggleFavorite={handleToggleFavorite}
         artPiecesInfo={artPiecesInfo}
-
       />
     </div>
   );
