@@ -18,8 +18,12 @@ export default function DetailsPage({ pieces, handleToggleFavorite, artPiecesInf
         image={selectedImage.imageSource}
         title={selectedImage.name}
         artist={selectedImage.artist}
+
+        slug={slug}
+
         handleToggleFavorite={handleToggleFavorite} 
         artPiecesInfo={artPiecesInfo}
+
       />
     </div>
   );
