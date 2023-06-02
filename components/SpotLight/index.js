@@ -4,7 +4,7 @@ import FavoriteButton from "../FavoriteButton";
 import styled from "styled-components";
 import PieceContainer from "../ArtPiecePreview";
 
-export default function SpotLight({ pieces }) {
+export default function SpotLight({ pieces, handleToggleFavorite, artPiecesInfo  }) {
   const [randomIndex, setRandomIndex] = useState(getRandomNumber());
 
   // console.log("SpotLight: ", pieces);
@@ -34,6 +34,8 @@ export default function SpotLight({ pieces }) {
         image={picture.imageSource}
         artist={picture.artist}
         slug={picture.slug}
+        handleToggleFavorite={handleToggleFavorite}
+        artPiecesInfo={artPiecesInfo} 
       ></PieceContainer>
       {/* <h4>@{picture.artist}</h4> */}
     </div>

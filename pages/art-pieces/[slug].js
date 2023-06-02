@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import ArtPieceDetails from "../../components/ArtPieceDetails";
 
-export default function DetailsPage({ pieces }) {
+export default function DetailsPage({ pieces, handleToggleFavorite, artPiecesInfo }) {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -18,6 +18,8 @@ export default function DetailsPage({ pieces }) {
         image={selectedImage.imageSource}
         title={selectedImage.name}
         artist={selectedImage.artist}
+        handleToggleFavorite={handleToggleFavorite} 
+        artPiecesInfo={artPiecesInfo}
       />
     </div>
   );

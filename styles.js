@@ -7,7 +7,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
 
     //! for production only
-    outline: 1px dashed salmon;
+    ${'' /* outline: 1px dashed salmon; */}
   }
 
   body {
