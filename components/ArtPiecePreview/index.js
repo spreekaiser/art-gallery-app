@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useImmerLocalStorageState } from "../../lib/hook/useImmerLocalStorageState";
 import PieceContainer from "../PieceContainer";
 
-export default function ArtPiecePreview({ image, title, artist, slug }) {
+export default function ArtPiecePreview({ image, title, artist, slug, handleToggleFavorite, artPiecesInfo }) {
   // console.log(image);
 
   // const [artPiecesInfo, updateArtPiecesInfo] = useImmerLocalStorageState(
@@ -31,6 +31,8 @@ export default function ArtPiecePreview({ image, title, artist, slug }) {
         image={image}
         slug={slug}
         artist={artist}
+        handleToggleFavorite={handleToggleFavorite}
+artPiecesInfo={artPiecesInfo} 
       ></PieceContainer>
       {/***  test button   ***/}
       {/* <button onClick={() => handleToggleFavorite(slug)}>Geil!</button> */}
