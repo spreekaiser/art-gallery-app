@@ -1,11 +1,11 @@
-import { ArtPiecePreview } from "../";
+import { ArtPiecePreview } from "..";
 
 export default function ArtPieces({
   pieces,
   handleToggleFavorite,
   artPiecesInfo,
 }) {
-  // console.log(pieces);
+  //
   return (
     <ul>
       {pieces.map((piece) => {
