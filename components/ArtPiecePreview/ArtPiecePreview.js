@@ -3,7 +3,7 @@ import Image from "next/image";
 import styled from "styled-components";
 // import Link from "next/link";
 // import { useImmerLocalStorageState } from "../../lib/hook/useImmerLocalStorageState";
-import PieceContainer from "../PieceContainer";
+import { PieceContainer } from "../";
 
 export default function ArtPiecePreview({
   image,
