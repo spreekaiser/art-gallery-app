@@ -1,9 +1,7 @@
 import Image from "next/image";
-import Comments from "../Comments";
-import CommentForm from "../../components/CommentForm";
-import FavoriteButton from "../FavoriteButton";
+import { CommentForm, Comments, FavoriteButton } from "../";
 
-export default function ArtPieceDetails({
+export function ArtPieceDetails({
   image,
   title,
   artist,

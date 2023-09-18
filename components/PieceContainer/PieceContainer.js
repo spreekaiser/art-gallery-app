@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import FavoriteButton from "../FavoriteButton";
+// import FavoriteButton from "../FavoriteButton/FavoriteButton";
+import { FavoriteButton } from "../";
 import styled from "styled-components";
 
-export default function PieceContainer({
+export function PieceContainer({
   title,
   image,
   slug,

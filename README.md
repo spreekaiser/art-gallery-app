@@ -7,11 +7,11 @@ A Next.js collaboration master piece created by the infamous [spreekaiser](https
 ## Features
 
 - [x] Fetch and display data from REST API
-- [x] Radom picked spotlight piece
+- [x] Random picked spotlight piece
 - [x] List view of all pieces
 - [x] Details page for every art piece
 - [x] Mark your favorite art pieces as favorite
-- [x] List your favorites art pieces
+- [x] List your favorite art pieces
 - [x] Write comments for art pieces
 - [x] Comments and favorites persist in the browser (local storage)
 - [ ] See the color palette of each art piece
@@ -33,4 +33,5 @@ Because we can! 💅
 - [ ] Implement TypeScript
 - [ ] Add color palette to each art piece
 - [ ] Create lots of unit tests
+- [ ] Implement barrel exports for components
 - [ ] World domination

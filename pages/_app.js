@@ -1,4 +1,4 @@
-import Layout from "../components/Layout";
+import { Layout } from "../components";
 import GlobalStyle from "../styles";
 // import { SWRConfig } from "swr";
 import useSWR from "swr";

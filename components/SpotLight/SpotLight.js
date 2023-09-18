@@ -1,13 +1,10 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import FavoriteButton from "../FavoriteButton";
 import styled from "styled-components";
-import PieceContainer from "../ArtPiecePreview";
+import { ArtPiecePreview } from "..";
 
-export default function SpotLight({ pieces, handleToggleFavorite, artPiecesInfo  }) {
+export function SpotLight({ pieces, handleToggleFavorite, artPiecesInfo }) {
   const [randomIndex, setRandomIndex] = useState(getRandomNumber());
-
-  // console.log("SpotLight: ", pieces);
 
   function getRandomNumber() {
     const randomNumber = Math.round(Math.random() * (pieces.length - 1));
@@ -24,20 +21,18 @@ export default function SpotLight({ pieces, handleToggleFavorite, artPiecesInfo 
   });
 
   const picture = pieces[randomIndex];
-  // console.log(pieces[randomIndex].imageSource);
 
   return (
     <div className="spotlight">
       <h1>Art Gallery</h1>
-      <PieceContainer
+      <ArtPiecePreview
         title={picture.name}
         image={picture.imageSource}
         artist={picture.artist}
         slug={picture.slug}
         handleToggleFavorite={handleToggleFavorite}
-        artPiecesInfo={artPiecesInfo} 
-      ></PieceContainer>
-      {/* <h4>@{picture.artist}</h4> */}
+        artPiecesInfo={artPiecesInfo}
+      ></ArtPiecePreview>
     </div>
   );
 }

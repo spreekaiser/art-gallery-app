@@ -1,7 +1,7 @@
-import ArtPiecePreview from "../ArtPiecePreview";
+import { ArtPiecePreview } from "..";
 
-export default function ArtPieces({ pieces, handleToggleFavorite, artPiecesInfo }) {
-  // console.log(pieces);
+export function ArtPieces({ pieces, handleToggleFavorite, artPiecesInfo }) {
+  //
   return (
     <ul>
       {pieces.map((piece) => {
@@ -13,7 +13,7 @@ export default function ArtPieces({ pieces, handleToggleFavorite, artPiecesInfo 
             artist={piece.artist}
             slug={piece.slug}
             handleToggleFavorite={handleToggleFavorite}
-artPiecesInfo={artPiecesInfo}
+            artPiecesInfo={artPiecesInfo}
           />
         );
       })}

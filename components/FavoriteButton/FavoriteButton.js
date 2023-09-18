@@ -6,11 +6,7 @@ import styled from "styled-components";
 let isFavorite = false;
 
 // export default function FavoriteButton({ isFavorite, onToggleFavorite, slug }) {
-export default function FavoriteButton({
-  handleToggleFavorite,
-  slug,
-  artPiecesInfo,
-}) {
+export function FavoriteButton({ handleToggleFavorite, slug, artPiecesInfo }) {
   return (
     <>
       {artPiecesInfo.includes(slug) ? (
