@@ -7,3 +7,4 @@ export { default as FavoriteButton } from "./FavoriteButton/FavoriteButton";
 export { default as Layout } from "./Layout/Layout";
 export { default as Navigation } from "./Navigation/Navigation";
 export { default as PieceContainer } from "./PieceContainer/PieceContainer";
+export { default as SpotLight } from "./SpotLight/SpotLight";

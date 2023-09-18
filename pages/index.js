@@ -1,7 +1,4 @@
-// import useSWR from "swr";
-// import ArtPieces from "../components/ArtPieces";
-import SpotLight from "../components/SpotLight";
-// import { ArtPiecePreview } from "../components";
+import { SpotLight } from "../components";
 
 export default function SpotlightPage({
   pieces,

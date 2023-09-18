@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-import { ArtPiecePreview } from "../";
+import { ArtPiecePreview } from "..";
 
 export default function SpotLight({
   pieces,
