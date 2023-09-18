@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import FavoriteButton from "../FavoriteButton";
 import styled from "styled-components";
 import { ArtPiecePreview } from "../";
 
