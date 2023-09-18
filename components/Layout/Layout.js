@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Navigation } from "../";
+import { Navigation } from "..";
 
 export default function Layout({ children }) {
   return (
