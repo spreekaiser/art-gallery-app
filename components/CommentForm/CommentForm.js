@@ -1,6 +1,6 @@
 import { useImmerLocalStorageState } from "../../lib/hook/useImmerLocalStorageState";
 
-export default function CommentForm({ title }) {
+export function CommentForm({ title }) {
   const [artPiecesComments, updateArtPiecesComments] =
     useImmerLocalStorageState("art-pieces-comments", {
       defaultValue: {},

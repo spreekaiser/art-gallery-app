@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FavoriteButton } from "../";
 import styled from "styled-components";
 
-export default function PieceContainer({
+export function PieceContainer({
   title,
   image,
   slug,

@@ -5,7 +5,7 @@ import styled from "styled-components";
 // import { useImmerLocalStorageState } from "../../lib/hook/useImmerLocalStorageState";
 import { PieceContainer } from "../";
 
-export default function ArtPiecePreview({
+export function ArtPiecePreview({
   image,
   title,
   artist,

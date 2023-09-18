@@ -3,11 +3,7 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { ArtPiecePreview } from "..";
 
-export default function SpotLight({
-  pieces,
-  handleToggleFavorite,
-  artPiecesInfo,
-}) {
+export function SpotLight({ pieces, handleToggleFavorite, artPiecesInfo }) {
   const [randomIndex, setRandomIndex] = useState(getRandomNumber());
 
   function getRandomNumber() {

@@ -1,10 +1,6 @@
 import { ArtPiecePreview } from "..";
 
-export default function ArtPieces({
-  pieces,
-  handleToggleFavorite,
-  artPiecesInfo,
-}) {
+export function ArtPieces({ pieces, handleToggleFavorite, artPiecesInfo }) {
   //
   return (
     <ul>
