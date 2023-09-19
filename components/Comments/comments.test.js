@@ -1,4 +1,4 @@
-import Comments from ".";
+import { Comments } from "..";
 import { render, screen } from "@testing-library/react";
 
 test("render a list", () => {
