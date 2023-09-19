@@ -8,13 +8,11 @@ export function Comments({ title }) {
 
   return (
     <ul>
-      {(artPiecesComments[title] || []).map((comment, index) => {
-        return (
-          <li className="commentList" key={index}>
-            {comment}
-          </li>
-        );
-      })}
+      {(artPiecesComments[title] || []).map((comment, index) => (
+        <li className="commentList" key={index}>
+          {comment}
+        </li>
+      ))}
     </ul>
   );
 }
