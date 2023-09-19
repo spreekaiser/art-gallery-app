@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-// import FavoriteButton from "../FavoriteButton/FavoriteButton";
-import { FavoriteButton } from "../";
 import styled from "styled-components";
+import { FavoriteButton } from "../";
 
 export function PieceContainer({
   title,
