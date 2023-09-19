@@ -1,6 +1,4 @@
-import Image from "next/image";
 import { useState, useEffect } from "react";
-import styled from "styled-components";
 import { ArtPiecePreview } from "..";
 
 export function SpotLight({ pieces, handleToggleFavorite, artPiecesInfo }) {
