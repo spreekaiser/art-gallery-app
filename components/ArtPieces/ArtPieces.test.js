@@ -1,4 +1,6 @@
 import { ArtPieces } from "..";
+import { render, screen } from "@testing-library/react";
+import "jest-styled-components";
 
 test("all art pieces are displayed as a list", () => {
   render(<ArtPieces />);
