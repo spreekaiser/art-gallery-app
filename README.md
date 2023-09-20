@@ -30,8 +30,9 @@ Because we can! 💅
 
 ## What's next
 
+- [x] Implement barrel exports for components
 - [ ] Implement TypeScript
 - [ ] Add color palette to each art piece
+- [ ] Implement Recoil for state management
 - [ ] Create lots of unit tests
-- [ ] Implement barrel exports for components
 - [ ] World domination

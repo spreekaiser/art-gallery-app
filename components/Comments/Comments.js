@@ -6,20 +6,13 @@ export function Comments({ title }) {
       defaultValue: {},
     });
 
-  //   const comment = (artPiecesComments[slug] || []).map((comment) => {
-  //     console.log("comment in maping: ", comment);
-  //     return comment;
-  //   });
   return (
     <ul>
-      {(artPiecesComments[title] || []).map((comment, index) => {
-        // console.log("comment in maping: ", comment);
-        return (
-          <li className="commentList" key={index}>
-            {comment}
-          </li>
-        );
-      })}
+      {(artPiecesComments[title] || []).map((comment, index) => (
+        <li className="commentList" key={index}>
+          {comment}
+        </li>
+      ))}
     </ul>
   );
 }
