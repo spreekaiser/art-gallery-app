@@ -18,7 +18,7 @@ A Next.js collaboration master piece created by the infamous [spreekaiser](https
 
 ## Tech Stack
 
-[![Tech Stack](https://skillicons.dev/icons?i=html,css,js,react,nextjs,jest)](https://skillicons.dev)
+[![Tech Stack](https://skillicons.dev/icons?i=html,css,js,react,nextjs,jest,ts)](https://skillicons.dev)
 
 ## API
 
@@ -32,6 +32,6 @@ Because we can! 💅
 
 - [ ] Implement TypeScript
 - [ ] Add color palette to each art piece
-- [ ] Create lots of unit tests
+- [ ] Create lots of component tests
 - [ ] Implement barrel exports for components
 - [ ] World domination
