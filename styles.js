@@ -13,6 +13,24 @@ export default createGlobalStyle`
   body {
     margin: 0;
     font-family: system-ui;
+
+
+    background-color: burlywood;
+    background-color: darkslategray;
+    background-color: lightcoral;
+    background-color: lightblue;
+    background-color: lightseagreen;
+    background-color: lightslategray;
+    background-color: maroon;
+    background-color: mediumvioletred;
+    background-color: purple;
+    background-color: rebeccapurple;
+    background-color: steelblue;
+    background-color: teal;
+    /* background-color: darkcyan; */
+
+    //! for production only
+    /* background-color: #333; */
   }
 
   ul {
