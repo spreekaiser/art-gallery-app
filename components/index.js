@@ -4,6 +4,7 @@ export { ArtPieces } from "./ArtPieces/ArtPieces";
 export { CommentForm } from "./CommentForm/CommentForm";
 export { Comments } from "./Comments/Comments";
 export { FavoriteButton } from "./FavoriteButton/FavoriteButton";
+export { IconHeart } from "./IconHeart/IconHeart";
 export { Layout } from "./Layout/Layout";
 export { Navigation } from "./Navigation/Navigation";
 export { PieceContainer } from "./PieceContainer/PieceContainer";
