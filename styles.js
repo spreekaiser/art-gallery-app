@@ -7,12 +7,11 @@ export default createGlobalStyle`
     box-sizing: border-box;
 
     //! for production only
-    ${"" /* outline: 1px dashed salmon; */}
+    /* outline: 1px dashed salmon; */
   }
 
   body {
     margin: 0;
-    /* padding: 10%; */
     font-family: system-ui;
   }
 
@@ -32,10 +31,18 @@ export default createGlobalStyle`
 
   img {
     object-fit: cover;
-    // outline-image: linear-gradient(brown, white);
-    // outline-width: 20px;
-    // outline-style: solid;
-    border: 20px solid brown;
+    /* border: 20px solid brown; */
+    border: 20px outset brown;
+    border: 20px outset darkgoldenrod;
+
+    border-radius: 5px;
+
+  /* border: 20px solid transparent;  */
+  /* border-image: linear-gradient(160deg,  brown, maroon);  */
+  /* Verlauf über die gesamte Border-Dicke */
+  /* border-image-slice: 1;  */
+
+    box-shadow: 10px 10px 20px #333;
   }
 
   a {
@@ -52,6 +59,5 @@ export default createGlobalStyle`
     background-color: lightgray;
     width: max-content;
   }
-
 
 `;
