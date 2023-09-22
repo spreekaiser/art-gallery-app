@@ -63,6 +63,11 @@ export default createGlobalStyle`
     box-shadow: 10px 10px 20px #333;
   }
 
+  .favoriteDiv:hover {
+    animation: MoveUpDown 2s linear infinite;
+
+  }
+
   a {
     text-decoration: none;
     color: unset
@@ -78,4 +83,13 @@ export default createGlobalStyle`
     width: max-content;
   }
 
+  @keyframes MoveUpDown {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-0.25rem);
+    }
+  }
 `;
