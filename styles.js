@@ -13,7 +13,8 @@ export default createGlobalStyle`
   body {
     margin: 0;
     font-family: system-ui;
-
+    /* height: 100vh; */
+    min-height: 100vh;
 
     background-color: burlywood;
     background-color: darkslategray;
@@ -27,7 +28,16 @@ export default createGlobalStyle`
     background-color: rebeccapurple;
     background-color: steelblue;
     background-color: teal;
-    /* background-color: darkcyan; */
+    background-color: darkcyan;
+
+    /* lsd */
+    /* background: 
+      linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+      linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+      linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%); */
+
+    /* rastamann */
+    /* background: linear-gradient(red 0%, orange 25%, yellow 50%, green 75%); */
 
     //! for production only
     /* background-color: #333; */
@@ -65,7 +75,6 @@ export default createGlobalStyle`
 
   .favoriteDiv:hover {
     animation: MoveUpDown 2s linear infinite;
-
   }
 
   a {
