@@ -4,7 +4,7 @@ export function ArtPieces({ pieces, handleToggleFavorite, artPiecesInfo }) {
   //
   return (
     <ul>
-      {pieces.map((piece) => (
+      {pieces?.map((piece) => (
         <ArtPiecePreview
           key={piece.imageSource}
           image={piece.imageSource}
