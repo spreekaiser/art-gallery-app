@@ -9,8 +9,6 @@ export default function DetailsPage({
   const router = useRouter();
   const { slug } = router.query;
 
-  // console.log("Slug: ", artPiecesInfo);
-
   const selectedImage = pieces.find((piece) => piece.slug === slug);
   if (!selectedImage) {
     return;

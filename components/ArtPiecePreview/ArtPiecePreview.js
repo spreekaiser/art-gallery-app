@@ -1,8 +1,4 @@
-import Image from "next/image";
-// import FavoriteIcon from "../../assets/heart.svg";
 import styled from "styled-components";
-// import Link from "next/link";
-// import { useImmerLocalStorageState } from "../../lib/hook/useImmerLocalStorageState";
 import { PieceContainer } from "../";
 
 export function ArtPiecePreview({
@@ -28,6 +24,4 @@ export function ArtPiecePreview({
   );
 }
 
-const StyledListItem = styled.li`
-  /* position: relative; */
-`;
+const StyledListItem = styled.li``;

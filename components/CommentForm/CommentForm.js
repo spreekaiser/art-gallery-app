@@ -9,8 +9,7 @@ export function CommentForm({ title }) {
   function handleSubmit(e) {
     e.preventDefault();
     const comment = document.getElementById("commentInput").value;
-    console.log("this is comments: ", artPiecesComments);
-    console.log("this is Slug: ", title);
+
     if (!artPiecesComments[title]) {
       updateArtPiecesComments({ ...artPiecesComments, [title]: [comment] });
     } else {
@@ -19,9 +18,8 @@ export function CommentForm({ title }) {
         [title]: [...artPiecesComments[title], comment],
       });
     }
-
-    // console.log(artPiecesComments);
   }
+
   return (
     <form onSubmit={handleSubmit}>
       <fieldset>
