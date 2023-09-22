@@ -15,15 +15,17 @@ export function FavoriteButton({ handleToggleFavorite, slug, artPiecesInfo }) {
       {/* <TestStyledHeart size={24} /> */}
       {artPiecesInfo.includes(slug) ? (
         // <IconHeart />
-        <FilledFavoriteIcon
-          // size={24}
+        // <FilledFavoriteIcon
+        <HeartIconFilled
+          className="test"
+          size={40}
           onClick={() => handleToggleFavorite(slug)}
         />
       ) : (
         // <IconHeart />
         // <UnfilledFavoriteIcon
-        <TestStyledHeart
-          className="test"
+        <HeartIconUnfilled
+          className="test" // mandatory; doesn't work without className
           size={40}
           onClick={() => handleToggleFavorite(slug)}
         />
@@ -32,18 +34,43 @@ export function FavoriteButton({ handleToggleFavorite, slug, artPiecesInfo }) {
   );
 }
 
-const TestStyledHeart = styled(IconHeart)`
+const HeartIconUnfilled = styled(IconHeart)`
   position: absolute;
   top: 25px;
   right: 25px;
-  /* stroke: crimson; */
-  stroke: green;
-  stroke-width: 0.2rem;
   fill: transparent;
+  stroke: crimson;
+  stroke-width: 0.15rem;
 
   &:hover {
     fill: crimson;
+    transform: scale(1.2);
     cursor: pointer;
+  }
+
+  &:active {
+    fill: white;
+    stroke: white;
+  }
+`;
+
+const HeartIconFilled = styled(IconHeart)`
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  fill: crimson;
+  stroke: crimson;
+  stroke-width: 0.15rem;
+
+  &:hover {
+    fill: crimson;
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+
+  &:active {
+    fill: white;
+    stroke: crimson;
   }
 `;
 
