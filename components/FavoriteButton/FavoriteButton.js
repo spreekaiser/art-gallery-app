@@ -1,49 +1,56 @@
-import FavoriteIcon from "../../assets/heart.svg";
+import { IconHeart } from "..";
 import styled from "styled-components";
 
 export function FavoriteButton({ handleToggleFavorite, slug, artPiecesInfo }) {
   return (
     <>
       {artPiecesInfo.includes(slug) ? (
-        <FilledFavoriteIcon onClick={() => handleToggleFavorite(slug)} />
+        <HeartIconFilled
+          className="mandatoryClassName" //!  Styled Comp doesn't work here without className
+          size={40}
+          onClick={() => handleToggleFavorite(slug)}
+        />
       ) : (
-        <UnfilledFavoriteIcon onClick={() => handleToggleFavorite(slug)} />
+        <HeartIconUnfilled
+          className="mandatoryClassName" //!  Styled Comp doesn't work here without className
+          size={40}
+          onClick={() => handleToggleFavorite(slug)}
+        />
       )}
     </>
   );
 }
 
-const FilledFavoriteIcon = styled(FavoriteIcon)`
+const StyledHeartIcon = styled(IconHeart)`
   position: absolute;
   top: 25px;
   right: 25px;
-  stroke: white;
-  stroke: crimson;
-  stroke-width: 0.2rem;
-  fill: crimson;
 
-  height: 40px;
-  width: 40px;
+  stroke: crimson;
+  stroke-width: 0.15rem;
 
   &:hover {
     fill: crimson;
+    transform: scale(1.2);
     cursor: pointer;
   }
+  &:active {
+    fill: white;
+  }
 `;
-const UnfilledFavoriteIcon = styled(FavoriteIcon)`
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  stroke: white;
-  stroke: crimson;
-  stroke-width: 0.2rem;
+
+const HeartIconUnfilled = styled(StyledHeartIcon)`
   fill: transparent;
 
-  height: 40px;
-  width: 40px;
+  &:active {
+    stroke: white;
+  }
+`;
 
-  &:hover {
-    fill: crimson;
-    cursor: pointer;
+const HeartIconFilled = styled(StyledHeartIcon)`
+  fill: crimson;
+
+  &:active {
+    stroke: crimson;
   }
 `;
