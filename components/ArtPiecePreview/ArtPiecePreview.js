@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { PieceContainer } from "../";
+import { ArtPieceContainer } from "../";
 
 export function ArtPiecePreview({
   image,
@@ -12,14 +12,14 @@ export function ArtPiecePreview({
   return (
     <StyledListItem>
       <h3>{title}</h3>
-      <PieceContainer
+      <ArtPieceContainer
         title={title}
         image={image}
         slug={slug}
         artist={artist}
         handleToggleFavorite={handleToggleFavorite}
         artPiecesInfo={artPiecesInfo}
-      ></PieceContainer>
+      ></ArtPieceContainer>
     </StyledListItem>
   );
 }
