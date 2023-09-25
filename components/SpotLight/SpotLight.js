@@ -1,16 +1,13 @@
 import { useState, useEffect } from "react";
 import { ArtPiecePreview } from "..";
+import { getRandomNumber } from "../../lib/utils";
 
 export function SpotLight({ pieces, handleToggleFavorite, artPiecesInfo }) {
-  const [randomIndex, setRandomIndex] = useState(getRandomNumber());
-
-  function getRandomNumber() {
-    return Math.round(Math.random() * (pieces.length - 1));
-  }
+  const [randomIndex, setRandomIndex] = useState(getRandomNumber(pieces));
 
   useEffect(() => {
     const intervalID = setInterval(() => {
-      setRandomIndex(getRandomNumber());
+      setRandomIndex(getRandomNumber(pieces));
     }, 3000);
     return () => {
       clearInterval(intervalID);
