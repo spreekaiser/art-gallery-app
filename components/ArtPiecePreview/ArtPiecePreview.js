@@ -11,7 +11,7 @@ export function ArtPiecePreview({
 }) {
   return (
     <StyledListItem>
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       <ArtPieceContainer
         title={title}
         image={image}
