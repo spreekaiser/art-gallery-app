@@ -7,7 +7,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
 
     //! for production only
-    /* outline: 1px dashed salmon; */
+    outline: 1px dashed salmon;
   }
 
   :root {
@@ -61,8 +61,8 @@ export default createGlobalStyle`
 
   .favoriteDiv{
     position: relative;
-  width: 360px;
-  height: 240px;
+    width: 360px;
+    height: 240px;
   }
 
   img {

@@ -11,7 +11,7 @@ export function ArtPiecePreview({
 }) {
   return (
     <StyledListItem>
-      <h3>{title}</h3>
+      <h2>{title}</h2>
       <ArtPieceContainer
         title={title}
         image={image}
@@ -24,4 +24,9 @@ export function ArtPiecePreview({
   );
 }
 
-const StyledListItem = styled.li``;
+const StyledListItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+`;
