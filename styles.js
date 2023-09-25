@@ -10,6 +10,13 @@ export default createGlobalStyle`
     /* outline: 1px dashed salmon; */
   }
 
+  :root {
+    --main-color1: darkcyan;
+    --main-color2: white;
+    --accent-color1: mediumvioletred;
+    --accent-color2: gold;
+  }
+
   body {
     margin: 0;
     font-family: system-ui;
@@ -28,7 +35,8 @@ export default createGlobalStyle`
     background-color: rebeccapurple;
     background-color: steelblue;
     background-color: teal;
-    background-color: darkcyan;
+    /* background-color: darkcyan; */
+    background-color: var(--main-color1);
 
     /* lsd */
     /* background: 

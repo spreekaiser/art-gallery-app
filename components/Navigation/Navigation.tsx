@@ -35,7 +35,8 @@ const StyledNavbar = styled.nav`
   /* background-color: #004040; */
   /* background-color: teal; */
   /* background-color: #126d6d; */
-  background-color: mediumvioletred;
+  /* background-color: mediumvioletred; */
+  background-color: var(--accent-color1);
 
   /* lsd */
   /* background: linear-gradient(
@@ -59,7 +60,7 @@ const StyledNavbar = styled.nav`
     font-weight: bold;
     &:hover {
       color: white;
-      background-color: gold;
+      background-color: var(--accent-color2);
     }
   }
 `;
