@@ -3,6 +3,7 @@ import { ArtPieceContainer } from "../";
 
 export function ArtPiecePreview({
   image,
+  // title = "bla",
   title,
   artist,
   slug,
@@ -10,17 +11,21 @@ export function ArtPiecePreview({
   artPiecesInfo,
 }) {
   return (
-    <StyledListItem>
-      <h3>{title}</h3>
-      <ArtPieceContainer
-        title={title}
-        image={image}
-        slug={slug}
-        artist={artist}
-        handleToggleFavorite={handleToggleFavorite}
-        artPiecesInfo={artPiecesInfo}
-      ></ArtPieceContainer>
-    </StyledListItem>
+    <>
+      {/* {image && ( */}
+      <StyledListItem>
+        <h3>{title}</h3>
+        <ArtPieceContainer
+          title={title}
+          image={image}
+          slug={slug}
+          artist={artist}
+          handleToggleFavorite={handleToggleFavorite}
+          artPiecesInfo={artPiecesInfo}
+        ></ArtPieceContainer>
+      </StyledListItem>
+      {/* )} */}
+    </>
   );
 }
 

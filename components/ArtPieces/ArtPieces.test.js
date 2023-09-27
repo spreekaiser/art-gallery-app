@@ -1,5 +1,7 @@
 import { ArtPieces } from "..";
 import { ArtPieceContainer } from "..";
+import { ArtPiecePreview } from "..";
+import { Navigation } from "..";
 import { render, screen } from "@testing-library/react";
 import "jest-styled-components";
 
@@ -20,10 +22,22 @@ test("Each art piece's image is displayed", () => {
 });
 */
 
-// test("each art piece's title is displayed", () => {
-//   render(<ArtPieces />);
+test("Each art piece's title is displayed", () => {
+  render(<ArtPiecePreview />);
+  const title = screen.getByRole("heading");
+  // const title = screen.getByRole("heading", {
+  // name: /Orange Red and Green Abstract Painting/i,
+  //// name: /bla/i,
+  // });
+  expect(title).toBeInTheDocument();
+});
+
+// test("teset", () => {
+//   render(<Navigation />);
+//   const link = screen.getByRole("link", { name: /spotligh/i });
+//   expect(link).toBeInTheDocument();
 // });
 
-// test("each art piece's artist is displayed", () => {
+// test("Each art piece's artist is displayed", () => {
 //   render(<ArtPieces />);
 // });
