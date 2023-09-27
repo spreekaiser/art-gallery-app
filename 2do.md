@@ -101,7 +101,7 @@ Download and extract the [Resources](#resources) into your project folder.
 
 #### Acceptance Criteria
 
-- [ ] A navigation link labeled "Spotlight" is displayed 🖼️
+- [x] A navigation link labeled "Spotlight" is displayed 🖼️
 - [ ] A navigation link labeled "Pieces" is displayed 🖼️
 - [ ] Clicking "Spotlight" shows the SpotlightPage
 - [ ] Clicking "Pieces" shows the ArtPiecesPage
