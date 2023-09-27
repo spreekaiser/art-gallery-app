@@ -7,19 +7,21 @@ export function FavoriteButton({ handleToggleFavorite, slug, artPiecesInfo }) {
       {artPiecesInfo.includes(slug) ? (
         <HeartIconFilled
           className="mandatoryClassName" //!  Styled Comp doesn't work here without className
-          size={40}
+          size={heartIconSize}
           onClick={() => handleToggleFavorite(slug)}
         />
       ) : (
         <HeartIconUnfilled
           className="mandatoryClassName" //!  Styled Comp doesn't work here without className
-          size={40}
+          size={heartIconSize}
           onClick={() => handleToggleFavorite(slug)}
         />
       )}
     </>
   );
 }
+
+const heartIconSize = 36;
 
 const StyledHeartIcon = styled(IconHeart)`
   position: absolute;
@@ -31,7 +33,7 @@ const StyledHeartIcon = styled(IconHeart)`
 
   &:hover {
     fill: crimson;
-    transform: scale(1.2);
+    transform: scale(1.15);
     cursor: pointer;
   }
   &:active {

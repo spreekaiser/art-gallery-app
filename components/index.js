@@ -7,7 +7,7 @@ export { FavoriteButton } from "./FavoriteButton/FavoriteButton";
 export { SpotLight } from "./SpotLight/SpotLight";
 export { ArtPieces } from "./ArtPieces/ArtPieces";
 export { ArtPiecePreview } from "./ArtPiecePreview/ArtPiecePreview";
-export { PieceContainer } from "./PieceContainer/PieceContainer";
+export { ArtPieceContainer } from "./ArtPieceContainer/ArtPieceContainer";
 export { ArtPieceDetails } from "./ArtPieceDetails/ArtPieceDetails";
 
 export { CommentForm } from "./CommentForm/CommentForm";

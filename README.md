@@ -2,6 +2,8 @@ Welcome to
 
 # Art Gallery
 
+https://art-gallery-app-pied.vercel.app
+
 A Next.js collaboration master piece created by the infamous [spreekaiser](https://github.com/spreekaiser) and the incredible [kasulk](https://github.com/kasulk).
 
 ## Features
@@ -18,7 +20,7 @@ A Next.js collaboration master piece created by the infamous [spreekaiser](https
 
 ## Tech Stack
 
-[![Tech Stack](https://skillicons.dev/icons?i=html,css,js,react,nextjs,jest)](https://skillicons.dev)
+[![Tech Stack](https://skillicons.dev/icons?i=html,css,js,react,nextjs,jest,ts)](https://skillicons.dev)
 
 ## API
 
@@ -33,6 +35,6 @@ Because we can! 💅
 - [x] Implement barrel exports for components
 - [ ] Implement TypeScript
 - [ ] Add color palette to each art piece
+- [ ] Create lots of component tests
 - [ ] Implement Recoil for state management
-- [ ] Create lots of unit tests
 - [ ] World domination

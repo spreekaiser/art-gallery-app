@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styled from "styled-components";
+import { StyledNavbar } from "./Navigation.style";
 
 export function Navigation() {
   return (
@@ -12,28 +12,3 @@ export function Navigation() {
     </>
   );
 }
-
-const StyledNavbar = styled.nav`
-  position: fixed;
-  bottom: 0;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-
-  background-color: salmon;
-  text-align: center;
-
-  width: 100%;
-
-  a {
-    padding: 1rem 2rem;
-    border: 1px solid black;
-    background-color: lightblue;
-    font-weight: bold;
-    &:hover {
-      color: white;
-      background-color: gold;
-    }
-  }
-`;
