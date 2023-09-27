@@ -4,7 +4,7 @@ import styled from "styled-components";
 export function FavoriteButton({ handleToggleFavorite, slug, artPiecesInfo }) {
   return (
     <>
-      {artPiecesInfo.includes(slug) ? (
+      {artPiecesInfo?.includes(slug) ? (
         <HeartIconFilled
           className="mandatoryClassName" //!  Styled Comp doesn't work here without className
           size={heartIconSize}
