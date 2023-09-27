@@ -102,9 +102,9 @@ Download and extract the [Resources](#resources) into your project folder.
 #### Acceptance Criteria
 
 - [x] A navigation link labeled "Spotlight" is displayed 🖼️
-- [ ] A navigation link labeled "Pieces" is displayed 🖼️
-- [ ] Clicking "Spotlight" shows the SpotlightPage
-- [ ] Clicking "Pieces" shows the ArtPiecesPage
+- [x] A navigation link labeled "Art Pieces" is displayed 🖼️
+- [x] Clicking "Spotlight" shows the SpotlightPage
+- [x] Clicking "Pieces" shows the ArtPiecesPage
 
 #### Tasks
 
@@ -115,7 +115,7 @@ Download and extract the [Resources](#resources) into your project folder.
 - [x] Create the component `Navigation` that renders all navigation links
 - [x] Create the component `Layout` that renders the `Navigation` component
 - [x] Apply the `Layout` component in `pages/_app`
-- [ ] All acceptance criteria marked with 🖼️ are covered by component testing
+- [x] All acceptance criteria marked with 🖼️ are covered by component testing
 
 ---
 
