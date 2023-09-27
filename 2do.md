@@ -48,7 +48,7 @@ Download and extract the [Resources](#resources) into your project folder.
 
 #### Acceptance Criteria
 
-- [ ] All art pieces are displayed as a list 🖼️
+- [x] All art pieces are displayed as a list 🖼️
 - [ ] Each art piece's image is displayed 🖼️
 - [ ] Each art piece's title is displayed 🖼️
 - [ ] Each art piece's artist is displayed 🖼️
