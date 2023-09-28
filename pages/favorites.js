@@ -13,11 +13,12 @@ export default function FavoritesPage({
           return (
             artPiecesInfo.includes(piece.slug) && (
               <ArtPiecePreview
-                key={piece.imageSource}
-                image={piece.imageSource}
-                title={piece.name}
-                artist={piece.artist}
-                slug={piece.slug}
+                // key={piece.imageSource}
+                // image={piece.imageSource}
+                // title={piece.name}
+                // artist={piece.artist}
+                // slug={piece.slug}
+                piece={piece}
                 handleToggleFavorite={handleToggleFavorite}
                 artPiecesInfo={artPiecesInfo}
               />

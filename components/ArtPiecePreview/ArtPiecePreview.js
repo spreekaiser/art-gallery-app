@@ -2,29 +2,33 @@ import styled from "styled-components";
 import { ArtPieceContainer } from "../";
 
 export function ArtPiecePreview({
-  image,
-  // title = "bla",
-  title,
-  artist,
-  slug,
+  piece,
+  // image,
+  // title,
+  // artist,
+  // slug,
   handleToggleFavorite,
   artPiecesInfo,
 }) {
   return (
     <>
-      {/* {image && ( */}
       <StyledListItem>
-        <h3>{title}</h3>
+        {/* <h3>{title}</h3> */}
+        <h3>{piece.name}</h3>
         <ArtPieceContainer
-          title={title}
-          image={image}
-          slug={slug}
-          artist={artist}
+          // title={title}
+          // image={image}
+          // slug={slug}
+          // artist={artist}
+          // title={piece.name}
+          // image={piece.imageSource}
+          // slug={piece.slug}
+          // artist={piece.artist}
+          {...piece}
           handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
         ></ArtPieceContainer>
       </StyledListItem>
-      {/* )} */}
     </>
   );
 }
