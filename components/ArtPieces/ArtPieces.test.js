@@ -1,24 +1,26 @@
 import { render, screen } from "@testing-library/react";
 import "jest-styled-components";
 import { ArtPieces } from "..";
-import { ArtPiecePreview } from "..";
-import { demoPiece } from "../../_testData/testData";
+import { demoPieces } from "../../_testData/testData";
 
-describe("Art Pieces Tests", () => {
+describe("Art Pieces Unit-Tests", () => {
   //
   it("should be displayed all art pieces as a list", () => {
     render(<ArtPieces />);
     const ulElement = screen.getByRole("list");
     expect(ulElement).toBeInTheDocument();
   });
+});
 
+describe("Art Pieces Integration-Tests", () => {
+  //
   it("should be displayed each art piece's image", () => {
     const handleToggleFavorite = jest.fn();
     const artPiecesInfo = [];
 
     render(
-      <ArtPiecePreview
-        piece={demoPiece}
+      <ArtPieces
+        pieces={demoPieces}
         handleToggleFavorite={handleToggleFavorite}
         artPiecesInfo={artPiecesInfo}
       />
@@ -34,8 +36,8 @@ describe("Art Pieces Tests", () => {
     const artPiecesInfo = [];
 
     render(
-      <ArtPiecePreview
-        piece={demoPiece}
+      <ArtPieces
+        pieces={demoPieces}
         handleToggleFavorite={handleToggleFavorite}
         artPiecesInfo={artPiecesInfo}
       />
@@ -51,8 +53,8 @@ describe("Art Pieces Tests", () => {
     const artPiecesInfo = [];
 
     render(
-      <ArtPiecePreview
-        piece={demoPiece}
+      <ArtPieces
+        pieces={demoPieces}
         handleToggleFavorite={handleToggleFavorite}
         artPiecesInfo={artPiecesInfo}
       />
