@@ -14,17 +14,14 @@ export function SpotLight({ pieces, handleToggleFavorite, artPiecesInfo }) {
     };
   });
 
-  const picture = pieces[randomIndex];
+  const piece = pieces[randomIndex];
 
   return (
     <>
       <h2>Spotlight</h2>
       <ul>
         <ArtPiecePreview
-          title={picture.name}
-          image={picture.imageSource}
-          artist={picture.artist}
-          slug={picture.slug}
+          piece={piece}
           handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
         ></ArtPiecePreview>

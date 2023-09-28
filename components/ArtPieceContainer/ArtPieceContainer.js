@@ -4,10 +4,10 @@ import styled from "styled-components";
 import { FavoriteButton } from "..";
 
 export function ArtPieceContainer({
-  title,
-  image,
-  slug,
   artist,
+  name,
+  imageSource: imageURL,
+  slug,
   handleToggleFavorite,
   artPiecesInfo,
 }) {
@@ -15,7 +15,7 @@ export function ArtPieceContainer({
     <>
       <div className="favoriteDiv">
         <Link href={`art-pieces/${slug}`}>
-          <Image src={image} alt={title} width={359} height={240} />
+          <Image src={imageURL} alt={name} width={359} height={240} />
         </Link>
         <FavoriteButton
           slug={slug}

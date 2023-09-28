@@ -8,11 +8,8 @@ export function ArtPieces({ pieces, handleToggleFavorite, artPiecesInfo }) {
       <ul>
         {pieces?.map((piece) => (
           <ArtPiecePreview
-            key={piece.imageSource}
-            image={piece.imageSource}
-            title={piece.name}
-            artist={piece.artist}
-            slug={piece.slug}
+            key={piece.slug}
+            piece={piece}
             handleToggleFavorite={handleToggleFavorite}
             artPiecesInfo={artPiecesInfo}
           />

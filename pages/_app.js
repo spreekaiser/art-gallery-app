@@ -7,7 +7,10 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 let isFavorite = false;
 
 export default function App({ Component, pageProps }) {
-  const { data } = useSWR("https://example-apis.vercel.app/api/art", fetcher);
+  const { data: pieces } = useSWR(
+    "https://example-apis.vercel.app/api/art",
+    fetcher
+  );
 
   // userImmerLocalStorageState for isFavorite
   const [artPiecesInfo, updateArtPiecesInfo] = useImmerLocalStorageState(
@@ -17,7 +20,7 @@ export default function App({ Component, pageProps }) {
     }
   );
 
-  if (!data) {
+  if (!pieces) {
     return;
   }
 
@@ -39,7 +42,7 @@ export default function App({ Component, pageProps }) {
         <GlobalStyle />
         <Component
           {...pageProps}
-          pieces={data}
+          pieces={pieces}
           handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
         />
