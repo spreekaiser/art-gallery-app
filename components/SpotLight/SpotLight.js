@@ -14,7 +14,6 @@ export function SpotLight({ pieces, handleToggleFavorite, artPiecesInfo }) {
     };
   });
 
-  // const picture = pieces[randomIndex];
   const piece = pieces[randomIndex];
 
   return (
@@ -23,10 +22,6 @@ export function SpotLight({ pieces, handleToggleFavorite, artPiecesInfo }) {
       <ul>
         <ArtPiecePreview
           piece={piece}
-          // title={picture.name}
-          // image={picture.imageSource}
-          // artist={picture.artist}
-          // slug={picture.slug}
           handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
         ></ArtPiecePreview>

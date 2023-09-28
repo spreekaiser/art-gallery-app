@@ -11,7 +11,6 @@ export default function App({ Component, pageProps }) {
     "https://example-apis.vercel.app/api/art",
     fetcher
   );
-  // console.log(pieces);
 
   // userImmerLocalStorageState for isFavorite
   const [artPiecesInfo, updateArtPiecesInfo] = useImmerLocalStorageState(
