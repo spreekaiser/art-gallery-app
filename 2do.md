@@ -76,16 +76,16 @@ Download and extract the [Resources](#resources) into your project folder.
 
 #### Acceptance Criteria
 
-- [ ] One art piece is picked at random to show as a spotlight piece
-- [ ] The art piece image is displayed 🖼️
-- [ ] The art piece artist is displayed 🖼️
+- [x] One art piece is picked at random to show as a spotlight piece
+- [x] The art piece image is displayed 🖼️
+- [x] The art piece artist is displayed 🖼️
 
 #### Tasks
 
-- [ ] Write function to pick one art piece [at random](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random#examples)
-- [ ] Create the component `Spotlight`
-- [ ] `Spotlight` props: `image`, `artist`
-- [ ] All acceptance criteria marked with 🖼️ are covered by component testing
+- [x] Write function to pick one art piece [at random](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random#examples)
+- [x] Create the component `Spotlight`
+- [x] `Spotlight` props: `image`, `artist`
+- [x] All acceptance criteria marked with 🖼️ are covered by component testing
 
 ---
 
