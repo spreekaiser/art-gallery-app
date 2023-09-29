@@ -20,4 +20,20 @@ describe("SpotLight Unit-Tests", () => {
     });
     expect(imageElement).toBeInTheDocument();
   });
+
+  it("should be displayed the art piece's artist", () => {
+    const handleToggleFavorite = jest.fn();
+    const artPiecesInfo = [];
+    render(
+      <SpotLight
+        pieces={demoPieces}
+        artPiecesInfo={artPiecesInfo}
+        handleToggleFavorite={handleToggleFavorite}
+      />
+    );
+    const headerElement = screen.getByRole("heading", {
+      name: /Steve Johnson/i,
+    });
+    expect(headerElement).toBeInTheDocument();
+  });
 });
