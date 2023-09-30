@@ -9,21 +9,20 @@ export default function DetailsPage({
   const router = useRouter();
   const { slug } = router.query;
 
-  const selectedImage = pieces.find((piece) => piece.slug === slug);
-  if (!selectedImage) {
-    return;
-  }
+  const selectedPiece = pieces.find((piece) => piece.slug === slug);
+
+  if (!selectedPiece) return;
 
   return (
-    <div>
-      <ArtPieceDetails
-        image={selectedImage.imageSource}
-        title={selectedImage.name}
-        artist={selectedImage.artist}
-        slug={slug}
-        handleToggleFavorite={handleToggleFavorite}
-        artPiecesInfo={artPiecesInfo}
-      />
-    </div>
+    <>
+      <h2>You`re taking a closer look at</h2>
+      <ul>
+        <ArtPieceDetails
+          {...selectedPiece}
+          handleToggleFavorite={handleToggleFavorite}
+          artPiecesInfo={artPiecesInfo}
+        />
+      </ul>
+    </>
   );
 }
