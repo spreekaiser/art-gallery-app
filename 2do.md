@@ -164,7 +164,7 @@ Download and extract the [Resources](#resources) into your project folder.
 #### Acceptance Criteria
 
 - [x] The favorite-button is displayed in the spotlight view 🖼️
-- [ ] The favorite-button is displayed in each entry in the list view 🖼️
+- [x] The favorite-button is displayed in each entry in the list view 🖼️
 - [ ] The favorite-button is displayed in the details view 🖼️
 - [ ] Clicking the favorite-button on a non-favorite piece saves it as a favorite 🖼️
 - [ ] Clicking the favorite-button on a favorite piece removes it from favorites 🖼️
