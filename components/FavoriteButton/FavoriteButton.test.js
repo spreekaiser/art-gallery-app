@@ -1,4 +1,4 @@
-import { screen, render } from "@testing-library/react";
+import { screen, render, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { ArtPieceDetails, ArtPieces, FavoriteButton, SpotLight } from "..";
 import { demoPieces } from "../../_testData/testData";
@@ -50,7 +50,6 @@ describe("FavoriteButton Integration-Tests", () => {
   it("should save a non-favorite piece as favorite on click", async () => {
     const mockHandleToggleFavorite = jest.fn();
     const mockArtPiecesInfo = [];
-    const user = userEvent.setup();
     render(
       <FavoriteButton
         handleToggleFavorite={mockHandleToggleFavorite}
@@ -59,9 +58,12 @@ describe("FavoriteButton Integration-Tests", () => {
       />
     );
     const svgElement = screen.getByTestId("favorite-button");
-    await user.click(svgElement);
+    fireEvent.click(svgElement);
+    // console.log(mockArtPiecesInfo);
+    // console.log(demoPieces[0].slug);
+    expect(mockHandleToggleFavorite).toHaveBeenCalledTimes(1);
 
-    expect(mockArtPiecesInfo.includes(demoPieces[0].slug)).toBeTruthy();
+    // expect(mockArtPiecesInfo.includes(demoPieces[0].slug)).toBeTruthy();
   });
 
   it("should remove a favorite piece from favorites on click", () => {});
