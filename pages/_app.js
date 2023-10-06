@@ -4,7 +4,7 @@ import useSWR from "swr";
 import { useImmerLocalStorageState } from "../lib/hook/useImmerLocalStorageState";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
-let isFavorite = false;
+// let isFavorite = false;
 
 export default function App({ Component, pageProps }) {
   const { data: pieces } = useSWR(
@@ -28,11 +28,11 @@ export default function App({ Component, pageProps }) {
     // if artPieceSlug is in localStorage, delete it from localStorage
     if (artPiecesInfo.includes(slug)) {
       updateArtPiecesInfo(artPiecesInfo.filter((element) => element !== slug));
-      isFavorite = false;
+      // isFavorite = false;
       // else add artPieceSlug to localStorage
     } else {
       updateArtPiecesInfo([...artPiecesInfo, slug]);
-      isFavorite = true;
+      // isFavorite = true;
     }
   }
 

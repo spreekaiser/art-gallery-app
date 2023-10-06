@@ -7,20 +7,18 @@ export function ArtPiecePreview({
   artPiecesInfo,
 }) {
   return (
-    <>
-      <StyledListItem>
-        <h3>{piece.name}</h3>
-        <ArtPieceContainer
-          {...piece}
-          handleToggleFavorite={handleToggleFavorite}
-          artPiecesInfo={artPiecesInfo}
-        ></ArtPieceContainer>
-      </StyledListItem>
-    </>
+    <StyledListItem>
+      <h3>{piece.name}</h3>
+      <ArtPieceContainer
+        {...piece}
+        handleToggleFavorite={handleToggleFavorite}
+        artPiecesInfo={artPiecesInfo}
+      ></ArtPieceContainer>
+    </StyledListItem>
   );
 }
 
-const StyledListItem = styled.li`
+export const StyledListItem = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;

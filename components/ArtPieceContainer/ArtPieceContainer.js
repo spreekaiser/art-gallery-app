@@ -15,7 +15,7 @@ export function ArtPieceContainer({
     <>
       <div className="favoriteDiv">
         <Link href={`art-pieces/${slug}`}>
-          <Image src={imageURL} alt={name} width={359} height={240} />
+          <Image src={imageURL} alt={name} width={360} height={240} />
         </Link>
         <FavoriteButton
           slug={slug}
@@ -23,7 +23,7 @@ export function ArtPieceContainer({
           artPiecesInfo={artPiecesInfo}
         />
       </div>
-      <h4>@{artist}</h4>
+      <h4>by {artist}</h4>
     </>
   );
 }

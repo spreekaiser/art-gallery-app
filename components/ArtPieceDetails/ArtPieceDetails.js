@@ -1,28 +1,38 @@
 import Image from "next/image";
+import styled from "styled-components";
 import { CommentForm, Comments, FavoriteButton } from "../";
+import { StyledListItem } from "../ArtPiecePreview/ArtPiecePreview";
 
 export function ArtPieceDetails({
-  image,
-  title,
+  imageSource: imageURL,
+  name,
   artist,
   slug,
   handleToggleFavorite,
   artPiecesInfo,
 }) {
   return (
-    <>
-      <h2>{title}</h2>
+    <StyledListItem>
+      <h3>{name}</h3>
       <div className="favoriteDiv">
-        <Image src={image} alt={title} width={360} height={240} />
+        {/* <Image src={imageURL} alt={name} width={360} height={240} /> */}
+        <StyledImage src={imageURL} alt={name} width={360} height={240} />
         <FavoriteButton
           slug={slug}
           handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
         />
       </div>
-      <h3>of {artist}</h3>
-      <Comments title={title} />
-      <CommentForm title={title} />
-    </>
+      <h4>by {artist}</h4>
+      <Comments title={name} />
+      <CommentForm title={name} />
+    </StyledListItem>
   );
 }
+
+const StyledImage = styled(Image)`
+  transition: all 0.5s;
+  &:hover {
+    transform: scale(1.5) rotate(2deg);
+  }
+`;
