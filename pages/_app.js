@@ -1,7 +1,7 @@
 import { Layout } from "../components";
 import GlobalStyle from "../styles";
 import useSWR from "swr";
-import { useImmerLocalStorageState } from "../lib/hook/useImmerLocalStorageState";
+import { useImmerLocalStorageState } from "../lib/hooks/useImmerLocalStorageState";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 // let isFavorite = false;

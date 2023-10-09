@@ -1,4 +1,4 @@
-import { useImmerLocalStorageState } from "../../lib/hook/useImmerLocalStorageState";
+import { useImmerLocalStorageState } from "../../lib/hooks/useImmerLocalStorageState";
 
 export function Comments({ title }) {
   const [artPiecesComments, updateArtPiecesComments] =
