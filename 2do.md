@@ -253,12 +253,12 @@ Download and extract the [Resources](#resources) into your project folder.
 
 #### Acceptance Criteria
 
-- [ ] All favorite flags and comments added to art pieces are persisted across browser reloads
+- [x] All favorite flags and comments added to art pieces are persisted across browser reloads
 
 #### Tasks
 
-- [ ] Install the package `use-local-storage-state`
-- [ ] Use the `useLocalStorageState` hook to store the `artPiecesInfo` state
+- [x] Install the package `use-local-storage-state`
+- [x] Use the `useLocalStorageState` hook to store the `artPiecesInfo` state
 
 To use the `useImmer` hook to mutate the `artPiecesInfo` state, implement this example to combine both.
 
@@ -325,7 +325,7 @@ export default function App({ Component, pageProps }) {
 
 - [ ] Pass the `colors` given by the API to the `ArtPieceDetails` component 🖼️
 - [ ] Use the color hex-code in a styled component to render an element with this color as background
-- [ ] All acceptance criteria marked with 🖼️ are covered by component testing
+- [x] All acceptance criteria marked with 🖼️ are covered by component testing
 
 ---
 
