@@ -3,7 +3,7 @@ import { ArtPieceDetails, ArtPieces, FavoriteButton, SpotLight } from "..";
 import { demoPieces } from "../../_testData/testData";
 
 const mockHandleToggleFavorite = jest.fn();
-let mockArtPiecesInfo = [];
+let mockArtPiecesInfo: string[] = [];
 
 describe("FavoriteButton Integration-Tests", () => {
   //
