@@ -1,7 +1,17 @@
 import { IconHeart } from "..";
 import styled from "styled-components";
 
-export function FavoriteButton({ handleToggleFavorite, slug, artPiecesInfo }) {
+type Props = {
+  handleToggleFavorite: (slug: string) => void;
+  slug: string;
+  artPiecesInfo: string[];
+};
+
+export function FavoriteButton({
+  handleToggleFavorite,
+  slug,
+  artPiecesInfo,
+}: Props) {
   return (
     <>
       {artPiecesInfo?.includes(slug) ? (
