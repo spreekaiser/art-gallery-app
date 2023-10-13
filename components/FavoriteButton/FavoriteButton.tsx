@@ -1,10 +1,5 @@
 import { HeartIconFilled, HeartIconUnfilled } from "./FavoriteButton.styles";
-
-type Props = {
-  handleToggleFavorite: (slug: string) => void;
-  slug: string;
-  artPiecesInfo: string[];
-};
+import { Props } from "./FavoriteButton.d";
 
 const heartIconSize = 36;
 
