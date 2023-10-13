@@ -1,11 +1,12 @@
-import { IconHeart } from "..";
-import styled from "styled-components";
+import { HeartIconFilled, HeartIconUnfilled } from "./FavoriteButton.styles";
 
 type Props = {
   handleToggleFavorite: (slug: string) => void;
   slug: string;
   artPiecesInfo: string[];
 };
+
+const heartIconSize = 36;
 
 export function FavoriteButton({
   handleToggleFavorite,
@@ -30,39 +31,3 @@ export function FavoriteButton({
     </>
   );
 }
-
-const heartIconSize = 36;
-
-const StyledHeartIcon = styled(IconHeart)`
-  position: absolute;
-  top: 25px;
-  right: 25px;
-
-  stroke: crimson;
-  stroke-width: 0.15rem;
-
-  &:hover {
-    fill: crimson;
-    transform: scale(1.15);
-    cursor: pointer;
-  }
-  &:active {
-    fill: white;
-  }
-`;
-
-const HeartIconUnfilled = styled(StyledHeartIcon)`
-  fill: transparent;
-
-  &:active {
-    stroke: white;
-  }
-`;
-
-const HeartIconFilled = styled(StyledHeartIcon)`
-  fill: crimson;
-
-  &:active {
-    stroke: crimson;
-  }
-`;
