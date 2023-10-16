@@ -17,5 +17,5 @@ export const StyledHeartBlob = styled(HeartBlob)`
   height: 30rem;
   width: 30rem;
   rotate: 10deg;
-  fill: yellow;
+  fill: var(--accent-color2);
 `;
