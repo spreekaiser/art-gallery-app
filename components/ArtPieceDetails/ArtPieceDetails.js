@@ -1,7 +1,7 @@
 import Image from "next/image";
-import styled from "styled-components";
 import { CommentForm, Comments, FavoriteButton } from "../";
 import { StyledListItem } from "../ArtPiecePreview/ArtPiecePreview";
+import { StyledImageContainer } from "./ArtPieceDetails.style";
 
 export function ArtPieceDetails({
   imageSource: imageURL,
@@ -30,10 +30,3 @@ export function ArtPieceDetails({
     </StyledListItem>
   );
 }
-
-const StyledImageContainer = styled.div`
-  transition: all 0.5s;
-  &:hover {
-    transform: scale(1.5) rotate(2deg);
-  }
-`;
