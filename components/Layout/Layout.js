@@ -1,18 +1,12 @@
-import styled from "styled-components";
 import { Navigation } from "..";
+import { Content, StyledHeartBlob } from "./Layout.style";
 
 export function Layout({ children }) {
   return (
     <>
       <Content>{children}</Content>
+      <StyledHeartBlob />
       <Navigation />
     </>
   );
 }
-
-const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10%;
-`;
