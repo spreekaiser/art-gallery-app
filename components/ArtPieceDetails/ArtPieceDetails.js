@@ -15,13 +15,14 @@ export function ArtPieceDetails({
     <StyledListItem>
       <h3>{name}</h3>
       <div className="favoriteDiv">
-        {/* <Image src={imageURL} alt={name} width={360} height={240} /> */}
-        <StyledImage src={imageURL} alt={name} width={360} height={240} />
-        <FavoriteButton
-          slug={slug}
-          handleToggleFavorite={handleToggleFavorite}
-          artPiecesInfo={artPiecesInfo}
-        />
+        <StyledImageContainer>
+          <Image src={imageURL} alt={name} width={360} height={240} />
+          <FavoriteButton
+            slug={slug}
+            handleToggleFavorite={handleToggleFavorite}
+            artPiecesInfo={artPiecesInfo}
+          />
+        </StyledImageContainer>
       </div>
       <h4>by {artist}</h4>
       <Comments title={name} />
@@ -30,7 +31,7 @@ export function ArtPieceDetails({
   );
 }
 
-const StyledImage = styled(Image)`
+const StyledImageContainer = styled.div`
   transition: all 0.5s;
   &:hover {
     transform: scale(1.5) rotate(2deg);
