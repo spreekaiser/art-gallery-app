@@ -1,7 +1,16 @@
 import Image from "next/image";
 import { CommentForm, Comments, FavoriteButton } from "../";
 import { StyledListItem } from "../ArtPiecePreview/ArtPiecePreview";
-import { StyledImageContainer } from "./ArtPieceDetails.style";
+import { StyledImageContainer } from "../ArtPieceDetails/ArtPieceDetails.style";
+
+type ArtPieceDetailsProps = {
+  imageSource: string;
+  name: string;
+  artist: string;
+  slug: string;
+  handleToggleFavorite: (slug: string) => void;
+  artPiecesInfo: string[];
+};
 
 export function ArtPieceDetails({
   imageSource: imageURL,
@@ -10,7 +19,7 @@ export function ArtPieceDetails({
   slug,
   handleToggleFavorite,
   artPiecesInfo,
-}) {
+}: ArtPieceDetailsProps) {
   return (
     <StyledListItem>
       <h3>{name}</h3>
