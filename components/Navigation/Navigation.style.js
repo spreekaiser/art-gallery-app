@@ -11,17 +11,16 @@ export const StyledNavbar = styled.nav`
   text-align: center;
   width: 100%;
 
-  padding: 1rem 2rem;
+  padding: 1rem 2.5rem;
   gap: 1rem;
 
   a {
     min-width: 11rem;
     padding: 1rem 3rem;
-    margin: 0 1rem;
-    /* border: 1px solid black; */
+    margin: 0 1%;
     background-color: lightblue;
     font-weight: bold;
-    /* text-align: center; */
+
     &:hover {
       color: var(--main-color1);
       background-color: var(--accent-color2);
@@ -29,5 +28,14 @@ export const StyledNavbar = styled.nav`
     &:active {
       color: white;
     }
+  }
+
+  @media (max-width: 768px) {
+    a {
+      margin: 0;
+    }
+  }
+  @media (max-width: 640px) {
+    justify-content: center;
   }
 `;
