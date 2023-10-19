@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import styled from "styled-components";
 import { FavoriteButton } from "..";
+import { ArtPieceContainerProps as Props } from "./ArtPieceContainer.d";
 
 export function ArtPieceContainer({
   artist,
@@ -10,7 +10,7 @@ export function ArtPieceContainer({
   slug,
   handleToggleFavorite,
   artPiecesInfo,
-}) {
+}: Props) {
   return (
     <>
       <div className="favoriteDiv">
@@ -27,9 +27,3 @@ export function ArtPieceContainer({
     </>
   );
 }
-
-const StyledContainer = styled.div`
-  position: relative;
-  width: 360px;
-  height: 240px;
-`;
