@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 import { FavoriteButton } from "..";
+import { ArtPieceContainerProps as Props } from "./ArtPieceContainer.d";
 
 export function ArtPieceContainer({
   artist,
@@ -10,7 +11,7 @@ export function ArtPieceContainer({
   slug,
   handleToggleFavorite,
   artPiecesInfo,
-}) {
+}: Props) {
   return (
     <>
       <div className="favoriteDiv">
