@@ -6,9 +6,10 @@ export function CommentForm({ title }) {
       defaultValue: {},
     });
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    const comment = document.getElementById("commentInput").value;
+  function handleSubmit(event) {
+    event.preventDefault();
+    const input = document.getElementById("commentInput");
+    const comment = input.value;
 
     if (!artPiecesComments[title]) {
       updateArtPiecesComments({ ...artPiecesComments, [title]: [comment] });
@@ -18,12 +19,15 @@ export function CommentForm({ title }) {
         [title]: [...artPiecesComments[title], comment],
       });
     }
+
+    input.value = "";
+    input.focus();
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <fieldset>
-        <label htmlFor="commentInput">Add a comment:</label>
+        <label htmlFor="commentInput">Add a free comment: </label>
         <input
           type="text"
           id="commentInput"
