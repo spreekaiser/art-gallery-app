@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import styled from "styled-components";
 import { FavoriteButton } from "..";
 import { ArtPieceContainerProps as Props } from "./ArtPieceContainer.d";
 
@@ -28,9 +27,3 @@ export function ArtPieceContainer({
     </>
   );
 }
-
-const StyledContainer = styled.div`
-  position: relative;
-  width: 360px;
-  height: 240px;
-`;
