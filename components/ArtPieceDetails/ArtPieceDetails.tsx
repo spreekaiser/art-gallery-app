@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { CommentForm, Comments, FavoriteButton } from "../";
-import { StyledListItem } from "../ArtPiecePreview/ArtPiecePreview";
+import { StyledListItem } from "../ArtPiecePreview/ArtPiecePreview.style";
 import { StyledImageContainer } from "../ArtPieceDetails/ArtPieceDetails.style";
 import { ArtPieceDetailsProps as Props } from "./ArtPieceDetails.d";
 
