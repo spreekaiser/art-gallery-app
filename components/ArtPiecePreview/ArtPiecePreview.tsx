@@ -1,6 +1,6 @@
-import styled from "styled-components";
 import { ArtPieceContainer } from "..";
 import { ArtPiecePreviewProps as Props } from "./ArtPiecePreview.d";
+import { StyledListItem } from "./ArtPiecePreview.style";
 
 export function ArtPiecePreview({
   piece,
@@ -18,10 +18,3 @@ export function ArtPiecePreview({
     </StyledListItem>
   );
 }
-
-export const StyledListItem = styled.li`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-`;
