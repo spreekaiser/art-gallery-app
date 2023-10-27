@@ -1,17 +1,11 @@
 import { ArtPiecePreview } from "..";
-import { IPiece } from "../../types";
-
-type ArtPiecesProps = {
-  pieces: IPiece[];
-  handleToggleFavorite: (slug: string) => void;
-  artPiecesInfo: [];
-};
+import { ArtPiecesProps as Props } from "./ArtPieces.d";
 
 export function ArtPieces({
   pieces,
   handleToggleFavorite,
   artPiecesInfo,
-}: ArtPiecesProps) {
+}: Props) {
   //
   return (
     <>
