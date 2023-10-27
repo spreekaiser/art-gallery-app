@@ -1,7 +1,7 @@
 import { IPiece } from "../../types";
 
-export type SpotLightProps = {
+export type ArtPiecesProps = {
   pieces: IPiece[];
   handleToggleFavorite: (slug: string) => void;
-  artPiecesInfo: string[];
+  artPiecesInfo: [];
 };

@@ -1,6 +1,11 @@
 import { ArtPiecePreview } from "..";
+import { ArtPiecesProps as Props } from "./ArtPieces.d";
 
-export function ArtPieces({ pieces, handleToggleFavorite, artPiecesInfo }) {
+export function ArtPieces({
+  pieces,
+  handleToggleFavorite,
+  artPiecesInfo,
+}: Props) {
   //
   return (
     <>
