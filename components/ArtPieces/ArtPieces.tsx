@@ -1,6 +1,17 @@
 import { ArtPiecePreview } from "..";
+import { IPiece } from "../../types";
 
-export function ArtPieces({ pieces, handleToggleFavorite, artPiecesInfo }) {
+type ArtPiecesProps = {
+  pieces: IPiece[];
+  handleToggleFavorite: (slug: string) => void;
+  artPiecesInfo: [];
+};
+
+export function ArtPieces({
+  pieces,
+  handleToggleFavorite,
+  artPiecesInfo,
+}: ArtPiecesProps) {
   //
   return (
     <>
