@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { ArtPieceDetails } from "../../components";
-import { ArtPiecesPageProps as Props } from "./art-pieces.d";
+import { ArtPiecesProps as Props } from "../../types.d";
 
 export default function DetailsPage({
   pieces,

@@ -12,3 +12,9 @@ export interface IPiece {
     type: string;
   };
 }
+
+export type ArtPiecesProps = {
+  pieces: IPiece[];
+  handleToggleFavorite: (slug: string) => void;
+  artPiecesInfo: [];
+};
