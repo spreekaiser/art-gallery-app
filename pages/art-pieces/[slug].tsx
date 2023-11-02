@@ -1,11 +1,12 @@
 import { useRouter } from "next/router";
 import { ArtPieceDetails } from "../../components";
+import { ArtPiecesProps as Props } from "../../types.d";
 
 export default function DetailsPage({
   pieces,
   handleToggleFavorite,
   artPiecesInfo,
-}) {
+}: Props) {
   const router = useRouter();
   const { slug } = router.query;
 
