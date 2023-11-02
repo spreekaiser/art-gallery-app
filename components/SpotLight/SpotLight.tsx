@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ArtPiecePreview } from "..";
 import { getRandomNumber } from "../../lib/utils";
 import useGetRandomPieceOnInterval from "../../lib/hooks/useGetRandomPieceOnInterval";
-import { SpotLightProps as Props } from "./SpotLight.d";
+import { ArtPiecesProps as Props } from "../../types.d";
 
 export function SpotLight({
   pieces,
