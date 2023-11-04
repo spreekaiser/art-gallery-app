@@ -1,5 +1,5 @@
 import { ArtPiecePreview } from "..";
-import { ArtPiecesProps as Props } from "./ArtPieces.d";
+import { ArtPiecesProps as Props } from "../../types.d";
 
 export function ArtPieces({
   pieces,

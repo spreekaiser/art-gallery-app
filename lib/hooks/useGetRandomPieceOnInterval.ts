@@ -1,9 +1,9 @@
 import { SetStateAction, useEffect } from "react";
-import { PieceType } from "../utils.d";
+import { IPiece } from "../../types.d";
 
 export default function useGetRandomPieceOnInterval(
-  pieces: PieceType[],
-  getRandomNumber: (pieces: PieceType[]) => number,
+  pieces: IPiece[],
+  getRandomNumber: (pieces: IPiece[]) => number,
   setRandomIndex: React.Dispatch<SetStateAction<number>>
 ) {
   useEffect(() => {
