@@ -1,10 +1,11 @@
 import { ArtPiecePreview } from "../components";
+import { ArtPiecesProps as Props } from "../types";
 
 export default function FavoritesPage({
   pieces,
   handleToggleFavorite,
   artPiecesInfo,
-}) {
+}: Props) {
   return (
     <>
       <h2>My Favorite Art Pieces ❤️</h2>

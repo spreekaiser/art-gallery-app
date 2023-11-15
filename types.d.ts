@@ -16,5 +16,5 @@ export interface IPiece {
 export type ArtPiecesProps = {
   pieces: IPiece[];
   handleToggleFavorite: (slug: string) => void;
-  artPiecesInfo: [];
+  artPiecesInfo: string[];
 };
