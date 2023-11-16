@@ -1,16 +1,7 @@
 import { useImmerLocalStorageState } from "../../lib/hooks/useImmerLocalStorageState";
+import { ICommentsProps as IProps, IArtPiecesComments } from "./Comments.d";
 
-// type Comment = string;
-// type CommentsState = Record<string, string[]>; // Annahme: Kommentare sind in einem Objekt gespeichert
-interface IArtPiecesComments {
-  [key: string]: string[];
-}
-
-interface ICommentsProps {
-  title: string;
-}
-
-export function Comments({ title }: ICommentsProps) {
+export function Comments({ title }: IProps) {
   const [artPieceComments, updateArtPieceComments]: [
     IArtPiecesComments,
     (updater: IArtPiecesComments) => void
@@ -20,7 +11,6 @@ export function Comments({ title }: ICommentsProps) {
 
   return (
     <ul>
-      {/* {(artPieceComments[title] || []).map((comment: string, index: number) => ( */}
       {(artPieceComments[title] || []).map((comment, index) => (
         <li className="commentList" key={index}>
           {comment}
