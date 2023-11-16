@@ -6,9 +6,9 @@ export function CommentForm({ title }) {
       defaultValue: {},
     });
 
-  function handleSubmit(event) {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>): void {
     event.preventDefault();
-    const input = document.getElementById("commentInput");
+    const input = document.getElementById("commentInput") as HTMLInputElement;
     const comment = input.value;
 
     if (!artPiecesComments[title]) {
