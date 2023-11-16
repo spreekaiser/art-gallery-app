@@ -1,10 +1,20 @@
 import { useImmerLocalStorageState } from "../../lib/hooks/useImmerLocalStorageState";
 
-export function CommentForm({ title }) {
-  const [artPiecesComments, updateArtPiecesComments] =
-    useImmerLocalStorageState("art-pieces-comments", {
-      defaultValue: {},
-    });
+interface ICommentFormProps {
+  title: string;
+}
+
+interface IArtPiecesComments {
+  [key: string]: string[];
+}
+
+export function CommentForm({ title }: ICommentFormProps) {
+  const [artPiecesComments, updateArtPiecesComments]: [
+    IArtPiecesComments,
+    (updater: IArtPiecesComments) => void
+  ] = useImmerLocalStorageState("art-pieces-comments", {
+    defaultValue: {},
+  });
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>): void {
     event.preventDefault();
