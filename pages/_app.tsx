@@ -4,6 +4,7 @@ import { useImmerLocalStorageState } from "../lib/hooks/useImmerLocalStorageStat
 import { Draft } from "immer";
 import { Layout } from "../components";
 import GlobalStyle from "../styles";
+import { ArtPiecesInfoType } from "../types";
 
 const fetcher = (...args: Parameters<typeof fetch>) =>
   fetch(...args).then((res) => res.json());
@@ -16,8 +17,6 @@ export default function App({
     "https://example-apis.vercel.app/api/art",
     fetcher
   );
-
-  type ArtPiecesInfoType = string[];
 
   // userImmerLocalStorageState for isFavorite
   const [artPiecesInfo, updateArtPiecesInfo]: [

@@ -13,8 +13,10 @@ export interface IPiece {
   };
 }
 
+export type ArtPiecesInfoType = string[];
+
 export type ArtPiecesProps = {
   pieces: IPiece[];
   handleToggleFavorite: (slug: string) => void;
-  artPiecesInfo: string[];
+  artPiecesInfo: ArtPiecesInfoType;
 };
