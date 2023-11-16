@@ -1,12 +1,8 @@
-import { ReactNode } from "react";
 import { Navigation } from "..";
 import { Content, StyledHeartBlob } from "./Layout.style";
+import { ILayoutProps as IProps } from "./Layout.d";
 
-interface ILayoutProps {
-  children: ReactNode;
-}
-
-export function Layout({ children }: ILayoutProps) {
+export function Layout({ children }: IProps) {
   return (
     <>
       <Content>{children}</Content>
