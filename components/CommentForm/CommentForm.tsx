@@ -22,7 +22,6 @@ export function CommentForm({ title }: IProps) {
     } else {
       updateArtPiecesComments({
         ...artPiecesComments,
-        // [title]: [...artPiecesComments[title], comment],
         [title]: [comment, ...artPiecesComments[title]],
       });
     }
