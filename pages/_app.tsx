@@ -1,38 +1,41 @@
-import { Layout } from "../components";
-import GlobalStyle from "../styles";
+import type { AppProps } from "next/app";
 import useSWR from "swr";
 import { useImmerLocalStorageState } from "../lib/hooks/useImmerLocalStorageState";
+import { Draft } from "immer";
+import { Layout } from "../components";
+import GlobalStyle from "../styles";
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
-// let isFavorite = false;
+const fetcher = (...args: Parameters<typeof fetch>) =>
+  fetch(...args).then((res) => res.json());
 
-export default function App({ Component, pageProps }) {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps) {
   const { data: pieces } = useSWR(
     "https://example-apis.vercel.app/api/art",
     fetcher
   );
 
+  type ArtPiecesInfoType = string[];
+
   // userImmerLocalStorageState for isFavorite
-  const [artPiecesInfo, updateArtPiecesInfo] = useImmerLocalStorageState(
-    "art-pieces-info",
-    {
-      defaultValue: [],
-    }
-  );
+  const [artPiecesInfo, updateArtPiecesInfo]: [
+    ArtPiecesInfoType,
+    (updater: string[] | ((draft: Draft<ArtPiecesInfoType>) => void)) => void
+  ] = useImmerLocalStorageState("info", { defaultValue: [] });
 
   if (!pieces) {
     return;
   }
 
-  function handleToggleFavorite(slug) {
+  function handleToggleFavorite(slug: string): void {
     // if artPieceSlug is in localStorage, delete it from localStorage
     if (artPiecesInfo.includes(slug)) {
       updateArtPiecesInfo(artPiecesInfo.filter((element) => element !== slug));
-      // isFavorite = false;
       // else add artPieceSlug to localStorage
     } else {
       updateArtPiecesInfo([...artPiecesInfo, slug]);
-      // isFavorite = true;
     }
   }
 
