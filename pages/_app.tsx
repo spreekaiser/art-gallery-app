@@ -22,17 +22,15 @@ export default function App({
   const [artPiecesInfo, updateArtPiecesInfo]: [
     ArtPiecesInfoType,
     (updater: string[] | ((draft: Draft<ArtPiecesInfoType>) => void)) => void
-  ] = useImmerLocalStorageState("info", { defaultValue: [] });
+  ] = useImmerLocalStorageState("art-pieces-favorites", { defaultValue: [] });
 
   if (!pieces) {
     return;
   }
 
   function handleToggleFavorite(slug: string): void {
-    // if artPieceSlug is in localStorage, delete it from localStorage
     if (artPiecesInfo.includes(slug)) {
       updateArtPiecesInfo(artPiecesInfo.filter((element) => element !== slug));
-      // else add artPieceSlug to localStorage
     } else {
       updateArtPiecesInfo([...artPiecesInfo, slug]);
     }
