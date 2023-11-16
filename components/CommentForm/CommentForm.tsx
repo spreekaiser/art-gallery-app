@@ -1,14 +1,10 @@
 import { useImmerLocalStorageState } from "../../lib/hooks/useImmerLocalStorageState";
+import {
+  ICommentFormProps as IProps,
+  IArtPiecesComments,
+} from "./CommentForm.d";
 
-interface ICommentFormProps {
-  title: string;
-}
-
-interface IArtPiecesComments {
-  [key: string]: string[];
-}
-
-export function CommentForm({ title }: ICommentFormProps) {
+export function CommentForm({ title }: IProps) {
   const [artPiecesComments, updateArtPiecesComments]: [
     IArtPiecesComments,
     (updater: IArtPiecesComments) => void
