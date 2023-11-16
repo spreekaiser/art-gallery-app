@@ -1,7 +1,12 @@
+import { ReactNode } from "react";
 import { Navigation } from "..";
 import { Content, StyledHeartBlob } from "./Layout.style";
 
-export function Layout({ children }) {
+interface ILayoutProps {
+  children: ReactNode;
+}
+
+export function Layout({ children }: ILayoutProps) {
   return (
     <>
       <Content>{children}</Content>
