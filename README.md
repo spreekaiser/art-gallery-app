@@ -2,7 +2,7 @@ Welcome to
 
 # Art Gallery
 
-https://art-gallery-app-pied.vercel.app
+https://art-gallery-2000.vercel.app
 
 A Next.js collaboration master piece created by the infamous [spreekaiser](https://github.com/spreekaiser) and the incredible [kasulk](https://github.com/kasulk).
 
@@ -20,7 +20,7 @@ A Next.js collaboration master piece created by the infamous [spreekaiser](https
 
 ## Tech Stack
 
-[![Tech Stack](https://skillicons.dev/icons?i=html,css,js,react,nextjs,jest,ts)](https://skillicons.dev)
+[![Tech Stack](https://skillicons.dev/icons?i=js,ts,react,nextjs,jest,html,css)](https://skillicons.dev)
 
 ## API
 
@@ -33,7 +33,7 @@ Because we can! 💅
 ## What's next
 
 - [x] Implement barrel exports for components
-- [ ] Implement TypeScript
+- [x] Implement TypeScript
 - [ ] Add color palette to each art piece
 - [ ] Create lots of unit and integration tests
 - [ ] Implement Recoil for state management
