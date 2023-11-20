@@ -1,4 +1,4 @@
-import { SpotLight } from "../components";
+import { LoadingSpinner, SpotLight } from "../components";
 import { ArtPiecesProps as Props } from "../types";
 
 export default function SpotlightPage({
@@ -8,6 +8,7 @@ export default function SpotlightPage({
 }: Props) {
   return (
     <>
+      <LoadingSpinner /> {/* test */}
       <SpotLight
         pieces={pieces}
         handleToggleFavorite={handleToggleFavorite}
