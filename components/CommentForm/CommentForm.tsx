@@ -1,14 +1,20 @@
 import { useImmerLocalStorageState } from "../../lib/hooks/useImmerLocalStorageState";
+import {
+  ICommentFormProps as IProps,
+  IArtPiecesComments,
+} from "./CommentForm.d";
 
-export function CommentForm({ title }) {
-  const [artPiecesComments, updateArtPiecesComments] =
-    useImmerLocalStorageState("art-pieces-comments", {
-      defaultValue: {},
-    });
+export function CommentForm({ title }: IProps) {
+  const [artPiecesComments, updateArtPiecesComments]: [
+    IArtPiecesComments,
+    (updater: IArtPiecesComments) => void
+  ] = useImmerLocalStorageState("art-pieces-comments", {
+    defaultValue: {},
+  });
 
-  function handleSubmit(event) {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>): void {
     event.preventDefault();
-    const input = document.getElementById("commentInput");
+    const input = document.getElementById("commentInput") as HTMLInputElement;
     const comment = input.value;
 
     if (!artPiecesComments[title]) {
@@ -16,7 +22,7 @@ export function CommentForm({ title }) {
     } else {
       updateArtPiecesComments({
         ...artPiecesComments,
-        [title]: [...artPiecesComments[title], comment],
+        [title]: [comment, ...artPiecesComments[title]],
       });
     }
 

@@ -26,8 +26,8 @@ export function ArtPieceDetails({
         </StyledImageContainer>
       </div>
       <h4>by {artist}</h4>
-      <Comments title={name} />
       <CommentForm title={name} />
+      <Comments title={name} />
     </StyledListItem>
   );
 }
