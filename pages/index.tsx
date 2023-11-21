@@ -5,10 +5,12 @@ export default function SpotlightPage({
   pieces,
   handleToggleFavorite,
   artPiecesInfo,
+  isLoading,
 }: Props) {
+  if (isLoading) return <LoadingSpinner />;
+
   return (
     <>
-      <LoadingSpinner /> {/* test */}
       <SpotLight
         pieces={pieces}
         handleToggleFavorite={handleToggleFavorite}
