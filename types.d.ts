@@ -19,4 +19,5 @@ export type ArtPiecesProps = {
   pieces: IPiece[];
   handleToggleFavorite: (slug: string) => void;
   artPiecesInfo: ArtPiecesInfoType;
+  isLoading?: boolean;
 };

@@ -13,7 +13,7 @@ export default function App({
   Component,
   pageProps: { session, ...pageProps },
 }: AppProps) {
-  const { data: pieces } = useSWR(
+  const { data: pieces, isLoading } = useSWR(
     "https://example-apis.vercel.app/api/art",
     fetcher
   );
@@ -24,9 +24,7 @@ export default function App({
     (updater: string[] | ((draft: Draft<ArtPiecesInfoType>) => void)) => void
   ] = useImmerLocalStorageState("art-pieces-favorites", { defaultValue: [] });
 
-  if (!pieces) {
-    return;
-  }
+  if (!pieces) return;
 
   function handleToggleFavorite(slug: string): void {
     if (artPiecesInfo.includes(slug)) {
@@ -45,6 +43,7 @@ export default function App({
           pieces={pieces}
           handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
+          isLoading={isLoading}
         />
       </Layout>
     </>
