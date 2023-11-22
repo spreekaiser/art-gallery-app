@@ -1,12 +1,15 @@
-import { ArtPiecePreview } from "..";
+import { ArtPiecePreview, LoadingSpinner } from "..";
 import { ArtPiecesProps as Props } from "../../types.d";
 
 export function ArtPieces({
   pieces,
   handleToggleFavorite,
   artPiecesInfo,
+  isLoading,
 }: Props) {
   //
+  if (isLoading) return <LoadingSpinner />;
+
   return (
     <>
       <h2>All Art Pieces</h2>

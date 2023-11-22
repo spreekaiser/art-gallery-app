@@ -1,5 +1,6 @@
 export { Layout } from "./Layout/Layout";
 export { Navigation } from "./Navigation/Navigation";
+export { LoadingSpinner } from "./LoadingSpinner/LoadingSpinner";
 
 export { IconHeart } from "./IconHeart/IconHeart";
 export { FavoriteButton } from "./FavoriteButton/FavoriteButton";

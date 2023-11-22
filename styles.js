@@ -20,21 +20,7 @@ export default createGlobalStyle`
   body {
     margin: 0;
     font-family: system-ui;
-    /* height: 100vh; */
     min-height: 100vh;
-
-    background-color: burlywood;
-    background-color: darkslategray;
-    background-color: lightcoral;
-    background-color: lightblue;
-    background-color: lightseagreen;
-    background-color: lightslategray;
-    background-color: maroon;
-    background-color: mediumvioletred;
-    background-color: purple;
-    background-color: rebeccapurple;
-    background-color: steelblue;
-    background-color: teal;
     background-color: var(--main-color1);
   }
 
@@ -54,17 +40,9 @@ export default createGlobalStyle`
 
   img {
     object-fit: cover;
-    /* border: 20px solid brown; */
     border: 20px outset brown;
     border: 20px outset darkgoldenrod;
-
     border-radius: 5px;
-
-  /* border: 20px solid transparent;  */
-  /* border-image: linear-gradient(160deg,  brown, maroon);  */
-  /* Verlauf über die gesamte Border-Dicke */
-  /* border-image-slice: 1;  */
-
     box-shadow: 10px 10px 20px #333;
   }
 
