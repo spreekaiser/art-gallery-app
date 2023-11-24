@@ -1,7 +1,6 @@
-import Link from "next/link";
-import { StyledNavbar } from "./Navigation.style";
+// import Link from "next/link";
+import { StyledNavbar, StyledPageTitle } from "./Navigation.style";
 import { BurgerMenu } from "../../components";
-import styled from "styled-components";
 
 export function Navigation() {
   return (
@@ -15,9 +14,3 @@ export function Navigation() {
     </>
   );
 }
-
-export const StyledPageTitle = styled.h1`
-  color: white;
-  margin: 0;
-  font-style: italic;
-`;

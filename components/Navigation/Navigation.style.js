@@ -40,3 +40,9 @@ export const StyledNavbar = styled.nav`
     /* justify-content: center; */
   }
 `;
+
+export const StyledPageTitle = styled.h1`
+  color: white;
+  margin: 0;
+  font-style: italic;
+`;
