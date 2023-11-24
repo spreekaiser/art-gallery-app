@@ -5,7 +5,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* padding: 10%; */
+  margin: 4rem 1rem 0;
 `;
 
 export const StyledHeartBlob = styled(HeartBlob)`

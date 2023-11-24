@@ -1,13 +1,15 @@
-import Link from "next/link";
-import { StyledNavbar } from "./Navigation.style";
+// import Link from "next/link";
+import { StyledNavbar, StyledPageTitle } from "./Navigation.style";
+import { BurgerMenu } from "../../components";
 
 export function Navigation() {
   return (
     <>
       <StyledNavbar>
-        <Link href="/">Spotlight</Link>
-        <Link href="/art-pieces">Art Pieces</Link>
-        <Link href="/favorites">Favorites</Link>
+        {/* <StyledPageTitleLink href="/"> */}
+        <StyledPageTitle>Art Gallery</StyledPageTitle>
+        {/* </StyledPageTitleLink> */}
+        <BurgerMenu />
       </StyledNavbar>
     </>
   );

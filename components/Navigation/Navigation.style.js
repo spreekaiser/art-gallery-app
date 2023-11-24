@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const StyledNavbar = styled.nav`
   position: fixed;
-  bottom: 0;
+  top: 0;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   background-color: var(--accent-color1);
@@ -18,8 +18,9 @@ export const StyledNavbar = styled.nav`
     min-width: 11rem;
     padding: 1rem 3rem;
     margin: 0 1%;
-    background-color: lightblue;
+    background-color: var(--main-color2);
     font-weight: bold;
+    color: #333;
 
     &:hover {
       color: var(--main-color1);
@@ -32,10 +33,16 @@ export const StyledNavbar = styled.nav`
 
   @media (max-width: 768px) {
     a {
-      margin: 0;
+      /* margin: 0; */
     }
   }
   @media (max-width: 640px) {
-    justify-content: center;
+    /* justify-content: center; */
   }
+`;
+
+export const StyledPageTitle = styled.h1`
+  color: white;
+  margin: 0;
+  font-style: italic;
 `;

@@ -36,5 +36,5 @@ Because we can! 💅
 - [x] Implement TypeScript
 - [ ] Add color palette to each art piece
 - [ ] Create lots of unit and integration tests
-- [ ] Implement Recoil for state management
+- [ ] Implement state management (i.g. useContext or Redux)
 - [ ] World domination
