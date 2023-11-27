@@ -55,16 +55,6 @@ export default createGlobalStyle`
     color: unset
   }
 
-  .commentList {
-    margin-top: 1em;
-    height: 2.5em;
-    padding: 0.5em;
-    border: 0.5px solid gray;
-    border-radius: 50px;
-    background-color: lightgray;
-    width: max-content;
-  }
-
   @keyframes MoveUpDown {
     0%,
     100% {

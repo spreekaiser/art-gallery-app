@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { useImmerLocalStorageState } from "../../lib/hooks/useImmerLocalStorageState";
 import { ICommentsProps as IProps, IArtPiecesComments } from "./Comments.d";
 
@@ -10,12 +11,24 @@ export function Comments({ title }: IProps) {
   });
 
   return (
-    <ul>
+    <StyledCommentList>
       {(artPieceComments[title] || []).map((comment, index) => (
-        <li className="commentList" key={index}>
-          {comment}
-        </li>
+        <StyledComment key={index}>{comment}</StyledComment>
       ))}
-    </ul>
+    </StyledCommentList>
   );
 }
+
+const StyledCommentList = styled.ul`
+  width: 90%;
+`;
+
+const StyledComment = styled.div`
+  margin-top: 1rem;
+  padding: 1rem;
+  text-align: left;
+  background-color: var(--main-color2);
+  border: 0.5px solid gray;
+  border-radius: 1rem;
+  border-bottom-right-radius: 0;
+`;
