@@ -37,6 +37,9 @@ export default createGlobalStyle`
     width: 360px;
     height: 240px;
   }
+  .favoriteDiv:hover {
+    animation: MoveUpDown 2s linear infinite;
+  }
 
   img {
     object-fit: cover;
@@ -44,10 +47,8 @@ export default createGlobalStyle`
     border: 20px outset darkgoldenrod;
     border-radius: 5px;
     box-shadow: 10px 10px 20px #333;
-  }
+    /* max-width: 90%; */
 
-  .favoriteDiv:hover {
-    animation: MoveUpDown 2s linear infinite;
   }
 
   a {
