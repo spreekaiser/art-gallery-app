@@ -1,6 +1,6 @@
-import styled from "styled-components";
 import { useImmerLocalStorageState } from "../../lib/hooks/useImmerLocalStorageState";
 import { ICommentsProps as IProps, IArtPiecesComments } from "./Comments.d";
+import { StyledComment, StyledCommentList } from "./Comments style";
 
 export function Comments({ title }: IProps) {
   const [artPieceComments, updateArtPieceComments]: [
@@ -18,17 +18,3 @@ export function Comments({ title }: IProps) {
     </StyledCommentList>
   );
 }
-
-const StyledCommentList = styled.ul`
-  width: 90%;
-`;
-
-const StyledComment = styled.div`
-  margin-top: 1rem;
-  padding: 1rem;
-  text-align: left;
-  background-color: var(--main-color2);
-  border: 0.5px solid gray;
-  border-radius: 1rem;
-  border-bottom-right-radius: 0;
-`;
