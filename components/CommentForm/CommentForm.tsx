@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { useImmerLocalStorageState } from "../../lib/hooks/useImmerLocalStorageState";
 import {
   ICommentFormProps as IProps,
@@ -31,17 +32,38 @@ export function CommentForm({ title }: IProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <fieldset>
-        <label htmlFor="commentInput">Add a free comment: </label>
-        <input
-          type="text"
+    <StyledForm onSubmit={handleSubmit}>
+      <StyledFieldset>
+        <StyledTextarea
           id="commentInput"
           name="commentInput"
-          placeholder="Your comment"
-        />
+          placeholder="Add a free comment..."
+        ></StyledTextarea>
         <button type="submit">Submit</button>
-      </fieldset>
-    </form>
+      </StyledFieldset>
+    </StyledForm>
   );
 }
+
+const StyledForm = styled.form`
+  width: 100%;
+`;
+
+const StyledFieldset = styled.fieldset`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  width: inherit;
+  padding: 0;
+  border: none;
+`;
+
+const StyledTextarea = styled.textarea`
+  width: inherit;
+  padding: 1rem;
+  border-radius: 5px;
+`;
+
+const StyledButton = styled.button``;
