@@ -72,7 +72,7 @@ export const Line = styled.div<IAnimationProps>`
     transform: ${({ isOpen }) =>
       isOpen ? "rotate(-45deg) translate(5px, -5px)" : "none"};
     background-color: ${({ isOpen }) =>
-      isOpen ? "red" : "var(--main-color2)"};
+      isOpen ? "var(--main-color1)" : "var(--main-color2)"};
   }
 `;
 

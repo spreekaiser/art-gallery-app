@@ -27,7 +27,7 @@ export const StyledNavbar = styled.nav`
       background-color: var(--accent-color2);
     }
     &:active {
-      color: white;
+      color: var(--accent-color1);
     }
   }
 

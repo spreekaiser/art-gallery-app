@@ -11,7 +11,8 @@ export function BurgerMenu() {
 
   return (
     <>
-      <Burger onClick={toggleMenu}>
+      {/* <Burger onClick={toggleMenu}> */}
+      <Burger onClick={() => setIsOpen(!isOpen)}>
         <Line isOpen={isOpen} />
         <Line isOpen={isOpen} />
         <Line isOpen={isOpen} />
