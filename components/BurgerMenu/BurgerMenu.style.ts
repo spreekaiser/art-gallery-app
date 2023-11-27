@@ -86,6 +86,23 @@ export const Menu = styled.div<IAnimationProps>`
   border-bottom-left-radius: 5px;
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   animation: ${({ isOpen }) => (isOpen ? fadeIn : fadeOut)} 0.3s ease-in-out;
+
+  a {
+    min-width: 11rem;
+    padding: 1rem 3rem;
+    margin: 0 1%;
+    background-color: var(--main-color2);
+    font-weight: bold;
+    color: #333;
+
+    &:hover {
+      color: var(--main-color1);
+      background-color: var(--accent-color2);
+    }
+    &:active {
+      color: var(--accent-color1);
+    }
+  }
 `;
 
 export const MenuItem = styled(Link)`
