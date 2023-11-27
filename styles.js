@@ -47,8 +47,6 @@ export default createGlobalStyle`
     border: 20px outset darkgoldenrod;
     border-radius: 5px;
     box-shadow: 10px 10px 20px #333;
-    /* max-width: 90%; */
-
   }
 
   a {
