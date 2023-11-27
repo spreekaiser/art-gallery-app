@@ -72,7 +72,7 @@ export const Line = styled.div<IAnimationProps>`
     transform: ${({ isOpen }) =>
       isOpen ? "rotate(-45deg) translate(5px, -5px)" : "none"};
     background-color: ${({ isOpen }) =>
-      isOpen ? "red" : "var(--main-color2)"};
+      isOpen ? "var(--main-color1)" : "var(--main-color2)"};
   }
 `;
 
@@ -86,6 +86,23 @@ export const Menu = styled.div<IAnimationProps>`
   border-bottom-left-radius: 5px;
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   animation: ${({ isOpen }) => (isOpen ? fadeIn : fadeOut)} 0.3s ease-in-out;
+
+  a {
+    min-width: 11rem;
+    padding: 1rem 3rem;
+    margin: 0 1%;
+    background-color: var(--main-color2);
+    font-weight: bold;
+    color: #333;
+
+    &:hover {
+      color: var(--main-color1);
+      background-color: var(--accent-color2);
+    }
+    &:active {
+      color: var(--accent-color1);
+    }
+  }
 `;
 
 export const MenuItem = styled(Link)`

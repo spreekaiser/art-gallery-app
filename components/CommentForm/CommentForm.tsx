@@ -3,6 +3,12 @@ import {
   ICommentFormProps as IProps,
   IArtPiecesComments,
 } from "./CommentForm.d";
+import {
+  StyledForm,
+  StyledFieldset,
+  StyledTextarea,
+  StyledButton,
+} from "./CommentForm style";
 
 export function CommentForm({ title }: IProps) {
   const [artPiecesComments, updateArtPiecesComments]: [
@@ -31,17 +37,15 @@ export function CommentForm({ title }: IProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <fieldset>
-        <label htmlFor="commentInput">Add a free comment: </label>
-        <input
-          type="text"
+    <StyledForm onSubmit={handleSubmit}>
+      <StyledFieldset>
+        <StyledTextarea
           id="commentInput"
           name="commentInput"
-          placeholder="Your comment"
-        />
-        <button type="submit">Submit</button>
-      </fieldset>
-    </form>
+          placeholder="Add a comment... it's free!"
+        ></StyledTextarea>
+        <StyledButton type="submit">Submit</StyledButton>
+      </StyledFieldset>
+    </StyledForm>
   );
 }

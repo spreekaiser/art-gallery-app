@@ -1,5 +1,6 @@
 import { useImmerLocalStorageState } from "../../lib/hooks/useImmerLocalStorageState";
 import { ICommentsProps as IProps, IArtPiecesComments } from "./Comments.d";
+import { StyledComment, StyledCommentList } from "./Comments style";
 
 export function Comments({ title }: IProps) {
   const [artPieceComments, updateArtPieceComments]: [
@@ -10,12 +11,10 @@ export function Comments({ title }: IProps) {
   });
 
   return (
-    <ul>
+    <StyledCommentList>
       {(artPieceComments[title] || []).map((comment, index) => (
-        <li className="commentList" key={index}>
-          {comment}
-        </li>
+        <StyledComment key={index}>{comment}</StyledComment>
       ))}
-    </ul>
+    </StyledCommentList>
   );
 }
