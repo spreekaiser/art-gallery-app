@@ -14,7 +14,7 @@ export function ArtPieces({
     <>
       <h2>All Art Pieces</h2>
       <ul>
-        {pieces?.map((piece) => (
+        {pieces.map((piece) => (
           <ArtPiecePreview
             key={piece.slug}
             piece={piece}
