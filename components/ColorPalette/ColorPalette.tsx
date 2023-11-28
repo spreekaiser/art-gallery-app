@@ -1,9 +1,7 @@
-import styled from "styled-components";
+import { StyledColorsList, StyledColorItem } from "./ColorPalette.style";
+import { IColorPaletteProps as IProps } from "./ColorPalette.d";
 
-type Props = {
-  colors: string[];
-};
-export function ColorPalette({ colors }: Props) {
+export function ColorPalette({ colors }: IProps) {
   return (
     <StyledColorsList>
       {colors.map((color) => (
@@ -12,17 +10,3 @@ export function ColorPalette({ colors }: Props) {
     </StyledColorsList>
   );
 }
-
-const StyledColorsList = styled.ul`
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  margin: 1rem 0 2rem;
-`;
-
-const StyledColorItem = styled.li`
-  background-color: ${(props) => props.color};
-  border-radius: 5px;
-  width: 15%;
-  height: 1.5rem;
-`;
