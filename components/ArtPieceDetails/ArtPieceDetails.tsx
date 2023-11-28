@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CommentForm, Comments, FavoriteButton } from "../";
+import { ColorPalette, CommentForm, Comments, FavoriteButton } from "../";
 import { StyledListItem } from "../ArtPiecePreview/ArtPiecePreview.style";
 import { StyledImageContainer } from "../ArtPieceDetails/ArtPieceDetails.style";
 import { ArtPieceDetailsProps as Props } from "./ArtPieceDetails.d";
@@ -9,6 +9,7 @@ export function ArtPieceDetails({
   name,
   artist,
   slug,
+  colors,
   handleToggleFavorite,
   artPiecesInfo,
 }: Props) {
@@ -26,6 +27,7 @@ export function ArtPieceDetails({
         </StyledImageContainer>
       </div>
       <h4>by {artist}</h4>
+      <ColorPalette colors={colors} />
       <CommentForm title={name} />
       <Comments title={name} />
     </StyledListItem>
