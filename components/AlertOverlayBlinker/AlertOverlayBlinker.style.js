@@ -9,7 +9,7 @@ export const Overlay = styled.div`
   background-color: ${(props) => props.color};
   z-index: 999;
 
-  opacity: 0.75;
+  opacity: 0.5;
 `;
 
 export const PopupBox = styled.div`
@@ -18,16 +18,24 @@ export const PopupBox = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
-  background-color: #fff;
-  border: 1px solid #000;
+  background-color: var(--main-color2);
   z-index: 1000;
 
-  opacity: 1;
+  border: 0.3rem solid ${(props) => props.color};
+  border-radius: 50%;
+  border-bottom-right-radius: 0;
+  height: 50vh;
+  width: 50vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 // textbox style
 export const Text = styled.p`
-  font-size: 18px;
+  font-size: 2rem;
 `;
 
 const blink = keyframes`

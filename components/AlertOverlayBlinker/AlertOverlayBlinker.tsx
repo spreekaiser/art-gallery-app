@@ -8,16 +8,15 @@ interface IProps {
 
 export function AlertOverlayBlinker({ isAlert, setIsAlert }: IProps) {
   const [overlayColor, setOverlayColor] = useState("darkred");
-  // const [boxOverlayColor, setBoxOverlayColor] = useState("midnightblue");
-  const [intervalID, setIntervalID] = useState<NodeJS.Timeout | null>(null);
+  const [boxOverlayColor, setBoxOverlayColor] = useState("steelblue");
 
   function toggleOverlayColor() {
     setOverlayColor((prevColor) =>
-      prevColor === "darkred" ? "midnightblue" : "darkred"
+      prevColor === "darkred" ? "navy" : "darkred"
     );
-    // setBoxOverlayColor((prevColor) =>
-    //   prevColor === "darkred" ? "midnightblue" : "darkred"
-    // );
+    setBoxOverlayColor((prevColor) =>
+      prevColor === "crimson" ? "steelblue" : "crimson"
+    );
   }
 
   function playSound() {
@@ -41,13 +40,13 @@ export function AlertOverlayBlinker({ isAlert, setIsAlert }: IProps) {
   if (isAlert)
     return (
       <>
-        {/* // <Overlay color={boxOverlayColor}> */}
-        <PopupBox>
+        {/* <Overlay color={boxOverlayColor}> */}
+        <PopupBox color={boxOverlayColor}>
           {/* <img src="bild-url" alt="Bild" /> */}
           <Text>Hier ist dein Text.</Text>
           <button onClick={() => setIsAlert(false)}>Schließen</button>
         </PopupBox>
-        {/* // </Overlay> */}
+        {/* </Overlay> */}
         <Overlay color={overlayColor} />
       </>
     );
