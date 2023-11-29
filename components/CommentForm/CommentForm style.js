@@ -31,17 +31,20 @@ export const StyledButton = styled.button`
 
   transition: all 0.3s ease;
 
-  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
-  filter: ${(props) => (props.disabled ? "saturate(50%)" : "none")};
+  ${({ disabled }) =>
+    disabled
+      ? css`
+          cursor: not-allowed;
+          filter: saturate(50%);
+        `
+      : css`
+          cursor: pointer;
 
-  ${(props) =>
-    !props.disabled &&
-    css`
-      &:hover {
-        filter: brightness(110%);
-        color: var(--accent-color2);
-        box-shadow: 3px 3px 6px #333;
-        transform: scale(1.02) rotate(1deg);
-      }
-    `}
+          &:hover {
+            filter: brightness(110%);
+            color: var(--accent-color2);
+            box-shadow: 3px 3px 6px #333;
+            transform: scale(1.02) rotate(1deg);
+          }
+        `}
 `;
