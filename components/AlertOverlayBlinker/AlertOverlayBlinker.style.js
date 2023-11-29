@@ -17,7 +17,7 @@ export const PopupBox = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 20px;
+  padding: 2rem;
   background-color: var(--main-color2);
   z-index: 1000;
 
@@ -36,6 +36,7 @@ export const PopupBox = styled.div`
 // textbox style
 export const Text = styled.p`
   font-size: 2rem;
+  text-align: center;
 `;
 
 const blink = keyframes`

@@ -42,9 +42,9 @@ export function AlertOverlayBlinker({ isAlert, setIsAlert }: IProps) {
       <>
         {/* <Overlay color={boxOverlayColor}> */}
         <PopupBox color={boxOverlayColor}>
-          {/* <img src="bild-url" alt="Bild" /> */}
-          <Text>Hier ist dein Text.</Text>
-          <button onClick={() => setIsAlert(false)}>Schließen</button>
+          {/* <img src="bild-url" alt="Angry Watchman" /> */}
+          <Text>OK buddy I warned you, S.W.A.T. is on their way!</Text>
+          <button onClick={() => setIsAlert(false)}>It wasn&apos;t me!</button>
         </PopupBox>
         {/* </Overlay> */}
         <Overlay color={overlayColor} />
