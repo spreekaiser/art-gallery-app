@@ -7,10 +7,8 @@ interface IProps {
 }
 
 export function AlertOverlayBlinker({ isAlert, setIsAlert }: IProps) {
-  // const [showOverlay, setShowOverlay] = useState(false);
   const [overlayColor, setOverlayColor] = useState("darkred");
-  const [showBox, setShowBox] = useState(false);
-  //   const [boxOverlayColor, setBoxOverlayColor] = useState("midnightblue");
+  // const [boxOverlayColor, setBoxOverlayColor] = useState("midnightblue");
   // const [intervalID, setIntervalID] = useState<number | null>(null);
   const [intervalID, setIntervalID] = useState<NodeJS.Timeout | null>(null);
 
@@ -23,68 +21,73 @@ export function AlertOverlayBlinker({ isAlert, setIsAlert }: IProps) {
     // );
   }
 
-  function toggleBox() {
-    setShowBox((prevShowBox) => !prevShowBox);
-  }
+  // function toggleBox() {
+  // setShowBox((prevShowBox) => !prevShowBox);
+  // }
 
   function toggleOverlay() {
     // setShowBox((prevShowBox) => !prevShowBox);
-    toggleBox();
-    if (intervalID) {
-      clearInterval(intervalID);
-    }
+    // toggleBox();
+    // if (intervalID) {
+    //   clearInterval(intervalID);
+    // }
   }
 
   function playSound() {
     // new Audio('sound.mp3').play();
   }
 
-  function startOverlayBlinking() {
-    playSound();
-    setShowBox(true);
-    // toggleBox();
-    const id = setInterval(() => {
-      toggleOverlayColor();
-      //   toggleBox();
-      //   playSound();
-    }, 2000);
+  // function startOverlayBlinking() {
+  //   playSound();
 
-    setIntervalID(id);
+  //   const id = setInterval(() => {
+  //     toggleOverlayColor();
+  //   }, 2000);
 
-    // return () => {
-    //   clearInterval(id);
-    // };
-  }
+  //   // setIntervalID(id);
+
+  //   return () => {
+  //     clearInterval(id);
+  //   };
+  // }
+  // useEffect(() => {
+  //   if (isAlert) {
+  //     startOverlayBlinking();
+  //   }
+  // }, [isAlert]);
 
   useEffect(() => {
-    startOverlayBlinking();
+    const id = setInterval(() => {
+      toggleOverlayColor();
+    }, 2000);
 
     return () => {
-      if (intervalID) {
-        clearInterval(intervalID);
-      }
+      clearInterval(id);
     };
-  }, []);
+  }, [isAlert]);
+
+  // useEffect(() => {
+  //   startOverlayBlinking();
+
+  //   return () => {
+  //     if (intervalID) {
+  //       clearInterval(intervalID);
+  //     }
+  //   };
+  // }, []);
   //   }, [intervalID]);
 
   if (isAlert)
     return (
       <>
-        {/* {showBox && ( */}
-        {/* {isAlert && ( */}
         {/* // <Overlay color={boxOverlayColor}> */}
         <PopupBox>
           {/* <img src="bild-url" alt="Bild" /> */}
           <Text>Hier ist dein Text.</Text>
-          <button onClick={toggleBox}>Schließen</button>
+          <button onClick={() => setIsAlert(false)}>Schließen</button>
         </PopupBox>
         {/* // </Overlay> */}
-        {/* )} */}
         <Overlay color={overlayColor} />
       </>
     );
 }
-
-// const App = () => {
-//   return <Alarm />;
-// };
