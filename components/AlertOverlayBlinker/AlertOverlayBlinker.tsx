@@ -9,7 +9,6 @@ interface IProps {
 export function AlertOverlayBlinker({ isAlert, setIsAlert }: IProps) {
   const [overlayColor, setOverlayColor] = useState("darkred");
   // const [boxOverlayColor, setBoxOverlayColor] = useState("midnightblue");
-  // const [intervalID, setIntervalID] = useState<number | null>(null);
   const [intervalID, setIntervalID] = useState<NodeJS.Timeout | null>(null);
 
   function toggleOverlayColor() {
@@ -21,61 +20,23 @@ export function AlertOverlayBlinker({ isAlert, setIsAlert }: IProps) {
     // );
   }
 
-  // function toggleBox() {
-  // setShowBox((prevShowBox) => !prevShowBox);
-  // }
-
-  function toggleOverlay() {
-    // setShowBox((prevShowBox) => !prevShowBox);
-    // toggleBox();
-    // if (intervalID) {
-    //   clearInterval(intervalID);
-    // }
-  }
-
   function playSound() {
     // new Audio('sound.mp3').play();
   }
 
-  // function startOverlayBlinking() {
-  //   playSound();
-
-  //   const id = setInterval(() => {
-  //     toggleOverlayColor();
-  //   }, 2000);
-
-  //   // setIntervalID(id);
-
-  //   return () => {
-  //     clearInterval(id);
-  //   };
-  // }
-  // useEffect(() => {
-  //   if (isAlert) {
-  //     startOverlayBlinking();
-  //   }
-  // }, [isAlert]);
-
   useEffect(() => {
-    const id = setInterval(() => {
-      toggleOverlayColor();
-    }, 2000);
+    if (isAlert) {
+      playSound();
 
-    return () => {
-      clearInterval(id);
-    };
+      const intervalId = setInterval(() => {
+        toggleOverlayColor();
+      }, 2000);
+
+      return () => {
+        clearInterval(intervalId);
+      };
+    }
   }, [isAlert]);
-
-  // useEffect(() => {
-  //   startOverlayBlinking();
-
-  //   return () => {
-  //     if (intervalID) {
-  //       clearInterval(intervalID);
-  //     }
-  //   };
-  // }, []);
-  //   }, [intervalID]);
 
   if (isAlert)
     return (
