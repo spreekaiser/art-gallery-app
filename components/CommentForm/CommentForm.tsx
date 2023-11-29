@@ -35,6 +35,7 @@ export function CommentForm({ title }: IProps) {
       });
     }
 
+    setIsText(false);
     input.value = "";
     input.focus();
   }
