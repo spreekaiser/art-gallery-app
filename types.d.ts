@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface IPiece {
   slug: string;
   artist: string;
@@ -20,4 +22,5 @@ export type ArtPiecesProps = {
   handleToggleFavorite: (slug: string) => void;
   artPiecesInfo: ArtPiecesInfoType;
   isLoading?: boolean;
+  setIsAlert: Dispatch<SetStateAction<boolean>>;
 };

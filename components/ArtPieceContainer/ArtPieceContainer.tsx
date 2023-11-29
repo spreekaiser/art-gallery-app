@@ -11,12 +11,19 @@ export function ArtPieceContainer({
   slug,
   handleToggleFavorite,
   artPiecesInfo,
+  setIsAlert,
 }: Props) {
   return (
     <>
       <div className="favoriteDiv">
         {/* <Link href={`art-pieces/${slug}`}> */}
-        <Image src={imageURL} alt={name} width={360} height={240} />
+        <Image
+          src={imageURL}
+          alt={name}
+          width={360}
+          height={240}
+          onClick={() => setIsAlert(true)}
+        />
         {/* </Link> */}
         <FavoriteButton
           slug={slug}

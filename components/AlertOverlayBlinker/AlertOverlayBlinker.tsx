@@ -6,8 +6,8 @@ interface IProps {
   setIsAlert: Dispatch<SetStateAction<boolean>>;
 }
 
-export function AlertOverlayBlinker({ isAlert }: IProps) {
-  const [showOverlay, setShowOverlay] = useState(false);
+export function AlertOverlayBlinker({ isAlert, setIsAlert }: IProps) {
+  // const [showOverlay, setShowOverlay] = useState(false);
   const [overlayColor, setOverlayColor] = useState("darkred");
   const [showBox, setShowBox] = useState(false);
   //   const [boxOverlayColor, setBoxOverlayColor] = useState("midnightblue");
@@ -67,21 +67,22 @@ export function AlertOverlayBlinker({ isAlert }: IProps) {
   }, []);
   //   }, [intervalID]);
 
-  return (
-    <>
-      {/* {showBox && ( */}
-      {showOverlay && (
-        // <Overlay color={boxOverlayColor}>
+  if (isAlert)
+    return (
+      <>
+        {/* {showBox && ( */}
+        {/* {isAlert && ( */}
+        {/* // <Overlay color={boxOverlayColor}> */}
         <PopupBox>
           {/* <img src="bild-url" alt="Bild" /> */}
           <Text>Hier ist dein Text.</Text>
           <button onClick={toggleBox}>Schließen</button>
         </PopupBox>
-        // </Overlay>
-      )}
-      <Overlay color={overlayColor} />
-    </>
-  );
+        {/* // </Overlay> */}
+        {/* )} */}
+        <Overlay color={overlayColor} />
+      </>
+    );
 }
 
 // const App = () => {

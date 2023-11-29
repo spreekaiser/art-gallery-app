@@ -48,6 +48,7 @@ export default function App({
           handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
           isLoading={isLoading}
+          setIsAlert={setIsAlert}
         />
       </Layout>
     </>
