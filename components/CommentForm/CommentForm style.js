@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledForm = styled.form`
   width: 100%;
@@ -31,11 +31,20 @@ export const StyledButton = styled.button`
 
   transition: all 0.3s ease;
 
-  &:hover {
-    filter: brightness(110%);
-    color: var(--accent-color2);
-    cursor: pointer;
-    box-shadow: 3px 3px 6px #333;
-    transform: scale(1.02) rotate(1deg);
-  }
+  ${({ disabled }) =>
+    disabled
+      ? css`
+          cursor: not-allowed;
+          filter: saturate(50%);
+        `
+      : css`
+          cursor: pointer;
+
+          &:hover {
+            filter: brightness(110%);
+            color: var(--accent-color2);
+            box-shadow: 3px 3px 6px #333;
+            transform: scale(1.02) rotate(1deg);
+          }
+        `}
 `;

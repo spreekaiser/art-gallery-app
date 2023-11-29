@@ -1,3 +1,4 @@
+import { ChangeEvent, useState } from "react";
 import { useImmerLocalStorageState } from "../../lib/hooks/useImmerLocalStorageState";
 import {
   ICommentFormProps as IProps,
@@ -11,6 +12,8 @@ import {
 } from "./CommentForm style";
 
 export function CommentForm({ title }: IProps) {
+  const [isText, setIsText] = useState(false);
+
   const [artPiecesComments, updateArtPiecesComments]: [
     IArtPiecesComments,
     (updater: IArtPiecesComments) => void
@@ -32,8 +35,15 @@ export function CommentForm({ title }: IProps) {
       });
     }
 
+    setIsText(false);
     input.value = "";
     input.focus();
+  }
+
+  function handleInputChange(event: ChangeEvent): void {
+    const textarea = event.target as HTMLTextAreaElement;
+    if (!textarea.value) setIsText(false);
+    else setIsText(true);
   }
 
   return (
@@ -43,8 +53,11 @@ export function CommentForm({ title }: IProps) {
           id="commentInput"
           name="commentInput"
           placeholder="Add a comment... it's free!"
+          onChange={handleInputChange}
         ></StyledTextarea>
-        <StyledButton type="submit">Submit</StyledButton>
+        <StyledButton disabled={!isText} type="submit">
+          Hit it!
+        </StyledButton>
       </StyledFieldset>
     </StyledForm>
   );
