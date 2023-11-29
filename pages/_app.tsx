@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { AppProps } from "next/app";
 import useSWR from "swr";
 import { useImmerLocalStorageState } from "../lib/hooks/useImmerLocalStorageState";
@@ -5,6 +6,7 @@ import { Draft } from "immer";
 import { Layout } from "../components";
 import GlobalStyle from "../styles";
 import { ArtPiecesInfoType } from "../types";
+import { AlertOverlayBlinker } from "../components/AlertOverlayBlinker/AlertOverlayBlinker";
 
 const fetcher = (...args: Parameters<typeof fetch>) =>
   fetch(...args).then((res) => res.json());
@@ -17,6 +19,7 @@ export default function App({
     "https://example-apis.vercel.app/api/art",
     fetcher
   );
+  const [isAlert, setIsAlert] = useState(false);
 
   // userImmerLocalStorageState for isFavorite
   const [artPiecesInfo, updateArtPiecesInfo]: [
@@ -38,6 +41,7 @@ export default function App({
     <>
       <Layout>
         <GlobalStyle />
+        <AlertOverlayBlinker isAlert={isAlert} setIsAlert={setIsAlert} />
         <Component
           {...pageProps}
           pieces={pieces}
