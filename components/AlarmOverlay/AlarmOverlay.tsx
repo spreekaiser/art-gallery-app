@@ -1,34 +1,22 @@
-import { useState, useEffect, Dispatch, SetStateAction } from "react";
+import { useState, useEffect } from "react";
 import { Overlay, PopupBox, Text, StyledButton } from "./AlarmOverlay.style";
 import { IAlarmOverlayProps as IProps } from "./AlarmOverlay.d";
+import useToggleAlarmOverlayOnInterval from "./utils/useToggleAlarmOverlayOnInterval";
 import { playSound } from "./utils/audio";
+import { toggleOverlayColor } from "./utils/otherUtils";
+//// import { playSound } from "./utils/audio";
+//// import { toggleOverlayColor } from "./utils/otherUtils";
 
 export function AlarmOverlay({ isAlarm, setIsAlarm }: IProps) {
-  const [overlayColor, setOverlayColor] = useState("darkred");
-  const [boxOverlayColor, setBoxOverlayColor] = useState("steelblue");
+  //// const [overlayColor, setOverlayColor] = useState("darkred");
+  //// const [boxOverlayColor, setBoxOverlayColor] = useState("steelblue");
 
-  function toggleOverlayColor() {
-    setOverlayColor((prevColor) =>
-      prevColor === "darkred" ? "navy" : "darkred"
-    );
-    setBoxOverlayColor((prevColor) =>
-      prevColor === "crimson" ? "steelblue" : "crimson"
-    );
-  }
-
-  useEffect(() => {
-    if (isAlarm) {
-      playSound();
-
-      const intervalId = setInterval(() => {
-        toggleOverlayColor();
-      }, 1000);
-
-      return () => {
-        clearInterval(intervalId);
-      };
-    }
-  }, [isAlarm]);
+  // useToggleAlarmOverlayOnInterval(isAlarm, playSound, toggleOverlayColor);
+  const [overlayColor, boxOverlayColor] = useToggleAlarmOverlayOnInterval(
+    isAlarm,
+    playSound,
+    toggleOverlayColor
+  );
 
   if (isAlarm)
     return (
