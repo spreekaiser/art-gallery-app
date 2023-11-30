@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export type ArtPieceDetailsProps = {
   imageSource: string;
   name: string;
@@ -6,4 +8,5 @@ export type ArtPieceDetailsProps = {
   colors: string[];
   handleToggleFavorite: (slug: string) => void;
   artPiecesInfo: string[];
+  setIsAlarm: Dispatch<SetStateAction<boolean>>;
 };

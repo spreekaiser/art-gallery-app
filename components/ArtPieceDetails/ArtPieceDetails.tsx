@@ -12,13 +12,20 @@ export function ArtPieceDetails({
   colors,
   handleToggleFavorite,
   artPiecesInfo,
+  setIsAlarm,
 }: Props) {
   return (
     <StyledListItem>
       <h3>{name}</h3>
       <div className="favoriteDiv">
         <StyledImageContainer>
-          <Image src={imageURL} alt={name} width={360} height={240} />
+          <Image
+            src={imageURL}
+            alt={name}
+            width={360}
+            height={240}
+            onClick={() => setIsAlarm(true)}
+          />
           <FavoriteButton
             slug={slug}
             handleToggleFavorite={handleToggleFavorite}

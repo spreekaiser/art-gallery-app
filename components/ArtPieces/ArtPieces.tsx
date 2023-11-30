@@ -6,6 +6,7 @@ export function ArtPieces({
   handleToggleFavorite,
   artPiecesInfo,
   isLoading,
+  setIsAlarm,
 }: Props) {
   //
   if (isLoading) return <LoadingSpinner />;
@@ -20,6 +21,7 @@ export function ArtPieces({
             piece={piece}
             handleToggleFavorite={handleToggleFavorite}
             artPiecesInfo={artPiecesInfo}
+            setIsAlarm={setIsAlarm}
           />
         ))}
       </ul>

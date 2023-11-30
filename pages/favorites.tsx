@@ -6,6 +6,7 @@ export default function FavoritesPage({
   handleToggleFavorite,
   artPiecesInfo,
   isLoading,
+  setIsAlarm,
 }: Props) {
   if (isLoading) return <LoadingSpinner />;
 
@@ -21,6 +22,7 @@ export default function FavoritesPage({
                 piece={piece}
                 handleToggleFavorite={handleToggleFavorite}
                 artPiecesInfo={artPiecesInfo}
+                setIsAlarm={setIsAlarm}
               />
             )
           );

@@ -5,6 +5,7 @@ export default function ArtPiecesPage({
   pieces,
   handleToggleFavorite,
   artPiecesInfo,
+  setIsAlarm,
 }: Props) {
   return (
     <>
@@ -12,6 +13,7 @@ export default function ArtPiecesPage({
         pieces={pieces}
         handleToggleFavorite={handleToggleFavorite}
         artPiecesInfo={artPiecesInfo}
+        setIsAlarm={setIsAlarm}
       />
     </>
   );

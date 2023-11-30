@@ -6,6 +6,7 @@ export default function DetailsPage({
   pieces,
   handleToggleFavorite,
   artPiecesInfo,
+  setIsAlarm,
 }: Props) {
   const router = useRouter();
   const { slug } = router.query;
@@ -22,6 +23,7 @@ export default function DetailsPage({
           {...selectedPiece}
           handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
+          setIsAlarm={setIsAlarm}
         />
       </ul>
     </>
