@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import { IPiece } from "../../types.d";
+import { IPiece } from "../../types/types";
 
 export type ArtPiecePreviewProps = {
   piece: IPiece;

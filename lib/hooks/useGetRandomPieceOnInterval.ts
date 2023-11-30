@@ -1,5 +1,5 @@
 import { SetStateAction, useEffect } from "react";
-import { IPiece } from "../../types.d";
+import { IPiece } from "../../types/types";
 
 export default function useGetRandomPieceOnInterval(
   pieces: IPiece[],

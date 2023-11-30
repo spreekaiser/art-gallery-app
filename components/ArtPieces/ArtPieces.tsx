@@ -1,5 +1,5 @@
 import { ArtPiecePreview, LoadingSpinner } from "..";
-import { ArtPiecesProps as Props } from "../../types.d";
+import { ArtPiecesProps as Props } from "../../types/types";
 
 export function ArtPieces({
   pieces,

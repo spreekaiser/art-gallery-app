@@ -5,7 +5,7 @@ import { useImmerLocalStorageState } from "../lib/hooks/useImmerLocalStorageStat
 import { Draft } from "immer";
 import { Layout } from "../components";
 import GlobalStyle from "../styles";
-import { ArtPiecesInfoType } from "../types";
+import { ArtPiecesInfoType } from "../types/types";
 import { AlarmOverlay } from "../components/AlarmOverlay/AlarmOverlay";
 
 const fetcher = (...args: Parameters<typeof fetch>) =>

@@ -1,5 +1,5 @@
 import { LoadingSpinner, SpotLight } from "../components";
-import { ArtPiecesProps as Props } from "../types";
+import { ArtPiecesProps as Props } from "../types/types";
 
 export default function SpotlightPage({
   pieces,

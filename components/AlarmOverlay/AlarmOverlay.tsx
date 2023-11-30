@@ -1,5 +1,6 @@
 import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import { Overlay, PopupBox, Text, StyledButton } from "./AlarmOverlay.style";
+import soundFile from "../../assets/audio/ahooga.mp3";
 
 interface IProps {
   isAlarm: boolean;
@@ -20,7 +21,7 @@ export function AlarmOverlay({ isAlarm, setIsAlarm }: IProps) {
   }
 
   function playSound() {
-    // new Audio('sound.mp3').play();
+    new Audio(soundFile).play();
   }
 
   useEffect(() => {

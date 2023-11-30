@@ -1,5 +1,5 @@
 import { ArtPieces } from "../../components";
-import { ArtPiecesProps as Props } from "../../types.d";
+import { ArtPiecesProps as Props } from "../../types/types";
 
 export default function ArtPiecesPage({
   pieces,
