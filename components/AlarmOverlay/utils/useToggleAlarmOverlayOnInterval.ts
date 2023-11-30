@@ -15,12 +15,17 @@ export default function useToggleAlarmOverlayOnInterval(
     if (isAlarm) {
       playSound();
 
-      const intervalId = setInterval(() => {
+      const soundInterval = setInterval(() => {
+        playSound();
+      }, 2400);
+
+      const overlayInterval = setInterval(() => {
         toggleOverlayColor(setOverlayColor, setBoxOverlayColor);
-      }, 1000);
+      }, 900);
 
       return () => {
-        clearInterval(intervalId);
+        clearInterval(overlayInterval);
+        clearInterval(soundInterval);
       };
     }
   }, [isAlarm]);
