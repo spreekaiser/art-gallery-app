@@ -8,7 +8,7 @@ import {
   StyledForm,
   StyledFieldset,
   StyledTextarea,
-  StyledButton,
+  SubmitButton,
 } from "./CommentForm style";
 
 export function CommentForm({ title }: IProps) {
@@ -55,9 +55,9 @@ export function CommentForm({ title }: IProps) {
           placeholder="Add a comment... it's free!"
           onChange={handleInputChange}
         ></StyledTextarea>
-        <StyledButton disabled={!isText} type="submit">
+        <SubmitButton disabled={!isText} type="submit">
           Hit it!
-        </StyledButton>
+        </SubmitButton>
       </StyledFieldset>
     </StyledForm>
   );

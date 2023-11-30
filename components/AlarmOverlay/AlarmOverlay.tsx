@@ -1,5 +1,5 @@
 import { useState, useEffect, Dispatch, SetStateAction } from "react";
-import { Overlay, PopupBox, Text } from "./AlarmOverlay.style";
+import { Overlay, PopupBox, Text, StyledButton } from "./AlarmOverlay.style";
 
 interface IProps {
   isAlarm: boolean;
@@ -44,7 +44,9 @@ export function AlarmOverlay({ isAlarm, setIsAlarm }: IProps) {
         <PopupBox color={boxOverlayColor}>
           {/* <img src="bild-url" alt="Angry Watchman" /> */}
           <Text>OK buddy I warned you, S.W.A.T. is on their way!</Text>
-          <button onClick={() => setIsAlarm(false)}>It wasn&apos;t me!</button>
+          <StyledButton onClick={() => setIsAlarm(false)}>
+            It wasn&apos;t me!
+          </StyledButton>
         </PopupBox>
         {/* </Overlay> */}
         <Overlay color={overlayColor} />

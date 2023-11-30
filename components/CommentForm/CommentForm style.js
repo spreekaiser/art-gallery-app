@@ -22,14 +22,19 @@ export const StyledTextarea = styled.textarea`
   border-radius: 5px;
 `;
 
-export const StyledButton = styled.button`
-  background-color: var(--accent-color1);
-  color: var(--main-color2);
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
+export const SubmitButton = styled.button`
+  /* background-color: var(--accent-color1); */
+  /* color: var(--main-color2); */
+  /* font-weight: bold; */
+  /* padding: 0.5rem 1rem; */
+  /* border-radius: 5px; */
 
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
+
+  &:hover {
+    /* filter: unset; */
+    /* cursor: none; */
+  }
 
   ${({ disabled }) =>
     disabled

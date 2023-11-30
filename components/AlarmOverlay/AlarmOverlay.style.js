@@ -39,6 +39,16 @@ export const Text = styled.p`
   text-align: center;
 `;
 
+export const StyledButton = styled.button`
+  &:hover {
+    filter: brightness(110%);
+    color: var(--accent-color2);
+    cursor: pointer;
+    box-shadow: 3px 3px 6px #333;
+    transform: scale(1.02) rotate(1deg);
+  }
+`;
+
 const blink = keyframes`
   0%, 100% {
     opacity: 1;
