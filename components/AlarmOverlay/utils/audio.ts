@@ -1,5 +1,5 @@
-import soundFile from "../../../assets/audio/ahooga.mp3";
+import ahoogaAlarm from "../../../assets/audio/ahooga.mp3";
 
 export function playSound(): void {
-  new Audio(soundFile).play();
+  new Audio(ahoogaAlarm).play();
 }

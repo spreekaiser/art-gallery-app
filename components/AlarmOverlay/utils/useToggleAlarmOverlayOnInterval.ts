@@ -1,6 +1,4 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-// import { playSound } from "../utils/audio";
-// import { toggleOverlayColor } from "../utils/otherUtils";
 
 export default function useToggleAlarmOverlayOnInterval(
   isAlarm: boolean,
@@ -27,6 +25,5 @@ export default function useToggleAlarmOverlayOnInterval(
     }
   }, [isAlarm]);
 
-  //   return [overlayColor, setOverlayColor, boxOverlayColor, setBoxOverlayColor];
   return [overlayColor, boxOverlayColor];
 }

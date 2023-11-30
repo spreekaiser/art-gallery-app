@@ -1,17 +1,10 @@
-import { useState, useEffect } from "react";
 import { Overlay, PopupBox, Text, StyledButton } from "./AlarmOverlay.style";
 import { IAlarmOverlayProps as IProps } from "./AlarmOverlay.d";
 import useToggleAlarmOverlayOnInterval from "./utils/useToggleAlarmOverlayOnInterval";
 import { playSound } from "./utils/audio";
 import { toggleOverlayColor } from "./utils/otherUtils";
-//// import { playSound } from "./utils/audio";
-//// import { toggleOverlayColor } from "./utils/otherUtils";
 
 export function AlarmOverlay({ isAlarm, setIsAlarm }: IProps) {
-  //// const [overlayColor, setOverlayColor] = useState("darkred");
-  //// const [boxOverlayColor, setBoxOverlayColor] = useState("steelblue");
-
-  // useToggleAlarmOverlayOnInterval(isAlarm, playSound, toggleOverlayColor);
   const [overlayColor, boxOverlayColor] = useToggleAlarmOverlayOnInterval(
     isAlarm,
     playSound,
