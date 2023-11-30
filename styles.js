@@ -60,6 +60,24 @@ export default createGlobalStyle`
     color: unset
   }
 
+
+  button {
+    background-color: var(--accent-color1);
+    color: var(--main-color2);
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+
+    transition: all 0.3s ease;
+  }
+  button:hover {
+    filter: brightness(110%);
+    color: var(--accent-color2);
+    cursor: pointer;
+    box-shadow: 3px 3px 6px #333;
+    transform: scale(1.02) rotate(1deg);
+  }
+
   @keyframes MoveUpDown {
     0%,
     100% {

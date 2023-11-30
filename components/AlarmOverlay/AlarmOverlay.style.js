@@ -22,9 +22,9 @@ export const PopupBox = styled.div`
   z-index: 1000;
 
   border: 0.3rem solid ${(props) => props.color};
-  border-radius: 50%;
+  border-radius: 2rem;
   border-bottom-right-radius: 0;
-  height: 50vh;
+  /* height: 50vh; */
   width: 50vw;
 
   display: flex;
@@ -35,7 +35,7 @@ export const PopupBox = styled.div`
 
 // textbox style
 export const Text = styled.p`
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
 `;
 
