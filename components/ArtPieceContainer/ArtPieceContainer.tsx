@@ -11,7 +11,7 @@ export function ArtPieceContainer({
   slug,
   handleToggleFavorite,
   artPiecesInfo,
-  setIsAlert,
+  setIsAlarm,
 }: Props) {
   return (
     <>
@@ -22,7 +22,7 @@ export function ArtPieceContainer({
           alt={name}
           width={360}
           height={240}
-          onClick={() => setIsAlert(true)}
+          onClick={() => setIsAlarm(true)}
         />
         {/* </Link> */}
         <FavoriteButton

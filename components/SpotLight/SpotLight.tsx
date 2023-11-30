@@ -8,7 +8,7 @@ export function SpotLight({
   pieces,
   handleToggleFavorite,
   artPiecesInfo,
-  setIsAlert,
+  setIsAlarm,
 }: Props) {
   const [randomIndex, setRandomIndex] = useState(getRandomNumber(pieces));
 
@@ -22,7 +22,7 @@ export function SpotLight({
           piece={pieces[randomIndex]}
           handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
-          setIsAlert={setIsAlert}
+          setIsAlarm={setIsAlarm}
         ></ArtPiecePreview>
       </ul>
     </>

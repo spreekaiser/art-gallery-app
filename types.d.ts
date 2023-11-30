@@ -22,5 +22,5 @@ export type ArtPiecesProps = {
   handleToggleFavorite: (slug: string) => void;
   artPiecesInfo: ArtPiecesInfoType;
   isLoading?: boolean;
-  setIsAlert: Dispatch<SetStateAction<boolean>>;
+  setIsAlarm: Dispatch<SetStateAction<boolean>>;
 };

@@ -7,5 +7,5 @@ export type ArtPieceContainerProps = {
   slug: string;
   handleToggleFavorite: (slug: string) => void;
   artPiecesInfo: string[];
-  setIsAlert: Dispatch<SetStateAction<boolean>>;
+  setIsAlarm: Dispatch<SetStateAction<boolean>>;
 };

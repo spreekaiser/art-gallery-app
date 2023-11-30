@@ -2,11 +2,11 @@ import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import { Overlay, PopupBox, Text } from "./AlarmOverlay.style";
 
 interface IProps {
-  isAlert: boolean;
-  setIsAlert: Dispatch<SetStateAction<boolean>>;
+  isAlarm: boolean;
+  setIsAlarm: Dispatch<SetStateAction<boolean>>;
 }
 
-export function AlarmOverlay({ isAlert, setIsAlert }: IProps) {
+export function AlarmOverlay({ isAlarm, setIsAlarm }: IProps) {
   const [overlayColor, setOverlayColor] = useState("darkred");
   const [boxOverlayColor, setBoxOverlayColor] = useState("steelblue");
 
@@ -24,7 +24,7 @@ export function AlarmOverlay({ isAlert, setIsAlert }: IProps) {
   }
 
   useEffect(() => {
-    if (isAlert) {
+    if (isAlarm) {
       playSound();
 
       const intervalId = setInterval(() => {
@@ -35,16 +35,16 @@ export function AlarmOverlay({ isAlert, setIsAlert }: IProps) {
         clearInterval(intervalId);
       };
     }
-  }, [isAlert]);
+  }, [isAlarm]);
 
-  if (isAlert)
+  if (isAlarm)
     return (
       <>
         {/* <Overlay color={boxOverlayColor}> */}
         <PopupBox color={boxOverlayColor}>
           {/* <img src="bild-url" alt="Angry Watchman" /> */}
           <Text>OK buddy I warned you, S.W.A.T. is on their way!</Text>
-          <button onClick={() => setIsAlert(false)}>It wasn&apos;t me!</button>
+          <button onClick={() => setIsAlarm(false)}>It wasn&apos;t me!</button>
         </PopupBox>
         {/* </Overlay> */}
         <Overlay color={overlayColor} />

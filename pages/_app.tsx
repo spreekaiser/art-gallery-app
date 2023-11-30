@@ -19,7 +19,7 @@ export default function App({
     "https://example-apis.vercel.app/api/art",
     fetcher
   );
-  const [isAlert, setIsAlert] = useState(false);
+  const [isAlarm, setIsAlarm] = useState(false);
 
   // userImmerLocalStorageState for isFavorite
   const [artPiecesInfo, updateArtPiecesInfo]: [
@@ -41,14 +41,14 @@ export default function App({
     <>
       <Layout>
         <GlobalStyle />
-        <AlarmOverlay isAlert={isAlert} setIsAlert={setIsAlert} />
+        <AlarmOverlay isAlarm={isAlarm} setIsAlarm={setIsAlarm} />
         <Component
           {...pageProps}
           pieces={pieces}
           handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
           isLoading={isLoading}
-          setIsAlert={setIsAlert}
+          setIsAlarm={setIsAlarm}
         />
       </Layout>
     </>
