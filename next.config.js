@@ -5,10 +5,20 @@ const nextConfig = {
   },
   reactStrictMode: true,
   webpack(config) {
+    // svg files
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
       use: ["@svgr/webpack"],
+    });
+
+    // mp3 files
+    config.module.rules.push({
+      test: /\.mp3$/,
+      type: "asset/resource",
+      generator: {
+        filename: "static/audio/[name][ext]",
+      },
     });
 
     return config;
