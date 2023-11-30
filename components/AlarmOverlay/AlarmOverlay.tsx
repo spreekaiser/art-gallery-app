@@ -1,7 +1,7 @@
 import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import { Overlay, PopupBox, Text, StyledButton } from "./AlarmOverlay.style";
 import { IAlarmOverlayProps as IProps } from "./AlarmOverlay.d";
-import soundFile from "../../assets/audio/ahooga.mp3";
+import { playSound } from "./utils/audio";
 
 export function AlarmOverlay({ isAlarm, setIsAlarm }: IProps) {
   const [overlayColor, setOverlayColor] = useState("darkred");
@@ -16,17 +16,13 @@ export function AlarmOverlay({ isAlarm, setIsAlarm }: IProps) {
     );
   }
 
-  function playSound() {
-    new Audio(soundFile).play();
-  }
-
   useEffect(() => {
     if (isAlarm) {
       playSound();
 
       const intervalId = setInterval(() => {
         toggleOverlayColor();
-      }, 2000);
+      }, 1000);
 
       return () => {
         clearInterval(intervalId);
