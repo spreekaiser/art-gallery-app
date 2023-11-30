@@ -1,12 +1,12 @@
 import { useState, useEffect, Dispatch, SetStateAction } from "react";
-import { Overlay, PopupBox, Text } from "./AlertOverlayBlinker.style";
+import { Overlay, PopupBox, Text } from "./AlarmOverlay.style";
 
 interface IProps {
   isAlert: boolean;
   setIsAlert: Dispatch<SetStateAction<boolean>>;
 }
 
-export function AlertOverlayBlinker({ isAlert, setIsAlert }: IProps) {
+export function AlarmOverlay({ isAlert, setIsAlert }: IProps) {
   const [overlayColor, setOverlayColor] = useState("darkred");
   const [boxOverlayColor, setBoxOverlayColor] = useState("steelblue");
 

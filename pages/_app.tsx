@@ -6,7 +6,7 @@ import { Draft } from "immer";
 import { Layout } from "../components";
 import GlobalStyle from "../styles";
 import { ArtPiecesInfoType } from "../types";
-import { AlertOverlayBlinker } from "../components/AlertOverlayBlinker/AlertOverlayBlinker";
+import { AlarmOverlay } from "../components/AlarmOverlay/AlarmOverlay";
 
 const fetcher = (...args: Parameters<typeof fetch>) =>
   fetch(...args).then((res) => res.json());
@@ -41,7 +41,7 @@ export default function App({
     <>
       <Layout>
         <GlobalStyle />
-        <AlertOverlayBlinker isAlert={isAlert} setIsAlert={setIsAlert} />
+        <AlarmOverlay isAlert={isAlert} setIsAlert={setIsAlert} />
         <Component
           {...pageProps}
           pieces={pieces}
