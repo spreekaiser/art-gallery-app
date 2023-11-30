@@ -3,10 +3,9 @@ import type { AppProps } from "next/app";
 import useSWR from "swr";
 import { useImmerLocalStorageState } from "../lib/hooks/useImmerLocalStorageState";
 import { Draft } from "immer";
-import { Layout } from "../components";
+import { Layout, AlarmOverlay } from "../components";
 import GlobalStyle from "../styles";
 import { ArtPiecesInfoType } from "../types/types";
-import { AlarmOverlay } from "../components/AlarmOverlay/AlarmOverlay";
 
 const fetcher = (...args: Parameters<typeof fetch>) =>
   fetch(...args).then((res) => res.json());

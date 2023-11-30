@@ -15,3 +15,5 @@ export { ArtPieceDetails } from "./ArtPieceDetails/ArtPieceDetails";
 export { CommentForm } from "./CommentForm/CommentForm";
 export { Comments } from "./Comments/Comments";
 export { ColorPalette } from "./ColorPalette/ColorPalette";
+
+export { AlarmOverlay } from "./AlarmOverlay/AlarmOverlay";
