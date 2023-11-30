@@ -1,11 +1,7 @@
 import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import { Overlay, PopupBox, Text, StyledButton } from "./AlarmOverlay.style";
+import { IAlarmOverlayProps as IProps } from "./AlarmOverlay.d";
 import soundFile from "../../assets/audio/ahooga.mp3";
-
-interface IProps {
-  isAlarm: boolean;
-  setIsAlarm: Dispatch<SetStateAction<boolean>>;
-}
 
 export function AlarmOverlay({ isAlarm, setIsAlarm }: IProps) {
   const [overlayColor, setOverlayColor] = useState("darkred");
