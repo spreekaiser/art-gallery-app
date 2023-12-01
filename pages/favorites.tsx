@@ -1,11 +1,12 @@
 import { ArtPiecePreview, LoadingSpinner } from "../components";
-import { ArtPiecesProps as Props } from "../types";
+import { ArtPiecesProps as Props } from "../types/types";
 
 export default function FavoritesPage({
   pieces,
   handleToggleFavorite,
   artPiecesInfo,
   isLoading,
+  setIsAlarm,
 }: Props) {
   if (isLoading) return <LoadingSpinner />;
 
@@ -21,6 +22,7 @@ export default function FavoritesPage({
                 piece={piece}
                 handleToggleFavorite={handleToggleFavorite}
                 artPiecesInfo={artPiecesInfo}
+                setIsAlarm={setIsAlarm}
               />
             )
           );

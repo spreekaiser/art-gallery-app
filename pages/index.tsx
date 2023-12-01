@@ -1,11 +1,12 @@
 import { LoadingSpinner, SpotLight } from "../components";
-import { ArtPiecesProps as Props } from "../types";
+import { ArtPiecesProps as Props } from "../types/types";
 
 export default function SpotlightPage({
   pieces,
   handleToggleFavorite,
   artPiecesInfo,
   isLoading,
+  setIsAlarm,
 }: Props) {
   if (isLoading) return <LoadingSpinner />;
 
@@ -15,6 +16,7 @@ export default function SpotlightPage({
         pieces={pieces}
         handleToggleFavorite={handleToggleFavorite}
         artPiecesInfo={artPiecesInfo}
+        setIsAlarm={setIsAlarm}
       />
     </>
   );

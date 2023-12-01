@@ -7,7 +7,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
 
     //! for build only
-    /* outline: 1px dashed salmon; */
+    outline: 1px dashed salmon;
   }
 
   :root {
@@ -48,10 +48,25 @@ export default createGlobalStyle`
     border-radius: 5px;
     box-shadow: 10px 10px 20px #333;
   }
+  img:hover {
+    cursor: grab;
+  }
+  img:active {
+    cursor: grabbing;
+  }
 
   a {
     text-decoration: none;
     color: unset
+  }
+
+  button {
+    background-color: var(--accent-color1);
+    color: var(--main-color2);
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
   }
 
   @keyframes MoveUpDown {

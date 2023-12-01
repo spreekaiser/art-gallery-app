@@ -6,6 +6,7 @@ export function ArtPiecePreview({
   piece,
   handleToggleFavorite,
   artPiecesInfo,
+  setIsAlarm,
 }: Props) {
   return (
     <StyledListItem>
@@ -14,6 +15,7 @@ export function ArtPiecePreview({
         {...piece}
         handleToggleFavorite={handleToggleFavorite}
         artPiecesInfo={artPiecesInfo}
+        setIsAlarm={setIsAlarm}
       ></ArtPieceContainer>
     </StyledListItem>
   );

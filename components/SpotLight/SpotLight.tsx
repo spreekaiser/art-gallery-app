@@ -2,12 +2,13 @@ import { useState } from "react";
 import { ArtPiecePreview } from "..";
 import { getRandomNumber } from "../../lib/utils";
 import useGetRandomPieceOnInterval from "../../lib/hooks/useGetRandomPieceOnInterval";
-import { ArtPiecesProps as Props } from "../../types.d";
+import { ArtPiecesProps as Props } from "../../types/types";
 
 export function SpotLight({
   pieces,
   handleToggleFavorite,
   artPiecesInfo,
+  setIsAlarm,
 }: Props) {
   const [randomIndex, setRandomIndex] = useState(getRandomNumber(pieces));
 
@@ -21,6 +22,7 @@ export function SpotLight({
           piece={pieces[randomIndex]}
           handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
+          setIsAlarm={setIsAlarm}
         ></ArtPiecePreview>
       </ul>
     </>

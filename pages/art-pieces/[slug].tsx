@@ -1,11 +1,12 @@
 import { useRouter } from "next/router";
 import { ArtPieceDetails } from "../../components";
-import { ArtPiecesProps as Props } from "../../types.d";
+import { ArtPiecesProps as Props } from "../../types/types";
 
 export default function DetailsPage({
   pieces,
   handleToggleFavorite,
   artPiecesInfo,
+  setIsAlarm,
 }: Props) {
   const router = useRouter();
   const { slug } = router.query;
@@ -22,6 +23,7 @@ export default function DetailsPage({
           {...selectedPiece}
           handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
+          setIsAlarm={setIsAlarm}
         />
       </ul>
     </>
