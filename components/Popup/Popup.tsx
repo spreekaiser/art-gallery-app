@@ -1,14 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { IPopupProps as IProps } from "./Popup.d";
 import { PopupBox, StyledButton, Text } from "./Popup.style";
-
-interface IProps {
-  trigger: "load" | "hover" | "touch";
-  delay: number;
-  content: string;
-  buttonText: string;
-  watchman: "sleepy" | "concerned" | "angry";
-  // color?: string;
-}
 
 export function Popup({
   trigger,
