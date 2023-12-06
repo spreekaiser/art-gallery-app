@@ -17,3 +17,4 @@ export { Comments } from "./Comments/Comments";
 export { ColorPalette } from "./ColorPalette/ColorPalette";
 
 export { AlarmOverlay } from "./AlarmOverlay/AlarmOverlay";
+export { Popup } from "./Popup/Popup";
