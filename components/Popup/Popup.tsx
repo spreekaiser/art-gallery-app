@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 interface IProps {
-  trigger: string;
+  trigger: "load" | "hover" | "touch";
   delay: number;
   content: string;
   buttonText: string;
-  watchman: "sleepy" | "angry" | "concerned";
+  watchman: "sleepy" | "concerned" | "angry";
+  // color?: string;
 }
 
 export function Popup({
@@ -33,13 +34,11 @@ export function Popup({
   return (
     <>
       {isOpen && (
-        <PopupBox className="popup">
-          {/* <div className="popup-content"> */}
+        <PopupBox>
           <Text>{content}</Text>
           <StyledButton onClick={() => setIsOpen(false)}>
             {buttonText}
           </StyledButton>
-          {/* </div> */}
         </PopupBox>
       )}
     </>
@@ -58,7 +57,6 @@ export const PopupBox = styled.div`
   border: 0.3rem solid ${(props) => props.color};
   border-radius: 2rem;
   border-bottom-right-radius: 0;
-  /* height: 50vh; */
   width: 50vw;
 
   display: flex;
@@ -67,7 +65,6 @@ export const PopupBox = styled.div`
   justify-content: center;
 `;
 
-// textbox style
 export const Text = styled.p`
   font-size: 1.5rem;
   text-align: center;
