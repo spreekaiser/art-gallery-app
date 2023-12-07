@@ -25,6 +25,7 @@ export const PopupBox = styled.div`
   border-radius: 2rem;
   border-bottom-right-radius: 0;
   width: 75vw;
+  max-width: 50rem;
 
   display: flex;
   flex-direction: column;
