@@ -20,7 +20,7 @@ export default createGlobalStyle`
   body {
     margin: 0;
     font-family: system-ui;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     background-color: var(--main-color1);
   }
 
@@ -57,7 +57,7 @@ export default createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: unset
+    color: var(--main-color2);
   }
 
   button {
