@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 import useSWR from "swr";
 import { useImmerLocalStorageState } from "../lib/hooks/useImmerLocalStorageState";
 import { Draft } from "immer";
-import { Layout, AlarmOverlay } from "../components";
+import { Layout, AlarmOverlay, Popup } from "../components";
 import GlobalStyle from "../styles";
 import { ArtPiecesInfoType } from "../types/types";
 
@@ -40,6 +40,13 @@ export default function App({
     <>
       <Layout>
         <GlobalStyle />
+        <Popup
+          trigger="load"
+          delay={1000}
+          content="Hey! Just DON'T TOUCH any of the precious art pieces, alright?!"
+          watchman="sleepy"
+          buttonText="I promise! 🤥"
+        />
         <AlarmOverlay isAlarm={isAlarm} setIsAlarm={setIsAlarm} />
         <Component
           {...pageProps}
