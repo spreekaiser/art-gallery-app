@@ -43,7 +43,7 @@ export default function App({
         <Popup
           trigger="load"
           delay={1000}
-          content="Hey! Just DON'T TOUCH any of the precious art pieces, alright?!"
+          content="Hey! Look, DON'T TOUCH, alright?!"
           watchman="sleepy"
           buttonText="I promise! 🤥"
         />

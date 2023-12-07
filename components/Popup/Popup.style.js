@@ -12,7 +12,8 @@ export const PopupBox = styled.div`
   border: 0.3rem solid ${(props) => props.color};
   border-radius: 2rem;
   border-bottom-right-radius: 0;
-  width: 50vw;
+  width: 75vw;
+  max-width: 50rem;
 
   display: flex;
   flex-direction: column;
@@ -23,6 +24,7 @@ export const PopupBox = styled.div`
 export const Text = styled.p`
   font-size: 1.5rem;
   text-align: center;
+  margin-top: 0;
 `;
 
 export const StyledButton = styled.button`
