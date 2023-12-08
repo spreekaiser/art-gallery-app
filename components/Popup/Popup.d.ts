@@ -1,8 +1,10 @@
 export interface IPopupProps {
   trigger: "load" | "hover" | "touch";
-  // delay: number;
-  // content: string;
-  // buttonText: string;
-  // watchman: "sleepy" | "concerned" | "angry";
-  // color?: string;
+}
+
+export interface IPopupData {
+  content: JSX.Element;
+  delay: number;
+  watchman: string;
+  button: string;
 }

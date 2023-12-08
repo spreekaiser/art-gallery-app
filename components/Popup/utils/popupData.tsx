@@ -1,9 +1,4 @@
-interface IPopupData {
-  content: JSX.Element;
-  delay: number;
-  watchman: string;
-  button: string;
-}
+import { IPopupData } from "../Popup.d";
 
 export const popupData: { [key: string]: IPopupData } = {
   load: {
