@@ -2,7 +2,13 @@ import { IPopupData } from "../Popup.d";
 
 export const popupData: { [key: string]: IPopupData } = {
   load: {
-    content: <p>Hey! Look, DON&apos;T TOUCH, alright?!</p>,
+    content: (
+      <p>
+        Hey!
+        <br />
+        Look, DON&apos;T TOUCH, alright?!
+      </p>
+    ),
     delay: 1000,
     watchman: "sleepy",
     button: "I promise! 🤥",
@@ -14,7 +20,7 @@ export const popupData: { [key: string]: IPopupData } = {
     button: "Huh?",
   },
   click: {
-    content: <div></div>,
+    content: <p>OK buddy I warned you, S.W.A.T. is on their way!</p>,
     delay: 1000,
     watchman: "pissed",
     button: "It wasn't me!",
