@@ -1,6 +1,6 @@
-import { IPopupData } from "../Popup.d";
+import { IPopupContents } from "../Popup.d";
 
-export const popupData: { [key: string]: IPopupData } = {
+export const popupData: IPopupContents = {
   load: {
     content: (
       <p>
