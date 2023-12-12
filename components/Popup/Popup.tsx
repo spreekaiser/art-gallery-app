@@ -10,7 +10,8 @@ export function Popup({ trigger }: IProps) {
   const [isOpen, setIsOpen] = useState(false);
   const { content, button } = popupContents[trigger];
 
-  useOpenPopupOnInterval(popupContents, trigger, setIsOpen);
+  // useOpenPopupOnInterval(popupContents, trigger, setIsOpen);
+  useOpenPopupOnInterval(popupContents[trigger], setIsOpen);
 
   return (
     <>

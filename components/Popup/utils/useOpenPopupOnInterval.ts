@@ -1,16 +1,20 @@
 import { Dispatch, SetStateAction, useEffect } from "react";
-import { IPopupContents, TriggerType } from "../Popup.d";
+import { IPopupContents, IPopupData, TriggerType } from "../Popup.d";
 
 export default function useOpenPopupOnInterval(
-  popupContents: IPopupContents,
-  trigger: TriggerType,
+  //   popupContent: IPopupContents,
+  popupContent: IPopupData,
+  //   trigger: TriggerType,
   setIsOpen: Dispatch<SetStateAction<boolean>>
 ) {
   useEffect(() => {
-    if (popupContents[trigger]) {
+    // if (popupContents[trigger]) {
+    if (popupContent) {
+      //   const { delay } = popupContents[trigger];
+      const { delay } = popupContent;
       const timeout = setTimeout(() => {
         setIsOpen(true);
-      }, popupContents[trigger].delay || 0);
+      }, delay);
 
       return () => {
         clearTimeout(timeout);
