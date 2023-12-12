@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useEffect } from "react";
 import { IPopupData } from "../Popup.d";
 
-export default function useOpenPopupOnInterval(
+export default function useSetPopupOpenOnInterval(
   popupContent: IPopupData,
   setIsOpen: Dispatch<SetStateAction<boolean>>
 ) {
