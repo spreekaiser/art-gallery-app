@@ -1,8 +1,16 @@
+export type TriggerType = "load" | "hover" | "touch";
+
 export interface IPopupProps {
-  trigger: "load" | "hover" | "touch";
+  trigger: TriggerType;
+}
+
+export interface IPopupData {
+  content: JSX.Element;
   delay: number;
-  content: string;
-  buttonText: string;
-  watchman: "sleepy" | "concerned" | "angry";
-  // color?: string;
+  watchman: string;
+  button: string;
+}
+
+export interface IPopupContents {
+  [key: string]: IPopupData;
 }

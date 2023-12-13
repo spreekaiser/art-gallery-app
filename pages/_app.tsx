@@ -40,13 +40,7 @@ export default function App({
     <>
       <Layout>
         <GlobalStyle />
-        <Popup
-          trigger="load"
-          delay={1000}
-          content="Hey! Look, DON'T TOUCH, alright?!"
-          watchman="sleepy"
-          buttonText="I promise! 🤥"
-        />
+        <Popup trigger="load" />
         <AlarmOverlay isAlarm={isAlarm} setIsAlarm={setIsAlarm} />
         <Component
           {...pageProps}
