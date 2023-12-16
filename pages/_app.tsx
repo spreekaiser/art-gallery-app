@@ -14,14 +14,16 @@ export default function App({
   Component,
   pageProps: { session, ...pageProps },
 }: AppProps) {
-  const { data: exampleData, isLoading: isLoadingExampleData } = useSWR(
-    "https://example-apis.vercel.app/api/art",
-    fetcher
-  );
-  const { data: carloData, isLoading: isLoadingCarloData } = useSWR(
-    "https://carlo-api.vercel.app",
-    fetcher
-  );
+  const {
+    data: exampleData,
+    isLoading: isLoadingExampleData,
+    error: exampleDataError,
+  } = useSWR("https://example-apis.vercel.app/api/art", fetcher);
+  const {
+    data: carloData,
+    isLoading: isLoadingCarloData,
+    error: carloDataError,
+  } = useSWR("https://carlo-api.vercel.app", fetcher);
 
   const pieces = [...(exampleData || []), ...(carloData || [])];
   const isLoading = isLoadingExampleData || isLoadingCarloData;
@@ -34,6 +36,14 @@ export default function App({
     (updater: string[] | ((draft: Draft<ArtPiecesInfoType>) => void)) => void
   ] = useImmerLocalStorageState("art-pieces-favorites", { defaultValue: [] });
 
+  if (exampleDataError) {
+    const error = exampleDataError;
+    return <div>Error fetching the example data: {error.message}</div>;
+  }
+  if (carloDataError) {
+    const error = carloDataError;
+    return <div>Error fetching the example data: {error.message}</div>;
+  }
   if (!pieces.length) return;
 
   function handleToggleFavorite(slug: string): void {
