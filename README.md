@@ -16,7 +16,7 @@ A Next.js collaboration master piece created by the infamous [spreekaiser](https
 - [x] List your favorite art pieces
 - [x] Write comments for art pieces
 - [x] Comments and favorites persist in the browser (local storage)
-- [ ] See the color palette of each art piece
+- [x] See the color palette of each art piece
 
 ## Tech Stack
 
@@ -34,7 +34,7 @@ Because we can! 💅
 
 - [x] Implement barrel exports for components
 - [x] Implement TypeScript
-- [ ] Add color palette to each art piece
+- [x] Add color palette to each art piece
 - [ ] Create lots of unit and integration tests
-- [ ] Implement state management (i.g. useContext or Redux)
+- [ ] Implement state management (e.g. useContext or Redux)
 - [ ] World domination
