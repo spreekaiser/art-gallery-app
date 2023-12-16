@@ -3,11 +3,11 @@ import { IPopupContents } from "../Popup.d";
 export const popupData: IPopupContents = {
   load: {
     content: (
-      <p>
+      <span>
         Hey!
         <br />
         Look, DON&apos;T TOUCH, alright?!
-      </p>
+      </span>
     ),
     delay: 1000,
     watchman: "sleepy",
