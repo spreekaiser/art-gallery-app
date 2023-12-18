@@ -9,7 +9,7 @@ export const PopupBox = styled.div`
   background-color: var(--main-color2);
   z-index: 1000;
 
-  border: 0.3rem solid ${(props) => props.color};
+  border: 0.3rem solid ${(props) => props.color || "black"};
   border-radius: 2rem;
   border-bottom-right-radius: 0;
   width: 75vw;
