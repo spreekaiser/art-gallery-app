@@ -21,7 +21,7 @@ export const popupData: IPopupContents = {
   },
   click: {
     content: <span>OK buddy I warned you, S.W.A.T. is on their way!</span>,
-    delay: 1000,
+    delay: 2000,
     watchman: "pissed",
     button: "It wasn't me!",
   },

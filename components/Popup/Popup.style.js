@@ -28,6 +28,8 @@ export const Text = styled.p`
 `;
 
 export const StyledButton = styled.button`
+  margin-top: 1rem;
+
   &:hover {
     filter: brightness(110%);
     color: var(--accent-color2);

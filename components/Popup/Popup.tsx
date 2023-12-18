@@ -20,8 +20,8 @@ export function Popup({ trigger }: IProps) {
           <Text>{content}</Text>
           <Image
             src={`/images/watchman-${watchman}.gif`}
-            width={192}
             height={256}
+            width={192}
             alt={`A very ${watchman} watchman`}
           />
           <StyledButton onClick={() => setIsOpen(false)}>{button}</StyledButton>
