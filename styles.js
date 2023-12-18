@@ -6,8 +6,8 @@ export default createGlobalStyle`
   *::after {
     box-sizing: border-box;
 
-    //! for build only
-    outline: 1px dashed salmon;
+    //! for dev only
+    /* outline: 1px dashed salmon; */
   }
 
   :root {

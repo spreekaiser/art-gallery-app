@@ -3,6 +3,7 @@ import { ColorPalette, CommentForm, Comments, FavoriteButton } from "../";
 import { StyledListItem } from "../ArtPiecePreview/ArtPiecePreview.style";
 import { StyledImageContainer } from "../ArtPieceDetails/ArtPieceDetails.style";
 import { ArtPieceDetailsProps as Props } from "./ArtPieceDetails.d";
+import { StyledImage } from "../ArtPieceContainer/ArtPieceContainer.style";
 
 export function ArtPieceDetails({
   imageSource: imageURL,
@@ -19,7 +20,7 @@ export function ArtPieceDetails({
       <h3>{name}</h3>
       <div className="favoriteDiv">
         <StyledImageContainer>
-          <Image
+          <StyledImage
             src={imageURL}
             alt={name}
             width={360}
