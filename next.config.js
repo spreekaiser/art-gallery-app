@@ -24,10 +24,7 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: [
-      "example-apis.vercel.app",
-      // "w3.org",
-    ],
+    domains: ["example-apis.vercel.app", "carlo-api.vercel.app"],
   },
 };
 
