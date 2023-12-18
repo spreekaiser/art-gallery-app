@@ -22,7 +22,7 @@ export function Popup({ trigger }: IProps) {
             src={`/images/watchman-${watchman}.gif`}
             width={192}
             height={256}
-            alt={`A ${watchman} watchman`}
+            alt={`A very ${watchman} watchman`}
           />
           <StyledButton onClick={() => setIsOpen(false)}>{button}</StyledButton>
         </PopupBox>
