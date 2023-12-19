@@ -9,7 +9,7 @@ export const PopupBox = styled.div`
   background-color: var(--main-color2);
   z-index: 1000;
 
-  border: 0.3rem solid ${(props) => props.color};
+  border: 0.3rem solid ${(props) => props.color || "black"};
   border-radius: 2rem;
   border-bottom-right-radius: 0;
   width: 75vw;
@@ -28,6 +28,8 @@ export const Text = styled.p`
 `;
 
 export const StyledButton = styled.button`
+  margin-top: 1rem;
+
   &:hover {
     filter: brightness(110%);
     color: var(--accent-color2);

@@ -1,8 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
 import { FavoriteButton } from "..";
 import { ArtPieceContainerProps as Props } from "./ArtPieceContainer.d";
-import styled from "styled-components";
+import { StyledImage, StyledLink } from "./ArtPieceContainer.style";
 
 export function ArtPieceContainer({
   artist,
@@ -16,15 +14,13 @@ export function ArtPieceContainer({
   return (
     <>
       <div className="favoriteDiv">
-        {/* <Link href={`art-pieces/${slug}`}> */}
-        <Image
+        <StyledImage
           src={imageURL}
           alt={name}
           width={360}
           height={240}
           onClick={() => setIsAlarm(true)}
         />
-        {/* </Link> */}
         <FavoriteButton
           slug={slug}
           handleToggleFavorite={handleToggleFavorite}
@@ -36,12 +32,3 @@ export function ArtPieceContainer({
     </>
   );
 }
-
-const StyledLink = styled(Link)`
-  margin-bottom: 1rem;
-
-  &:hover {
-    color: var(--main-color2);
-    font-weight: bold;
-  }
-`;

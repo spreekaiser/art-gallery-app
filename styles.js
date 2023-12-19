@@ -6,7 +6,7 @@ export default createGlobalStyle`
   *::after {
     box-sizing: border-box;
 
-    //! for build only
+    //! for dev only
     /* outline: 1px dashed salmon; */
   }
 
@@ -43,16 +43,6 @@ export default createGlobalStyle`
 
   img {
     object-fit: cover;
-    border: 20px outset brown;
-    border: 20px outset darkgoldenrod;
-    border-radius: 5px;
-    box-shadow: 10px 10px 20px #333;
-  }
-  img:hover {
-    cursor: grab;
-  }
-  img:active {
-    cursor: grabbing;
   }
 
   a {

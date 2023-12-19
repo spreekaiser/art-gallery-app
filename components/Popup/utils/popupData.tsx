@@ -6,10 +6,10 @@ export const popupData: IPopupContents = {
       <span>
         Hey!
         <br />
-        Look, DON&apos;T TOUCH, alright?!
+        Don&apos;t touch ANY art pieces, alright?!
       </span>
     ),
-    delay: 1000,
+    delay: 2000,
     watchman: "sleepy",
     button: "I promise! 🤥",
   },
@@ -20,8 +20,8 @@ export const popupData: IPopupContents = {
     button: "Huh?",
   },
   click: {
-    content: <p>OK buddy I warned you, S.W.A.T. is on their way!</p>,
-    delay: 1000,
+    content: <span>OK buddy I warned you, S.W.A.T. is on their way!</span>,
+    delay: 2000,
     watchman: "pissed",
     button: "It wasn't me!",
   },
