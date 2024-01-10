@@ -1,13 +1,5 @@
 import styled from "styled-components";
-
-interface IArrowButton {
-  children: string;
-  width?: number;
-}
-
-interface IButton {
-  width?: number;
-}
+import { IArrowButton, IButton } from "./ArrowButton.d";
 
 export function ArrowButton({ children, width }: IArrowButton) {
   return (
