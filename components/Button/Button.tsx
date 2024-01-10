@@ -2,11 +2,16 @@ import styled from "styled-components";
 
 interface IButton {
   children: string;
+  buttonWidth?: number;
 }
 
-export function Button({ children }: IButton) {
+interface IArrowButton {
+  buttonWidth?: number;
+}
+
+export function Button({ children, buttonWidth }: IButton) {
   return (
-    <ArrowButton className="learn-more">
+    <ArrowButton buttonWidth={buttonWidth} className="learn-more">
       <Circle className="circle" aria-hidden="true">
         <ArrowIcon className="icon arrow"></ArrowIcon>
       </Circle>
@@ -15,7 +20,7 @@ export function Button({ children }: IButton) {
   );
 }
 
-const ArrowButton = styled.button`
+const ArrowButton = styled.button<IArrowButton>`
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -28,7 +33,7 @@ const ArrowButton = styled.button`
   font-size: inherit;
   font-family: inherit;
 
-  width: 12rem;
+  width: ${(props) => props.buttonWidth + "rem" || "auto"};
   height: auto;
 
   &:hover .circle {
@@ -36,12 +41,14 @@ const ArrowButton = styled.button`
   }
 
   &:hover .circle .icon.arrow {
-    background: #fff;
+    /* background: #fff; */
+    background: var(--main-color2);
     transform: translate(1rem, 0);
   }
 
   &:hover .button-text {
-    color: #fff;
+    /* color: #fff; */
+    color: var(--main-color2);
   }
 `;
 
@@ -52,7 +59,8 @@ const Circle = styled.span`
   margin: 0;
   width: 3rem;
   height: 3rem;
-  background: #282936;
+  /* background: #282936; */
+  background: var(--accent-color1);
   border-radius: 1.625rem;
 `;
 
@@ -63,6 +71,7 @@ const ArrowIcon = styled.span`
   bottom: 0;
   margin: auto;
   background: #fff;
+  /* background: var(--accent-color1); */
 
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   left: 0.625rem;
@@ -77,8 +86,10 @@ const ArrowIcon = styled.span`
     right: 0.0625rem;
     width: 0.625rem;
     height: 0.625rem;
-    border-top: 0.125rem solid #fff;
-    border-right: 0.125rem solid #fff;
+    /* border-top: 0.125rem solid #fff; */
+    /* border-right: 0.125rem solid #fff; */
+    border-top: 0.125rem solid var(--main-color2);
+    border-right: 0.125rem solid var(--main-color2);
     transform: rotate(45deg);
   }
 `;
@@ -92,7 +103,8 @@ const ButtonText = styled.span`
   bottom: 0;
   padding: 0.75rem 0;
   margin: 0 0 0 1.85rem;
-  color: #282936;
+  /* color: #282936; */
+  color: var(--main-color2);
   font-weight: 700;
   line-height: 1.6;
   text-align: center;

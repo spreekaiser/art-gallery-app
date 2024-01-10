@@ -30,7 +30,7 @@ export function ArtPieceContainer({
       </div>
       <h4>by {artist}</h4>
       <StyledLink href={`art-pieces/${slug}`}>Take a closer look</StyledLink>
-      <Button>Test</Button>
+      <Button buttonWidth={16}>Take a closer look</Button>
     </>
   );
 }
