@@ -1,5 +1,5 @@
 import { FavoriteButton } from "..";
-import { Button } from "..";
+import { ArrowButton } from "..";
 import { ArtPieceContainerProps as Props } from "./ArtPieceContainer.d";
 import { StyledImage, StyledLink } from "./ArtPieceContainer.style";
 
@@ -29,8 +29,9 @@ export function ArtPieceContainer({
         />
       </div>
       <h4>by {artist}</h4>
-      <StyledLink href={`art-pieces/${slug}`}>Take a closer look</StyledLink>
-      <Button buttonWidth={16}>Take a closer look</Button>
+      <StyledLink href={`art-pieces/${slug}`}>
+        <ArrowButton width={16}>Take a closer look</ArrowButton>
+      </StyledLink>
     </>
   );
 }

@@ -18,4 +18,4 @@ export { ColorPalette } from "./ColorPalette/ColorPalette";
 
 export { AlarmOverlay } from "./AlarmOverlay/AlarmOverlay";
 export { Popup } from "./Popup/Popup";
-export { Button } from "./Button/Button";
+export { ArrowButton } from "./ArrowButton/ArrowButton";
