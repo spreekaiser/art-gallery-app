@@ -1,5 +1,4 @@
-import { FavoriteButton } from "..";
-import { ArrowButton } from "..";
+import { FavoriteButton, ArrowButton } from "..";
 import { ArtPieceContainerProps as Props } from "./ArtPieceContainer.d";
 import { StyledImage, StyledLink } from "./ArtPieceContainer.style";
 
