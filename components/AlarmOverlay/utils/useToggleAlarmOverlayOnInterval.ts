@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 export default function useToggleAlarmOverlayOnInterval(
   isAlarm: boolean,
-  playSound: () => void,
+  playAhoogaAlarm: () => void,
   toggleOverlayColor: (
     setOverlayColor: Dispatch<SetStateAction<string>>,
     setBoxOverlayColor: Dispatch<SetStateAction<string>>
@@ -13,10 +13,10 @@ export default function useToggleAlarmOverlayOnInterval(
 
   useEffect(() => {
     if (isAlarm) {
-      playSound();
+      playAhoogaAlarm();
 
       const soundInterval = setInterval(() => {
-        playSound();
+        playAhoogaAlarm();
       }, 2400);
 
       const overlayInterval = setInterval(() => {

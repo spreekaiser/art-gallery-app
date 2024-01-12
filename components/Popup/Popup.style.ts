@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { IPopupBox } from "./Popup.d";
 
-export const PopupBox = styled.div`
+export const PopupBox = styled.div<IPopupBox>`
   position: fixed;
   top: 50%;
   left: 50%;
@@ -9,7 +10,7 @@ export const PopupBox = styled.div`
   background-color: var(--main-color2);
   z-index: 1000;
 
-  border: 0.3rem solid ${(props) => props.color || "black"};
+  border: 0.3rem solid ${(props) => props.borderColor || "black"};
   border-radius: 2rem;
   border-bottom-right-radius: 0;
   width: 75vw;

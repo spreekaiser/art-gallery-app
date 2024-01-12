@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import HeartBlob from "../../assets/heart-blob.svg";
+import HeartBlob from "../../public/icons/heart-blob.svg";
 
 export const Content = styled.div`
   display: flex;
