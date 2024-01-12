@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { IPopupBox } from "./Popup.d";
 
-export const PopupBox = styled.div`
+export const PopupBox = styled.div<IPopupBox>`
   position: fixed;
   top: 50%;
   left: 50%;

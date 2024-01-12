@@ -1,9 +1,12 @@
 export type TriggerType = "load" | "hover" | "touch";
 
-export interface IPopupProps {
+export interface IPopupProps extends IPopupBox {
   trigger: TriggerType;
-  borderColor?: string;
   setIsAlarm?: Dispatch<SetStateAction<boolean>>;
+}
+
+export interface IPopupBox {
+  borderColor?: string;
 }
 
 export interface IPopupData {
