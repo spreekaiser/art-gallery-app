@@ -2,6 +2,7 @@ export type TriggerType = "load" | "hover" | "touch";
 
 export interface IPopupProps {
   trigger: TriggerType;
+  color?: string;
 }
 
 export interface IPopupData {

@@ -3,6 +3,7 @@ import { IAlarmOverlayProps as IProps } from "./AlarmOverlay.d";
 import useToggleAlarmOverlayOnInterval from "./utils/useToggleAlarmOverlayOnInterval";
 import { playSound } from "./utils/audio";
 import { toggleOverlayColor } from "./utils/otherUtils";
+import { Popup } from "..";
 
 export function AlarmOverlay({ isAlarm, setIsAlarm }: IProps) {
   const [overlayColor, boxOverlayColor] = useToggleAlarmOverlayOnInterval(
@@ -14,15 +15,14 @@ export function AlarmOverlay({ isAlarm, setIsAlarm }: IProps) {
   if (isAlarm)
     return (
       <>
-        {/* <Overlay color={boxOverlayColor}> */}
-        <PopupBox color={boxOverlayColor}>
-          {/* <img src="bild-url" alt="Angry Watchman" /> */}
-          <Text>OK buddy I warned you, S.W.A.T. is on their way!</Text>
-          <StyledButton onClick={() => setIsAlarm(false)}>
-            It wasn&apos;t me!
-          </StyledButton>
-        </PopupBox>
-        {/* </Overlay> */}
+        {/* <PopupBox color={boxOverlayColor}> */}
+        {/* <Text>OK buddy I warned you, S.W.A.T. is on their way!</Text> */}
+        {/* <StyledButton onClick={() => setIsAlarm(false)}> */}
+        {/* It wasn&apos;t me! */}
+        {/* </StyledButton> */}
+        <Popup trigger="touch" color={boxOverlayColor} />
+        {/* </PopupBox> */}
+
         <Overlay color={overlayColor} />
       </>
     );

@@ -24,7 +24,14 @@ export function Popup({ trigger }: IProps) {
             width={192}
             alt={`A very ${watchman} watchman`}
           />
-          <StyledButton onClick={() => setIsOpen(false)}>{button}</StyledButton>
+          <StyledButton
+            onClick={() => {
+              setIsOpen(false);
+              // setIsAlarm(false);
+            }}
+          >
+            {button}
+          </StyledButton>
         </PopupBox>
       )}
     </>

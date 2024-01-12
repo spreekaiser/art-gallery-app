@@ -19,7 +19,7 @@ export const popupData: IPopupContents = {
     watchman: "sleepy",
     button: "Huh?",
   },
-  click: {
+  touch: {
     content: <span>OK buddy I warned you, S.W.A.T. is on their way!</span>,
     delay: 2000,
     watchman: "pissed",
