@@ -5,13 +5,18 @@ import { PopupBox, StyledButton, Text } from "./Popup.style";
 import { popupData } from "./utils/popupData";
 import useSetPopupOpenOnInterval from "./utils/useSetPopupOpenOnInterval";
 
-export function Popup({ trigger }: IProps) {
+export function Popup({ trigger, setIsAlarm }: IProps) {
   const popupContents = useMemo(() => popupData, []);
 
   const [isOpen, setIsOpen] = useState(false);
   const { content, button, watchman } = popupContents[trigger];
 
   useSetPopupOpenOnInterval(popupContents[trigger], setIsOpen);
+
+  function handleClick() {
+    setIsOpen(false);
+    if (setIsAlarm) setIsAlarm(false);
+  }
 
   return (
     <>
@@ -24,14 +29,7 @@ export function Popup({ trigger }: IProps) {
             width={192}
             alt={`A very ${watchman} watchman`}
           />
-          <StyledButton
-            onClick={() => {
-              setIsOpen(false);
-              // setIsAlarm(false);
-            }}
-          >
-            {button}
-          </StyledButton>
+          <StyledButton onClick={handleClick}>{button}</StyledButton>
         </PopupBox>
       )}
     </>

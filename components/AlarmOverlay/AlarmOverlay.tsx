@@ -20,7 +20,11 @@ export function AlarmOverlay({ isAlarm, setIsAlarm }: IProps) {
         {/* <StyledButton onClick={() => setIsAlarm(false)}> */}
         {/* It wasn&apos;t me! */}
         {/* </StyledButton> */}
-        <Popup trigger="touch" color={boxOverlayColor} />
+        <Popup
+          trigger="touch"
+          color={boxOverlayColor}
+          setIsAlarm={setIsAlarm}
+        />
         {/* </PopupBox> */}
 
         <Overlay color={overlayColor} />
