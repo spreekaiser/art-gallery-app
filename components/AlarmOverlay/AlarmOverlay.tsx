@@ -1,4 +1,4 @@
-import { Overlay, PopupBox, Text, StyledButton } from "./AlarmOverlay.style";
+import { Overlay } from "./AlarmOverlay.style";
 import { IAlarmOverlayProps as IProps } from "./AlarmOverlay.d";
 import useToggleAlarmOverlayOnInterval from "./utils/useToggleAlarmOverlayOnInterval";
 import { playSound } from "./utils/audio";
@@ -15,18 +15,11 @@ export function AlarmOverlay({ isAlarm, setIsAlarm }: IProps) {
   if (isAlarm)
     return (
       <>
-        {/* <PopupBox color={boxOverlayColor}> */}
-        {/* <Text>OK buddy I warned you, S.W.A.T. is on their way!</Text> */}
-        {/* <StyledButton onClick={() => setIsAlarm(false)}> */}
-        {/* It wasn&apos;t me! */}
-        {/* </StyledButton> */}
         <Popup
           trigger="touch"
-          color={boxOverlayColor}
+          borderColor={boxOverlayColor}
           setIsAlarm={setIsAlarm}
         />
-        {/* </PopupBox> */}
-
         <Overlay color={overlayColor} />
       </>
     );
