@@ -5,7 +5,7 @@ import { PopupBox, StyledButton, Text } from "./Popup.style";
 import { popupData } from "./utils/popupData";
 import useSetPopupOpenOnInterval from "./utils/useSetPopupOpenOnInterval";
 
-export function Popup({ trigger, setIsAlarm }: IProps) {
+export function Popup({ trigger, setIsAlarm, borderColor }: IProps) {
   const popupContents = useMemo(() => popupData, []);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +21,7 @@ export function Popup({ trigger, setIsAlarm }: IProps) {
   return (
     <>
       {isOpen && (
-        <PopupBox>
+        <PopupBox borderColor={borderColor}>
           <Text>{content}</Text>
           <Image
             src={`/images/watchman-${watchman}.gif`}
