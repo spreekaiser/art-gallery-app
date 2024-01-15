@@ -20,7 +20,6 @@ export default createGlobalStyle`
   body {
     margin: 0;
     font-family: system-ui;
-    /* min-height: 100vh; */
     background-color: var(--main-color1);
   }
 
@@ -38,7 +37,10 @@ export default createGlobalStyle`
     height: 240px;
   }
   .favoriteDiv:hover {
-    animation: MoveUpDown 2s linear infinite;
+    animation: Shake 1s linear infinite;
+    animation-iteration-count: 1;
+    transform-origin: center;
+
   }
 
   img {
@@ -59,7 +61,7 @@ export default createGlobalStyle`
     transition: all 0.3s ease;
   }
 
-  @keyframes MoveUpDown {
+  /* @keyframes MoveUpDown {
     0%,
     100% {
       transform: translateY(0);
@@ -67,5 +69,21 @@ export default createGlobalStyle`
     50% {
       transform: translateY(-0.25rem);
     }
+  } */
+
+  @keyframes Shake {
+    10%, 90% {
+      transform: translateX(-3px) rotate(-1deg);
+    }
+    20%, 80% {
+      transform: translateX(3px) rotate(1deg);
+    }
+    30%, 50%, 70% {
+      transform: translateX(-3px) rotate(-1deg);
+    }
+    40%, 60% {
+      transform: translateX(3px) rotate(1deg);
+    }
   }
+
 `;
