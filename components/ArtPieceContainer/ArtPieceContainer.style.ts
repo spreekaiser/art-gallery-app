@@ -8,11 +8,11 @@ interface IStyledImage {
   onAnimationEnd?: any;
 }
 
-// export const StyledImage = styled(Image)<IStyledImage>`
 export const StyledImage = styled(Image)`
   border: 20px inset darkgoldenrod;
   border-radius: 5px;
   box-shadow: 10px 10px 20px #333;
+  /* z-index: 100; */
 
   &:hover {
     cursor: grab;
@@ -31,7 +31,6 @@ export const StyledLink = styled(Link)`
   }
 `;
 
-//
 const hingeAnimation = keyframes`
   0% {
     transform-origin: top left;
@@ -51,7 +50,6 @@ const hingeAnimation = keyframes`
   }
 
   100% {
-    /* transform: rotate(60deg) translate(0, 500px); */
     transform: translateY(600px) rotate(80deg);
     transform-origin: top left;
     animation-timing-function: ease-in;
@@ -59,23 +57,9 @@ const hingeAnimation = keyframes`
 
 `;
 
-const fadeInFromBottom = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
 export const HingeAnimation = styled.div<IStyledImage>`
   animation: ${(props) => (props.clicked ? hingeAnimation : "none")} 3s ease-out;
   animation-iteration-count: 1;
   transform-origin: top left;
+  z-index: ${(props) => (props.clicked ? 100 : 0)};
 `;
-
-// export const ReappearAnimation = styled.div`
-//   animation: ${fadeInFromBottom} 1s ease-out;
-// `;

@@ -34,20 +34,13 @@ export function ArtPieceContainer({
 
   return (
     <>
-      {/* <div  */}
       <HingeAnimation
         className="favoriteDiv"
         onClick={() => handleClick(slug)}
         clicked={isAlarm && touchedArtPiece === slug}
         onAnimationEnd={() => setTouchedArtPiece(null)}
       >
-        <StyledImage
-          src={imageURL}
-          alt={name}
-          width={360}
-          height={240}
-          // onClick={() => setIsAlarm(true)}
-        />
+        <StyledImage src={imageURL} alt={name} width={360} height={240} />
         <FavoriteButton
           slug={slug}
           handleToggleFavorite={handleToggleFavorite}
