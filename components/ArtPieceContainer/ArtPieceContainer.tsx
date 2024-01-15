@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FavoriteButton, ArrowButton } from "..";
 import { ArtPieceContainerProps as Props } from "./ArtPieceContainer.d";
 import {
@@ -14,10 +14,11 @@ export function ArtPieceContainer({
   slug,
   handleToggleFavorite,
   artPiecesInfo,
+  isAlarm,
   setIsAlarm,
 }: Props) {
   //
-  const [clickedArtPiece, setClickedArtPiece] = useState<string | null>(null);
+  const [touchedArtPiece, setTouchedArtPiece] = useState<string | null>(null);
 
   function handleClick(id: string) {
     // if no scrollbar visible, don't show one during animation
@@ -28,9 +29,7 @@ export function ArtPieceContainer({
     }
 
     setIsAlarm(true);
-    setClickedArtPiece(id);
-
-    console.log(slug);
+    setTouchedArtPiece(id);
   }
 
   return (
@@ -39,8 +38,8 @@ export function ArtPieceContainer({
       <HingeAnimation
         className="favoriteDiv"
         onClick={() => handleClick(slug)}
-        clicked={clickedArtPiece === slug}
-        // scrollable={isScrollbarVisible}
+        clicked={isAlarm && touchedArtPiece === slug}
+        onAnimationEnd={() => setTouchedArtPiece(null)}
       >
         <StyledImage
           src={imageURL}

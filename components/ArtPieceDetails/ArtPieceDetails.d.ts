@@ -8,5 +8,6 @@ export type ArtPieceDetailsProps = {
   colors: string[];
   handleToggleFavorite: (slug: string) => void;
   artPiecesInfo: string[];
+  isAlarm: boolean;
   setIsAlarm: Dispatch<SetStateAction<boolean>>;
 };

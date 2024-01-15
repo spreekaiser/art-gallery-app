@@ -58,7 +58,7 @@ export default function App({
     <>
       <Layout>
         <GlobalStyle />
-        <Popup trigger="load" />
+        {/* <Popup trigger="load" /> */}
         <AlarmOverlay isAlarm={isAlarm} setIsAlarm={setIsAlarm} />
         <Component
           {...pageProps}
@@ -66,6 +66,7 @@ export default function App({
           handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
           isLoading={isLoading}
+          isAlarm={isAlarm}
           setIsAlarm={setIsAlarm}
         />
       </Layout>

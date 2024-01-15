@@ -5,5 +5,6 @@ export type ArtPiecePreviewProps = {
   piece: IPiece;
   handleToggleFavorite: (slug: string) => void;
   artPiecesInfo: string[];
+  isAlarm: boolean;
   setIsAlarm: Dispatch<SetStateAction<boolean>>;
 };

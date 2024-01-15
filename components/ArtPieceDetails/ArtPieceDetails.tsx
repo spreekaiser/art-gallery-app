@@ -13,6 +13,7 @@ export function ArtPieceDetails({
   colors,
   handleToggleFavorite,
   artPiecesInfo,
+  // isAlarm,
   setIsAlarm,
 }: Props) {
   return (

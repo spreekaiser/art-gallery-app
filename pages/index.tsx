@@ -6,6 +6,7 @@ export default function SpotlightPage({
   handleToggleFavorite,
   artPiecesInfo,
   isLoading,
+  isAlarm,
   setIsAlarm,
 }: Props) {
   if (isLoading) return <LoadingSpinner />;
@@ -16,6 +17,7 @@ export default function SpotlightPage({
         pieces={pieces}
         handleToggleFavorite={handleToggleFavorite}
         artPiecesInfo={artPiecesInfo}
+        isAlarm={isAlarm}
         setIsAlarm={setIsAlarm}
       />
     </>

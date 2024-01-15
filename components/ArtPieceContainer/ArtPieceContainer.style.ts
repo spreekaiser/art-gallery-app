@@ -5,6 +5,7 @@ import styled, { keyframes } from "styled-components";
 interface IStyledImage {
   clicked: boolean;
   scrollable?: boolean;
+  onAnimationEnd?: any;
 }
 
 // export const StyledImage = styled(Image)<IStyledImage>`
@@ -70,8 +71,8 @@ const fadeInFromBottom = keyframes`
 `;
 
 export const HingeAnimation = styled.div<IStyledImage>`
-  animation: ${(props) => (props.clicked ? hingeAnimation : "none")} 3s ease-out
-    1;
+  animation: ${(props) => (props.clicked ? hingeAnimation : "none")} 3s ease-out;
+  animation-iteration-count: 1;
   transform-origin: top left;
 `;
 

@@ -6,6 +6,7 @@ export function ArtPieces({
   handleToggleFavorite,
   artPiecesInfo,
   isLoading,
+  isAlarm,
   setIsAlarm,
 }: Props) {
   //
@@ -21,6 +22,7 @@ export function ArtPieces({
             piece={piece}
             handleToggleFavorite={handleToggleFavorite}
             artPiecesInfo={artPiecesInfo}
+            isAlarm={isAlarm}
             setIsAlarm={setIsAlarm}
           />
         ))}
