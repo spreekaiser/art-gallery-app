@@ -71,7 +71,7 @@ export default function App({
     <>
       <Layout>
         <GlobalStyle />
-        {/* <Popup trigger="load" /> */}
+        <Popup trigger="load" />
         <AlarmOverlay isAlarm={isAlarm} setIsAlarm={setIsAlarm} />
         <Component
           {...pageProps}

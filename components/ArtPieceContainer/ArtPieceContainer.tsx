@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { FavoriteButton, ArrowButton } from "..";
 import { ArtPieceContainerProps as Props } from "./ArtPieceContainer.d";
 import {
@@ -15,26 +14,12 @@ export function ArtPieceContainer({
   handleToggleFavorite,
   artPiecesInfo,
   isAlarm,
-  setIsAlarm,
+  // setIsAlarm,
   handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
 }: Props) {
   //
-  // const [touchedArtPiece, setTouchedArtPiece] = useState<string | null>(null);
-
-  // function handleTouch(slug: string) {
-  //   // if no scrollbar visible, don't show one during animation
-  //   const isScrollbarVisible =
-  //     window.innerWidth > document.documentElement.clientWidth;
-  //   if (!isScrollbarVisible) {
-  //     document.body.style.overflow = "hidden";
-  //   }
-
-  //   setIsAlarm(true);
-  //   setTouchedArtPiece(slug);
-  // }
-
   return (
     <>
       <HingeAnimation

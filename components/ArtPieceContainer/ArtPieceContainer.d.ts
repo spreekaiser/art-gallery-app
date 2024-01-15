@@ -13,3 +13,8 @@ export type ArtPieceContainerProps = {
   touchedArtPiece: string | null;
   setTouchedArtPiece: Dispatch<SetStateAction<string | null>>;
 };
+
+export interface IHingeAnimation {
+  clicked: boolean;
+  onAnimationEnd: Dispatch<SetStateAction<string | null>>;
+}
