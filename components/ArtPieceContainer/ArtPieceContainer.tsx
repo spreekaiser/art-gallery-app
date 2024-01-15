@@ -20,7 +20,7 @@ export function ArtPieceContainer({
   //
   const [touchedArtPiece, setTouchedArtPiece] = useState<string | null>(null);
 
-  function handleClick(id: string) {
+  function handleTouch(slug: string) {
     // if no scrollbar visible, don't show one during animation
     const isScrollbarVisible =
       window.innerWidth > document.documentElement.clientWidth;
@@ -29,23 +29,23 @@ export function ArtPieceContainer({
     }
 
     setIsAlarm(true);
-    setTouchedArtPiece(id);
+    setTouchedArtPiece(slug);
   }
 
   return (
     <>
       <HingeAnimation
         className="favoriteDiv"
-        onClick={() => handleClick(slug)}
+        onClick={() => handleTouch(slug)}
         clicked={isAlarm && touchedArtPiece === slug}
         onAnimationEnd={() => setTouchedArtPiece(null)}
       >
-        <StyledImage src={imageURL} alt={name} width={360} height={240} />
         <FavoriteButton
           slug={slug}
           handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
         />
+        <StyledImage src={imageURL} alt={name} width={360} height={240} />
       </HingeAnimation>
       <h4>by {artist}</h4>
       <StyledLink href={`art-pieces/${slug}`}>
