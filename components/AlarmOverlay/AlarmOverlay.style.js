@@ -7,7 +7,7 @@ export const Overlay = styled.div`
   width: 100%;
   height: 100%;
   background-color: ${(props) => props.color};
-  z-index: 999;
+  z-index: 1000;
 
   opacity: 0.5;
 `;

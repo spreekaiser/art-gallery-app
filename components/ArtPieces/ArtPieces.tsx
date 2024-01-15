@@ -6,7 +6,11 @@ export function ArtPieces({
   handleToggleFavorite,
   artPiecesInfo,
   isLoading,
+  isAlarm,
   setIsAlarm,
+  handleTouch,
+  touchedArtPiece,
+  setTouchedArtPiece,
 }: Props) {
   //
   if (isLoading) return <LoadingSpinner />;
@@ -21,7 +25,11 @@ export function ArtPieces({
             piece={piece}
             handleToggleFavorite={handleToggleFavorite}
             artPiecesInfo={artPiecesInfo}
+            isAlarm={isAlarm}
             setIsAlarm={setIsAlarm}
+            handleTouch={handleTouch}
+            touchedArtPiece={touchedArtPiece}
+            setTouchedArtPiece={setTouchedArtPiece}
           />
         ))}
       </ul>

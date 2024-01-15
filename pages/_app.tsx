@@ -29,6 +29,7 @@ export default function App({
   const isLoading = isLoadingExampleData || isLoadingCarloData;
 
   const [isAlarm, setIsAlarm] = useState(false);
+  const [touchedArtPiece, setTouchedArtPiece] = useState<string | null>(null);
 
   // userImmerLocalStorageState for isFavorite
   const [artPiecesInfo, updateArtPiecesInfo]: [
@@ -54,6 +55,18 @@ export default function App({
     }
   }
 
+  function handleTouch(slug: string) {
+    // if no scrollbar visible, don't show one during animation
+    const isScrollbarVisible =
+      window.innerWidth > document.documentElement.clientWidth;
+    if (!isScrollbarVisible) {
+      document.body.style.overflow = "hidden";
+    }
+
+    setIsAlarm(true);
+    setTouchedArtPiece(slug);
+  }
+
   return (
     <>
       <Layout>
@@ -66,7 +79,11 @@ export default function App({
           handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
           isLoading={isLoading}
+          isAlarm={isAlarm}
           setIsAlarm={setIsAlarm}
+          handleTouch={handleTouch}
+          touchedArtPiece={touchedArtPiece}
+          setTouchedArtPiece={setTouchedArtPiece}
         />
       </Layout>
     </>

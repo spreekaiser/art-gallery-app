@@ -14,6 +14,8 @@ export function Popup({ trigger, setIsAlarm, borderColor }: IProps) {
   useSetPopupOpenOnInterval(popupContents[trigger], setIsOpen);
 
   function handleClick() {
+    document.body.style.overflow = "visible";
+
     setIsOpen(false);
     if (setIsAlarm) setIsAlarm(false);
   }

@@ -7,5 +7,14 @@ export type ArtPieceContainerProps = {
   slug: string;
   handleToggleFavorite: (slug: string) => void;
   artPiecesInfo: string[];
+  isAlarm: boolean;
   setIsAlarm: Dispatch<SetStateAction<boolean>>;
+  handleTouch: (slug) => void;
+  touchedArtPiece: string | null;
+  setTouchedArtPiece: Dispatch<SetStateAction<string | null>>;
 };
+
+export interface IHingeAnimation {
+  clicked: boolean;
+  onAnimationEnd: Dispatch<SetStateAction<string | null>>;
+}
