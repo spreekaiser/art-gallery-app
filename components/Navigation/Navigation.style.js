@@ -2,7 +2,7 @@ import Link from "next/link";
 import styled from "styled-components";
 
 export const StyledNavbar = styled.nav`
-  z-index: 1000;
+  z-index: 999;
   position: fixed;
   top: 0;
   display: flex;

@@ -8,7 +8,7 @@ export const PopupBox = styled.div<IPopupBox>`
   transform: translate(-50%, -50%);
   padding: 2rem;
   background-color: var(--main-color2);
-  z-index: 1000;
+  z-index: 1001;
 
   border: 0.3rem solid ${(props) => props.borderColor || "black"};
   border-radius: 2rem;
