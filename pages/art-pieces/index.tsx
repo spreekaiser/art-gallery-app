@@ -7,6 +7,9 @@ export default function ArtPiecesPage({
   artPiecesInfo,
   isAlarm,
   setIsAlarm,
+  handleTouch,
+  touchedArtPiece,
+  setTouchedArtPiece,
 }: Props) {
   return (
     <>
@@ -16,6 +19,9 @@ export default function ArtPiecesPage({
         artPiecesInfo={artPiecesInfo}
         isAlarm={isAlarm}
         setIsAlarm={setIsAlarm}
+        handleTouch={handleTouch}
+        touchedArtPiece={touchedArtPiece}
+        setTouchedArtPiece={setTouchedArtPiece}
       />
     </>
   );

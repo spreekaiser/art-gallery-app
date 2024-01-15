@@ -8,6 +8,9 @@ export default function SpotlightPage({
   isLoading,
   isAlarm,
   setIsAlarm,
+  handleTouch,
+  touchedArtPiece,
+  setTouchedArtPiece,
 }: Props) {
   if (isLoading) return <LoadingSpinner />;
 
@@ -19,6 +22,9 @@ export default function SpotlightPage({
         artPiecesInfo={artPiecesInfo}
         isAlarm={isAlarm}
         setIsAlarm={setIsAlarm}
+        handleTouch={handleTouch}
+        touchedArtPiece={touchedArtPiece}
+        setTouchedArtPiece={setTouchedArtPiece}
       />
     </>
   );

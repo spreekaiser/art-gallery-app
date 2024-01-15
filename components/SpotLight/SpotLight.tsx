@@ -10,6 +10,9 @@ export function SpotLight({
   artPiecesInfo,
   isAlarm,
   setIsAlarm,
+  handleTouch,
+  touchedArtPiece,
+  setTouchedArtPiece,
 }: Props) {
   const [randomIndex, setRandomIndex] = useState(getRandomNumber(pieces));
 
@@ -25,6 +28,9 @@ export function SpotLight({
           artPiecesInfo={artPiecesInfo}
           isAlarm={isAlarm}
           setIsAlarm={setIsAlarm}
+          handleTouch={handleTouch}
+          touchedArtPiece={touchedArtPiece}
+          setTouchedArtPiece={setTouchedArtPiece}
         ></ArtPiecePreview>
       </ul>
     </>

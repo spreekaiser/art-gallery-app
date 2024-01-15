@@ -8,6 +8,9 @@ export default function DetailsPage({
   artPiecesInfo,
   isAlarm,
   setIsAlarm,
+  handleTouch,
+  touchedArtPiece,
+  setTouchedArtPiece,
 }: Props) {
   const router = useRouter();
   const { slug } = router.query;
@@ -26,6 +29,9 @@ export default function DetailsPage({
           artPiecesInfo={artPiecesInfo}
           isAlarm={isAlarm}
           setIsAlarm={setIsAlarm}
+          handleTouch={handleTouch}
+          touchedArtPiece={touchedArtPiece}
+          setTouchedArtPiece={setTouchedArtPiece}
         />
       </ul>
     </>

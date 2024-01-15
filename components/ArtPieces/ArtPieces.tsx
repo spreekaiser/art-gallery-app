@@ -8,6 +8,9 @@ export function ArtPieces({
   isLoading,
   isAlarm,
   setIsAlarm,
+  handleTouch,
+  touchedArtPiece,
+  setTouchedArtPiece,
 }: Props) {
   //
   if (isLoading) return <LoadingSpinner />;
@@ -24,6 +27,9 @@ export function ArtPieces({
             artPiecesInfo={artPiecesInfo}
             isAlarm={isAlarm}
             setIsAlarm={setIsAlarm}
+            handleTouch={handleTouch}
+            touchedArtPiece={touchedArtPiece}
+            setTouchedArtPiece={setTouchedArtPiece}
           />
         ))}
       </ul>

@@ -1,9 +1,11 @@
-import Image from "next/image";
 import { ColorPalette, CommentForm, Comments, FavoriteButton } from "../";
 import { StyledListItem } from "../ArtPiecePreview/ArtPiecePreview.style";
 import { StyledImageContainer } from "../ArtPieceDetails/ArtPieceDetails.style";
 import { ArtPieceDetailsProps as Props } from "./ArtPieceDetails.d";
-import { StyledImage } from "../ArtPieceContainer/ArtPieceContainer.style";
+import {
+  StyledImage,
+  HingeAnimation,
+} from "../ArtPieceContainer/ArtPieceContainer.style";
 
 export function ArtPieceDetails({
   imageSource: imageURL,
@@ -13,20 +15,29 @@ export function ArtPieceDetails({
   colors,
   handleToggleFavorite,
   artPiecesInfo,
-  // isAlarm,
+  isAlarm,
   setIsAlarm,
+  handleTouch,
+  touchedArtPiece,
+  setTouchedArtPiece,
 }: Props) {
   return (
     <StyledListItem>
       <h3>{name}</h3>
-      <div className="favoriteDiv">
+      {/* <div className="favoriteDiv"> */}
+      <HingeAnimation
+        className="favoriteDiv"
+        onClick={() => handleTouch(slug)}
+        clicked={isAlarm && touchedArtPiece === slug}
+        onAnimationEnd={() => setTouchedArtPiece(null)}
+      >
         <StyledImageContainer>
           <StyledImage
             src={imageURL}
             alt={name}
             width={360}
             height={240}
-            onClick={() => setIsAlarm(true)}
+            // onClick={() => setIsAlarm(true)}
           />
           <FavoriteButton
             slug={slug}
@@ -34,7 +45,8 @@ export function ArtPieceDetails({
             artPiecesInfo={artPiecesInfo}
           />
         </StyledImageContainer>
-      </div>
+      </HingeAnimation>
+      {/* </div> */}
       <h4>by {artist}</h4>
       <ColorPalette colors={colors} />
       <CommentForm title={name} />

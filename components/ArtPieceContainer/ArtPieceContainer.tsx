@@ -16,21 +16,24 @@ export function ArtPieceContainer({
   artPiecesInfo,
   isAlarm,
   setIsAlarm,
+  handleTouch,
+  touchedArtPiece,
+  setTouchedArtPiece,
 }: Props) {
   //
-  const [touchedArtPiece, setTouchedArtPiece] = useState<string | null>(null);
+  // const [touchedArtPiece, setTouchedArtPiece] = useState<string | null>(null);
 
-  function handleTouch(slug: string) {
-    // if no scrollbar visible, don't show one during animation
-    const isScrollbarVisible =
-      window.innerWidth > document.documentElement.clientWidth;
-    if (!isScrollbarVisible) {
-      document.body.style.overflow = "hidden";
-    }
+  // function handleTouch(slug: string) {
+  //   // if no scrollbar visible, don't show one during animation
+  //   const isScrollbarVisible =
+  //     window.innerWidth > document.documentElement.clientWidth;
+  //   if (!isScrollbarVisible) {
+  //     document.body.style.overflow = "hidden";
+  //   }
 
-    setIsAlarm(true);
-    setTouchedArtPiece(slug);
-  }
+  //   setIsAlarm(true);
+  //   setTouchedArtPiece(slug);
+  // }
 
   return (
     <>

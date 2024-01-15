@@ -8,6 +8,9 @@ export default function FavoritesPage({
   isLoading,
   isAlarm,
   setIsAlarm,
+  handleTouch,
+  touchedArtPiece,
+  setTouchedArtPiece,
 }: Props) {
   if (isLoading) return <LoadingSpinner />;
 
@@ -25,6 +28,9 @@ export default function FavoritesPage({
                 artPiecesInfo={artPiecesInfo}
                 isAlarm={isAlarm}
                 setIsAlarm={setIsAlarm}
+                handleTouch={handleTouch}
+                touchedArtPiece={touchedArtPiece}
+                setTouchedArtPiece={setTouchedArtPiece}
               />
             )
           );
