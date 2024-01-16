@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const StyledForm = styled.form`
   width: 100%;
@@ -20,36 +20,4 @@ export const StyledTextarea = styled.textarea`
   width: inherit;
   padding: 1rem;
   border-radius: 5px;
-`;
-
-export const SubmitButton = styled.button`
-  /* background-color: var(--accent-color1); */
-  /* color: var(--main-color2); */
-  /* font-weight: bold; */
-  /* padding: 0.5rem 1rem; */
-  /* border-radius: 5px; */
-
-  /* transition: all 0.3s ease; */
-
-  &:hover {
-    /* filter: unset; */
-    /* cursor: none; */
-  }
-
-  ${({ disabled }) =>
-    disabled
-      ? css`
-          cursor: not-allowed;
-          filter: saturate(50%);
-        `
-      : css`
-          cursor: pointer;
-
-          &:hover {
-            filter: brightness(110%);
-            color: var(--accent-color2);
-            box-shadow: 3px 3px 6px #333;
-            transform: scale(1.02) rotate(1deg);
-          }
-        `}
 `;

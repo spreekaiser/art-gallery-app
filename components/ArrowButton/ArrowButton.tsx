@@ -6,10 +6,15 @@ export function ArrowButton({
   width,
   handleClick,
   color,
+  isDisabled,
 }: IArrowButton) {
   return (
-    // <Button width={width} onClick={handleClick} className="learn-more">
-    <Button color={color} width={width} onClick={handleClick}>
+    <Button
+      color={color}
+      width={width}
+      onClick={handleClick}
+      disabled={isDisabled}
+    >
       <Circle className="circle" aria-hidden="true">
         <ArrowIcon className="icon arrow"></ArrowIcon>
       </Circle>

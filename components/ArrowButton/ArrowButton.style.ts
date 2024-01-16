@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { IButton } from "./ArrowButton.d";
 
 export const Button = styled.button<IButton>`
@@ -17,6 +17,16 @@ export const Button = styled.button<IButton>`
   color: ${(props) => props.color || "var(--main-color2)"};
   width: ${(props) => props.width + "rem" || "auto"};
   height: auto;
+
+  ${(props) =>
+    props.disabled
+      ? css`
+          cursor: not-allowed;
+          filter: saturate(50%);
+        `
+      : css`
+          cursor: pointer;
+        `}
 
   &:hover .circle {
     width: 100%;
@@ -79,7 +89,6 @@ export const ButtonText = styled.span`
   bottom: 0;
   padding: 0.75rem 0;
   margin: 0 0 0 1.85rem;
-  /* color: var(--main-color2); */
   font-weight: 700;
   line-height: 1.6;
   text-align: center;

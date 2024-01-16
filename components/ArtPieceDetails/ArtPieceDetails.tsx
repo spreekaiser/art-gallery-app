@@ -16,7 +16,7 @@ export function ArtPieceDetails({
   handleToggleFavorite,
   artPiecesInfo,
   isAlarm,
-  setIsAlarm,
+  // setIsAlarm,
   handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
@@ -24,7 +24,6 @@ export function ArtPieceDetails({
   return (
     <StyledListItem>
       <h3>{name}</h3>
-      {/* <div className="favoriteDiv"> */}
       <HingeAnimation
         className="favoriteDiv"
         onClick={() => handleTouch(slug)}
@@ -32,13 +31,7 @@ export function ArtPieceDetails({
         onAnimationEnd={() => setTouchedArtPiece(null)}
       >
         <StyledImageContainer>
-          <StyledImage
-            src={imageURL}
-            alt={name}
-            width={360}
-            height={240}
-            // onClick={() => setIsAlarm(true)}
-          />
+          <StyledImage src={imageURL} alt={name} width={360} height={240} />
           <FavoriteButton
             slug={slug}
             handleToggleFavorite={handleToggleFavorite}
@@ -46,7 +39,6 @@ export function ArtPieceDetails({
           />
         </StyledImageContainer>
       </HingeAnimation>
-      {/* </div> */}
       <h4>by {artist}</h4>
       <ColorPalette colors={colors} />
       <CommentForm title={name} />
