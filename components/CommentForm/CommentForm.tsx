@@ -8,8 +8,8 @@ import {
   StyledForm,
   StyledFieldset,
   StyledTextarea,
-  SubmitButton,
 } from "./CommentForm style";
+import { ArrowButton } from "../ArrowButton/ArrowButton";
 
 export function CommentForm({ title }: IProps) {
   const [isText, setIsText] = useState(false);
@@ -55,9 +55,9 @@ export function CommentForm({ title }: IProps) {
           placeholder="Add a comment... it's free!"
           onChange={handleInputChange}
         ></StyledTextarea>
-        <SubmitButton disabled={!isText} type="submit">
+        <ArrowButton width={8} isDisabled={!isText} type="submit">
           Hit it!
-        </SubmitButton>
+        </ArrowButton>
       </StyledFieldset>
     </StyledForm>
   );

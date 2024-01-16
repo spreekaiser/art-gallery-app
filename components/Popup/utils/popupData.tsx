@@ -13,16 +13,22 @@ export const popupData: IPopupContents = {
     watchman: "sleepy",
     button: "I promise! 🤥",
   },
-  hover: {
-    content: <div></div>,
-    delay: 1000,
-    watchman: "sleepy",
-    button: "Huh?",
-  },
   touch: {
-    content: <span>🚨 What is WRONG with you?!! 🚨</span>,
+    content: (
+      <span>
+        What the ...?!
+        <br />
+        What is WRONG with you?!!
+      </span>
+    ),
     delay: 2000,
     watchman: "pissed",
     button: "It wasn't me!",
   },
+  // hover: {
+  //   content: <div></div>,
+  //   delay: 1000,
+  //   watchman: "sleepy",
+  //   button: "Huh?",
+  // },
 };
