@@ -14,6 +14,7 @@ export const Button = styled.button<IButton>`
   font-size: inherit;
   font-family: inherit;
 
+  color: ${(props) => props.color || "var(--main-color2)"};
   width: ${(props) => props.width + "rem" || "auto"};
   height: auto;
 
@@ -78,7 +79,7 @@ export const ButtonText = styled.span`
   bottom: 0;
   padding: 0.75rem 0;
   margin: 0 0 0 1.85rem;
-  color: var(--main-color2);
+  /* color: var(--main-color2); */
   font-weight: 700;
   line-height: 1.6;
   text-align: center;
