@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Image from "next/image";
 import { IPopupBox } from "./Popup.d";
 
 export const PopupBox = styled.div<IPopupBox>`
@@ -28,14 +29,6 @@ export const Text = styled.p`
   margin-top: 0;
 `;
 
-export const StyledButton = styled.button`
-  margin-top: 1rem;
-
-  &:hover {
-    filter: brightness(110%);
-    color: var(--accent-color2);
-    cursor: pointer;
-    box-shadow: 3px 3px 6px #333;
-    transform: scale(1.02) rotate(1deg);
-  }
+export const StyledImage = styled(Image)`
+  margin-bottom: 1rem;
 `;

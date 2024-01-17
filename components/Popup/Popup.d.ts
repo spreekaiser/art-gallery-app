@@ -1,4 +1,4 @@
-export type TriggerType = "load" | "hover" | "touch";
+export type TriggerType = "load" | "touch" | "hover";
 
 export interface IPopupProps extends IPopupBox {
   trigger: TriggerType;

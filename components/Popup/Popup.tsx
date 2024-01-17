@@ -1,9 +1,9 @@
 import React, { useState, useMemo } from "react";
-import Image from "next/image";
 import { IPopupProps as IProps } from "./Popup.d";
-import { PopupBox, StyledButton, Text } from "./Popup.style";
+import { PopupBox, StyledImage, Text } from "./Popup.style";
 import { popupData } from "./utils/popupData";
 import useSetPopupOpenOnInterval from "./utils/useSetPopupOpenOnInterval";
+import { ArrowButton } from "..";
 
 export function Popup({ trigger, setIsAlarm, borderColor }: IProps) {
   const popupContents = useMemo(() => popupData, []);
@@ -25,13 +25,19 @@ export function Popup({ trigger, setIsAlarm, borderColor }: IProps) {
       {isOpen && (
         <PopupBox borderColor={borderColor}>
           <Text>{content}</Text>
-          <Image
+          <StyledImage
             src={`/images/watchman-${watchman}.gif`}
             height={256}
             width={192}
             alt={`A very ${watchman} watchman`}
           />
-          <StyledButton onClick={handleClick}>{button}</StyledButton>
+          <ArrowButton
+            color="var(--accent-color1)"
+            width={12}
+            handleClick={handleClick}
+          >
+            {button}
+          </ArrowButton>
         </PopupBox>
       )}
     </>
