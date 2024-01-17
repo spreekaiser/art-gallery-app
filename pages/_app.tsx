@@ -4,13 +4,9 @@ import type { AppProps } from "next/app";
 import useSWR from "swr";
 import { useImmerLocalStorageState } from "../lib/hooks/useImmerLocalStorageState";
 import { Draft } from "immer";
-import { ArtPiecesInfoType, IPiece } from "../types/types";
+import { ArtPiecesInfoType, IApiError, IPiece } from "../types/types";
 import { Layout, AlarmOverlay, Popup } from "../components";
 import { fetcher } from "./utils/fetcher";
-
-export interface IApiError {
-  message: string;
-}
 
 export default function App({
   Component,

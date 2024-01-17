@@ -1,5 +1,5 @@
 import { LoadingSpinner, SpotLight } from "../components";
-import { ArtPiecesProps as Props } from "../types/types";
+import { IArtPiecesProps as IProps } from "../types/types";
 
 export default function SpotlightPage({
   pieces,
@@ -11,7 +11,7 @@ export default function SpotlightPage({
   handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
-}: Props) {
+}: IProps) {
   if (isLoading) return <LoadingSpinner />;
 
   return (

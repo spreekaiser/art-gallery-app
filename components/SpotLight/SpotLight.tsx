@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ArtPiecePreview } from "..";
 import { getRandomNumber } from "../../lib/utils";
 import useGetRandomPieceOnInterval from "../../lib/hooks/useGetRandomPieceOnInterval";
-import { ArtPiecesProps as Props } from "../../types/types";
+import { IArtPiecesProps as IProps } from "../../types/types";
 
 export function SpotLight({
   pieces,
@@ -13,7 +13,7 @@ export function SpotLight({
   handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
-}: Props) {
+}: IProps) {
   const [randomIndex, setRandomIndex] = useState(getRandomNumber(pieces));
 
   useGetRandomPieceOnInterval(pieces, getRandomNumber, setRandomIndex);

@@ -1,6 +1,6 @@
 import { ArrowButton, ArtPiecePreview, LoadingSpinner } from "../components";
 import { StyledLink } from "../components/ArtPieceContainer/ArtPieceContainer.style";
-import { ArtPiecesProps as Props } from "../types/types";
+import { IArtPiecesProps as IProps } from "../types/types";
 import { StyledH3 } from "./favorites.style";
 
 export default function FavoritesPage({
@@ -13,7 +13,7 @@ export default function FavoritesPage({
   handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
-}: Props) {
+}: IProps) {
   if (isLoading) return <LoadingSpinner />;
 
   return (

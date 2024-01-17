@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { ArtPieceDetails } from "../../components";
-import { ArtPiecesProps as Props } from "../../types/types";
+import { IArtPiecesProps as IProps } from "../../types/types";
 
 export default function DetailsPage({
   pieces,
@@ -11,7 +11,7 @@ export default function DetailsPage({
   handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
-}: Props) {
+}: IProps) {
   const router = useRouter();
   const { slug } = router.query;
 

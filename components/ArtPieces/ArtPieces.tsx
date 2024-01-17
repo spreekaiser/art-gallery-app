@@ -1,5 +1,5 @@
 import { ArtPiecePreview, LoadingSpinner } from "..";
-import { ArtPiecesProps as Props } from "../../types/types";
+import { IArtPiecesProps as IProps } from "../../types/types";
 
 export function ArtPieces({
   pieces,
@@ -11,7 +11,7 @@ export function ArtPieces({
   handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
-}: Props) {
+}: IProps) {
   //
   if (isLoading) return <LoadingSpinner />;
 
