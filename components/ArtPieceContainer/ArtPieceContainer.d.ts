@@ -9,7 +9,6 @@ export type ArtPieceContainerProps = {
   artPiecesInfo: string[];
   isAlarm: boolean;
   setIsAlarm: Dispatch<SetStateAction<boolean>>;
-  // handleTouch: (slug) => void;
   handleTouch: (slug, setIsAlarm, setTouchedArtPiece) => void;
   touchedArtPiece: string | null;
   setTouchedArtPiece: Dispatch<SetStateAction<string | null>>;

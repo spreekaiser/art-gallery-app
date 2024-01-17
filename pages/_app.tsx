@@ -8,11 +8,13 @@ import { ArtPiecesInfoType, IApiError, IPiece } from "../types/types";
 import { Layout, AlarmOverlay, Popup } from "../components";
 import { fetcher } from "./utils/fetcher";
 import { handleTouch } from "./utils/handleTouch";
+import { renderErrorMessage } from "./utils/renderErrorMessage";
 
 export default function App({
   Component,
   pageProps: { session, ...pageProps },
 }: AppProps) {
+  // data fetch
   const {
     data: exampleData,
     error: exampleDataError,
@@ -39,20 +41,9 @@ export default function App({
     (updater: string[] | ((draft: Draft<ArtPiecesInfoType>) => void)) => void
   ] = useImmerLocalStorageState("art-pieces-favorites", { defaultValue: [] });
 
-  if (exampleDataError) {
-    const error = exampleDataError;
-    return (
-      <p>
-        Uh oh, something went wrong fetching the example data... {error.message}
-      </p>
-    );
-  }
-  if (carloDataError) {
-    const error = carloDataError;
-    <p>
-      Uh oh, something went wrong fetching the carlo data... {error.message}
-    </p>;
-  }
+  // error handling
+  if (exampleDataError) return renderErrorMessage(exampleDataError, "example");
+  if (carloDataError) return renderErrorMessage(carloDataError, "carlo");
   if (!pieces.length) return;
 
   function handleToggleFavorite(slug: string): void {
