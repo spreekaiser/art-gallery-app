@@ -7,6 +7,7 @@ import { Draft } from "immer";
 import { ArtPiecesInfoType, IApiError, IPiece } from "../types/types";
 import { Layout, AlarmOverlay, Popup } from "../components";
 import { fetcher } from "./utils/fetcher";
+import { handleTouch } from "./utils/handleTouch";
 
 export default function App({
   Component,
@@ -64,17 +65,19 @@ export default function App({
     }
   }
 
-  function handleTouch(slug: string): void {
-    // if no scrollbar visible, don't show one during animation
-    const isScrollbarVisible =
-      window.innerWidth > document.documentElement.clientWidth;
-    if (!isScrollbarVisible) {
-      document.body.style.overflow = "hidden";
-    }
+  // handleTouch(slug, setIsAlarm, setTouchedArtPiece(slug));
 
-    setIsAlarm(true);
-    setTouchedArtPiece(slug);
-  }
+  // function handleTouch(slug: string): void {
+  //   // if no scrollbar visible, don't show one during animation
+  //   const isScrollbarVisible =
+  //     window.innerWidth > document.documentElement.clientWidth;
+  //   if (!isScrollbarVisible) {
+  //     document.body.style.overflow = "hidden";
+  //   }
+
+  //   setIsAlarm(true);
+  //   setTouchedArtPiece(slug);
+  // }
 
   return (
     <>
@@ -91,6 +94,7 @@ export default function App({
           isAlarm={isAlarm}
           setIsAlarm={setIsAlarm}
           handleTouch={handleTouch}
+          // handleTouch={handleTouch(slug, setIsAlarm, setTouchedArtPiece)}
           touchedArtPiece={touchedArtPiece}
           setTouchedArtPiece={setTouchedArtPiece}
         />
