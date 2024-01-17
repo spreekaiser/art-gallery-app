@@ -1,5 +1,5 @@
 import { ArtPieces } from "../../components";
-import { ArtPiecesProps as Props } from "../../types/types";
+import { IArtPiecesProps as IProps } from "../../types/types";
 
 export default function ArtPiecesPage({
   pieces,
@@ -10,7 +10,7 @@ export default function ArtPiecesPage({
   handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
-}: Props) {
+}: IProps) {
   return (
     <>
       <ArtPieces

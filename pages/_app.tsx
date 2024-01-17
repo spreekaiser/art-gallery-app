@@ -1,29 +1,33 @@
 import { useState } from "react";
+import GlobalStyle from "../styles";
 import type { AppProps } from "next/app";
 import useSWR from "swr";
 import { useImmerLocalStorageState } from "../lib/hooks/useImmerLocalStorageState";
 import { Draft } from "immer";
+import { ArtPiecesInfoType, IApiError, IPiece } from "../types/types";
 import { Layout, AlarmOverlay, Popup } from "../components";
-import GlobalStyle from "../styles";
-import { ArtPiecesInfoType } from "../types/types";
-
-const fetcher = (...args: Parameters<typeof fetch>) =>
-  fetch(...args).then((res) => res.json());
+import { fetcher } from "./utils/fetcher";
+import { handleTouch } from "./utils/handleTouch";
+import { renderErrorMessage } from "./utils/renderErrorMessage";
 
 export default function App({
   Component,
   pageProps: { session, ...pageProps },
 }: AppProps) {
+  // data fetch
   const {
     data: exampleData,
-    isLoading: isLoadingExampleData,
     error: exampleDataError,
-  } = useSWR("https://example-apis.vercel.app/api/art", fetcher);
+    isLoading: isLoadingExampleData,
+  } = useSWR<IPiece[], IApiError>(
+    "https://example-apis.vercel.app/api/art",
+    fetcher
+  );
   const {
     data: carloData,
-    isLoading: isLoadingCarloData,
     error: carloDataError,
-  } = useSWR("https://carlo-api.vercel.app", fetcher);
+    isLoading: isLoadingCarloData,
+  } = useSWR<IPiece[], IApiError>("https://carlo-api.vercel.app", fetcher);
 
   const pieces = [...(exampleData || []), ...(carloData || [])];
   const isLoading = isLoadingExampleData || isLoadingCarloData;
@@ -37,14 +41,9 @@ export default function App({
     (updater: string[] | ((draft: Draft<ArtPiecesInfoType>) => void)) => void
   ] = useImmerLocalStorageState("art-pieces-favorites", { defaultValue: [] });
 
-  if (exampleDataError) {
-    const error = exampleDataError;
-    return <div>Error fetching the example data: {error.message}</div>;
-  }
-  if (carloDataError) {
-    const error = carloDataError;
-    return <div>Error fetching the example data: {error.message}</div>;
-  }
+  // error handling
+  if (exampleDataError) return renderErrorMessage(exampleDataError, "example");
+  if (carloDataError) return renderErrorMessage(carloDataError, "carlo");
   if (!pieces.length) return;
 
   function handleToggleFavorite(slug: string): void {
@@ -53,18 +52,6 @@ export default function App({
     } else {
       updateArtPiecesInfo([...artPiecesInfo, slug]);
     }
-  }
-
-  function handleTouch(slug: string) {
-    // if no scrollbar visible, don't show one during animation
-    const isScrollbarVisible =
-      window.innerWidth > document.documentElement.clientWidth;
-    if (!isScrollbarVisible) {
-      document.body.style.overflow = "hidden";
-    }
-
-    setIsAlarm(true);
-    setTouchedArtPiece(slug);
   }
 
   return (

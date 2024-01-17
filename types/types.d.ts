@@ -17,7 +17,7 @@ export interface IPiece {
 
 export type ArtPiecesInfoType = string[];
 
-export type ArtPiecesProps = {
+export interface IArtPiecesProps {
   pieces: IPiece[];
   handleToggleFavorite: (slug: string) => void;
   artPiecesInfo: ArtPiecesInfoType;
@@ -27,4 +27,8 @@ export type ArtPiecesProps = {
   handleTouch: (slug: string) => void;
   touchedArtPiece: string | null;
   setTouchedArtPiece: Dispatch<SetStateAction<string | null>>;
-};
+}
+
+export interface IApiError {
+  message: string;
+}
