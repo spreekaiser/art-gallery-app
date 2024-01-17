@@ -1,15 +1,16 @@
 import { useState } from "react";
+import GlobalStyle from "../styles";
 import type { AppProps } from "next/app";
 import useSWR from "swr";
 import { useImmerLocalStorageState } from "../lib/hooks/useImmerLocalStorageState";
 import { Draft } from "immer";
-import GlobalStyle from "../styles";
-import { ArtPiecesInfoType } from "../types/types";
+import { ArtPiecesInfoType, IPiece } from "../types/types";
 import { Layout, AlarmOverlay, Popup } from "../components";
 import { fetcher } from "./utils/fetcher";
 
-// const fetcher = (...args: Parameters<typeof fetch>) =>
-// fetch(...args).then((res) => res.json());
+export interface IApiError {
+  message: string;
+}
 
 export default function App({
   Component,
@@ -17,14 +18,19 @@ export default function App({
 }: AppProps) {
   const {
     data: exampleData,
-    isLoading: isLoadingExampleData,
     error: exampleDataError,
-  } = useSWR("https://example-apis.vercel.app/api/art", fetcher);
+    isLoading: isLoadingExampleData,
+  } = useSWR<IPiece[], IApiError>(
+    "https://example-apis.vercel.app/api/art",
+    fetcher
+  );
+  // } = useSWR("https://example-apis.vercel.app/api/art", fetcher);
   const {
     data: carloData,
-    isLoading: isLoadingCarloData,
     error: carloDataError,
-  } = useSWR("https://carlo-api.vercel.app", fetcher);
+    isLoading: isLoadingCarloData,
+    // } = useSWR("https://carlo-api.vercel.app", fetcher);
+  } = useSWR<IPiece[], IApiError>("https://carlo-api.vercel.app", fetcher);
 
   const pieces = [...(exampleData || []), ...(carloData || [])];
   const isLoading = isLoadingExampleData || isLoadingCarloData;
@@ -40,11 +46,17 @@ export default function App({
 
   if (exampleDataError) {
     const error = exampleDataError;
-    return <div>Error fetching the example data: {error.message}</div>;
+    return (
+      <p>
+        Uh oh, something went wrong fetching the example data... {error.message}
+      </p>
+    );
   }
   if (carloDataError) {
     const error = carloDataError;
-    return <div>Error fetching the example data: {error.message}</div>;
+    <p>
+      Uh oh, something went wrong fetching the carlo data... {error.message}
+    </p>;
   }
   if (!pieces.length) return;
 
@@ -56,7 +68,7 @@ export default function App({
     }
   }
 
-  function handleTouch(slug: string) {
+  function handleTouch(slug: string): void {
     // if no scrollbar visible, don't show one during animation
     const isScrollbarVisible =
       window.innerWidth > document.documentElement.clientWidth;
