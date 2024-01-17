@@ -3,12 +3,13 @@ import type { AppProps } from "next/app";
 import useSWR from "swr";
 import { useImmerLocalStorageState } from "../lib/hooks/useImmerLocalStorageState";
 import { Draft } from "immer";
-import { Layout, AlarmOverlay, Popup } from "../components";
 import GlobalStyle from "../styles";
 import { ArtPiecesInfoType } from "../types/types";
+import { Layout, AlarmOverlay, Popup } from "../components";
+import { fetcher } from "./utils/fetcher";
 
-const fetcher = (...args: Parameters<typeof fetch>) =>
-  fetch(...args).then((res) => res.json());
+// const fetcher = (...args: Parameters<typeof fetch>) =>
+// fetch(...args).then((res) => res.json());
 
 export default function App({
   Component,
