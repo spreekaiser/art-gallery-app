@@ -21,12 +21,10 @@ export default function App({
     "https://example-apis.vercel.app/api/art",
     fetcher
   );
-  // } = useSWR("https://example-apis.vercel.app/api/art", fetcher);
   const {
     data: carloData,
     error: carloDataError,
     isLoading: isLoadingCarloData,
-    // } = useSWR("https://carlo-api.vercel.app", fetcher);
   } = useSWR<IPiece[], IApiError>("https://carlo-api.vercel.app", fetcher);
 
   const pieces = [...(exampleData || []), ...(carloData || [])];
@@ -65,20 +63,6 @@ export default function App({
     }
   }
 
-  // handleTouch(slug, setIsAlarm, setTouchedArtPiece(slug));
-
-  // function handleTouch(slug: string): void {
-  //   // if no scrollbar visible, don't show one during animation
-  //   const isScrollbarVisible =
-  //     window.innerWidth > document.documentElement.clientWidth;
-  //   if (!isScrollbarVisible) {
-  //     document.body.style.overflow = "hidden";
-  //   }
-
-  //   setIsAlarm(true);
-  //   setTouchedArtPiece(slug);
-  // }
-
   return (
     <>
       <Layout>
@@ -94,7 +78,6 @@ export default function App({
           isAlarm={isAlarm}
           setIsAlarm={setIsAlarm}
           handleTouch={handleTouch}
-          // handleTouch={handleTouch(slug, setIsAlarm, setTouchedArtPiece)}
           touchedArtPiece={touchedArtPiece}
           setTouchedArtPiece={setTouchedArtPiece}
         />
