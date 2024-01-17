@@ -16,7 +16,7 @@ export function ArtPieceDetails({
   handleToggleFavorite,
   artPiecesInfo,
   isAlarm,
-  // setIsAlarm,
+  setIsAlarm,
   handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
@@ -26,7 +26,7 @@ export function ArtPieceDetails({
       <h3>{name}</h3>
       <HingeAnimation
         className="favoriteDiv"
-        onClick={() => handleTouch(slug)}
+        onClick={() => handleTouch(slug, setIsAlarm, setTouchedArtPiece)}
         clicked={isAlarm && touchedArtPiece === slug}
         onAnimationEnd={() => setTouchedArtPiece(null)}
       >
