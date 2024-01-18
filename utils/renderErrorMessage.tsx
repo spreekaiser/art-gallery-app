@@ -1,4 +1,4 @@
-import { IApiError } from "../../types/types";
+import { IApiError } from "../types/types";
 
 export function renderErrorMessage(error: IApiError, dataSource: string) {
   return (
