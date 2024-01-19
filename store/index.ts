@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 // import rooReducer from "./rootReducer";
+// import alarmReducer from "./alarm/alarmSlice";
 
 const store = configureStore({
   reducer: {
     // rootReducer,
+    // alarm: alarmReducer,
   },
 });
 
