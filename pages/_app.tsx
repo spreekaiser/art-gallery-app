@@ -8,6 +8,8 @@ import { ArtPiecesInfoType, IApiError, IPiece } from "../types/types";
 import { Layout, AlarmOverlay, Popup } from "../components";
 import { fetcher, renderErrorMessage } from "../utils/api";
 import { handleTouch } from "../utils/handleTouch";
+import { Provider } from "react-redux";
+import store from "../store";
 
 export default function App({
   Component,
@@ -55,23 +57,25 @@ export default function App({
 
   return (
     <>
-      <Layout>
-        <GlobalStyle />
-        <Popup trigger="load" />
-        <AlarmOverlay isAlarm={isAlarm} setIsAlarm={setIsAlarm} />
-        <Component
-          {...pageProps}
-          pieces={pieces}
-          handleToggleFavorite={handleToggleFavorite}
-          artPiecesInfo={artPiecesInfo}
-          isLoading={isLoading}
-          isAlarm={isAlarm}
-          setIsAlarm={setIsAlarm}
-          handleTouch={handleTouch}
-          touchedArtPiece={touchedArtPiece}
-          setTouchedArtPiece={setTouchedArtPiece}
-        />
-      </Layout>
+      <Provider store={store}>
+        <Layout>
+          <GlobalStyle />
+          <Popup trigger="load" />
+          <AlarmOverlay isAlarm={isAlarm} setIsAlarm={setIsAlarm} />
+          <Component
+            {...pageProps}
+            pieces={pieces}
+            handleToggleFavorite={handleToggleFavorite}
+            artPiecesInfo={artPiecesInfo}
+            isLoading={isLoading}
+            isAlarm={isAlarm}
+            setIsAlarm={setIsAlarm}
+            handleTouch={handleTouch}
+            touchedArtPiece={touchedArtPiece}
+            setTouchedArtPiece={setTouchedArtPiece}
+          />
+        </Layout>
+      </Provider>
     </>
   );
 }
