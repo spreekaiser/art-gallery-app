@@ -6,9 +6,8 @@ import { useImmerLocalStorageState } from "../lib/hooks/useImmerLocalStorageStat
 import { Draft } from "immer";
 import { ArtPiecesInfoType, IApiError, IPiece } from "../types/types";
 import { Layout, AlarmOverlay, Popup } from "../components";
-import { fetcher } from "./utils/fetcher";
-import { handleTouch } from "./utils/handleTouch";
-import { renderErrorMessage } from "./utils/renderErrorMessage";
+import { fetcher, renderErrorMessage } from "../utils/api";
+import { handleTouch } from "../utils/handleTouch";
 
 export default function App({
   Component,

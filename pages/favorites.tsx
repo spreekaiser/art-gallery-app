@@ -1,7 +1,7 @@
 import { ArrowButton, ArtPiecePreview, LoadingSpinner } from "../components";
 import { StyledLink } from "../components/ArtPieceContainer/ArtPieceContainer.style";
 import { IArtPiecesProps as IProps } from "../types/types";
-import { StyledH3 } from "./favorites.style";
+import { StyledH3 } from "../styles/favorites.style";
 
 export default function FavoritesPage({
   pieces,
