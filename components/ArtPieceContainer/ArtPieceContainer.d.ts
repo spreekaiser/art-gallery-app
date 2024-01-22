@@ -7,8 +7,8 @@ export type ArtPieceContainerProps = {
   slug: string;
   handleToggleFavorite: (slug: string) => void;
   artPiecesInfo: string[];
-  isAlarm: boolean;
-  setIsAlarm: Dispatch<SetStateAction<boolean>>;
+  // isAlarm: boolean;
+  // setIsAlarm: Dispatch<SetStateAction<boolean>>;
   handleTouch: (slug, setIsAlarm, setTouchedArtPiece) => void;
   touchedArtPiece: string | null;
   setTouchedArtPiece: Dispatch<SetStateAction<string | null>>;

@@ -6,8 +6,8 @@ export function ArtPiecePreview({
   piece,
   handleToggleFavorite,
   artPiecesInfo,
-  isAlarm,
-  setIsAlarm,
+  // isAlarm,
+  // setIsAlarm,
   handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
@@ -19,8 +19,8 @@ export function ArtPiecePreview({
         {...piece}
         handleToggleFavorite={handleToggleFavorite}
         artPiecesInfo={artPiecesInfo}
-        isAlarm={isAlarm}
-        setIsAlarm={setIsAlarm}
+        // isAlarm={isAlarm}
+        // setIsAlarm={setIsAlarm}
         handleTouch={handleTouch}
         touchedArtPiece={touchedArtPiece}
         setTouchedArtPiece={setTouchedArtPiece}

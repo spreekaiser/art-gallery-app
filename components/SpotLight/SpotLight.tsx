@@ -8,8 +8,8 @@ export function SpotLight({
   pieces,
   handleToggleFavorite,
   artPiecesInfo,
-  isAlarm,
-  setIsAlarm,
+  // isAlarm,
+  // setIsAlarm,
   handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
@@ -26,8 +26,8 @@ export function SpotLight({
           piece={pieces[randomIndex]}
           handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
-          isAlarm={isAlarm}
-          setIsAlarm={setIsAlarm}
+          // isAlarm={isAlarm}
+          // setIsAlarm={setIsAlarm}
           handleTouch={handleTouch}
           touchedArtPiece={touchedArtPiece}
           setTouchedArtPiece={setTouchedArtPiece}

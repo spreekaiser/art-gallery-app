@@ -6,8 +6,8 @@ export default function SpotlightPage({
   handleToggleFavorite,
   artPiecesInfo,
   isLoading,
-  isAlarm,
-  setIsAlarm,
+  // isAlarm,
+  // setIsAlarm,
   handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
@@ -20,8 +20,8 @@ export default function SpotlightPage({
         pieces={pieces}
         handleToggleFavorite={handleToggleFavorite}
         artPiecesInfo={artPiecesInfo}
-        isAlarm={isAlarm}
-        setIsAlarm={setIsAlarm}
+        // isAlarm={isAlarm}
+        // setIsAlarm={setIsAlarm}
         handleTouch={handleTouch}
         touchedArtPiece={touchedArtPiece}
         setTouchedArtPiece={setTouchedArtPiece}
