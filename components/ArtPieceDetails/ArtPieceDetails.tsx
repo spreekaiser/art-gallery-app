@@ -6,6 +6,8 @@ import {
   StyledImage,
   HingeAnimation,
 } from "../ArtPieceContainer/ArtPieceContainer.style";
+import { useAppDispatch, useAppSelector } from "../../lib/hooks/storeHooks";
+import { selectAlarm, startAlarm } from "../../store/alarm/alarmSlice";
 
 export function ArtPieceDetails({
   imageSource: imageURL,
@@ -15,18 +17,22 @@ export function ArtPieceDetails({
   colors,
   handleToggleFavorite,
   artPiecesInfo,
-  isAlarm,
-  setIsAlarm,
-  handleTouch,
+  // isAlarm,
+  // setIsAlarm,
+  // handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
 }: Props) {
+  const isAlarm = useAppSelector(selectAlarm);
+  const dispatch = useAppDispatch();
+
   return (
     <StyledListItem>
       <h3>{name}</h3>
       <HingeAnimation
         className="favoriteDiv"
-        onClick={() => handleTouch(slug, setIsAlarm, setTouchedArtPiece)}
+        // onClick={() => handleTouch(slug, setIsAlarm, setTouchedArtPiece)}
+        onClick={() => dispatch(startAlarm())}
         clicked={isAlarm && touchedArtPiece === slug}
         onAnimationEnd={() => setTouchedArtPiece(null)}
       >
