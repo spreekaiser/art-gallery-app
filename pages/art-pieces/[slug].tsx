@@ -6,7 +6,6 @@ export default function DetailsPage({
   pieces,
   handleToggleFavorite,
   artPiecesInfo,
-  handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
 }: IProps) {
@@ -25,7 +24,6 @@ export default function DetailsPage({
           {...selectedPiece}
           handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
-          handleTouch={handleTouch}
           touchedArtPiece={touchedArtPiece}
           setTouchedArtPiece={setTouchedArtPiece}
         />

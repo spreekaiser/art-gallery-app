@@ -8,7 +8,6 @@ export default function FavoritesPage({
   handleToggleFavorite,
   artPiecesInfo,
   isLoading,
-  handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
 }: IProps) {
@@ -27,7 +26,6 @@ export default function FavoritesPage({
                   piece={piece}
                   handleToggleFavorite={handleToggleFavorite}
                   artPiecesInfo={artPiecesInfo}
-                  handleTouch={handleTouch}
                   touchedArtPiece={touchedArtPiece}
                   setTouchedArtPiece={setTouchedArtPiece}
                 />

@@ -8,7 +8,6 @@ import { Draft } from "immer";
 import { ArtPiecesInfoType, IApiError, IPiece } from "../types/types";
 import { Layout, AlarmOverlay, Popup } from "../components";
 import { fetcher, renderErrorMessage } from "../utils/api";
-import { handleTouch } from "../utils/handleTouch";
 import { Provider } from "react-redux";
 
 export default function App({
@@ -33,7 +32,6 @@ export default function App({
   const pieces = [...(exampleData || []), ...(carloData || [])];
   const isLoading = isLoadingExampleData || isLoadingCarloData;
 
-  const [isAlarm, setIsAlarm] = useState(false);
   const [touchedArtPiece, setTouchedArtPiece] = useState<string | null>(null);
 
   // userImmerLocalStorageState for isFavorite
@@ -68,7 +66,6 @@ export default function App({
             handleToggleFavorite={handleToggleFavorite}
             artPiecesInfo={artPiecesInfo}
             isLoading={isLoading}
-            handleTouch={handleTouch}
             touchedArtPiece={touchedArtPiece}
             setTouchedArtPiece={setTouchedArtPiece}
           />

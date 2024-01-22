@@ -6,7 +6,6 @@ export default function SpotlightPage({
   handleToggleFavorite,
   artPiecesInfo,
   isLoading,
-  handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
 }: IProps) {
@@ -18,7 +17,6 @@ export default function SpotlightPage({
         pieces={pieces}
         handleToggleFavorite={handleToggleFavorite}
         artPiecesInfo={artPiecesInfo}
-        handleTouch={handleTouch}
         touchedArtPiece={touchedArtPiece}
         setTouchedArtPiece={setTouchedArtPiece}
       />

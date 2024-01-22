@@ -5,7 +5,6 @@ export type ArtPiecePreviewProps = {
   piece: IPiece;
   handleToggleFavorite: (slug: string) => void;
   artPiecesInfo: string[];
-  // handleTouch: (slug: string) => void;
   touchedArtPiece: string | null;
   setTouchedArtPiece: Dispatch<SetStateAction<string | null>>;
 };

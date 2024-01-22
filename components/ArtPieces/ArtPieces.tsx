@@ -6,7 +6,6 @@ export function ArtPieces({
   handleToggleFavorite,
   artPiecesInfo,
   isLoading,
-  // handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
 }: IProps) {
@@ -23,7 +22,6 @@ export function ArtPieces({
             piece={piece}
             handleToggleFavorite={handleToggleFavorite}
             artPiecesInfo={artPiecesInfo}
-            // handleTouch={handleTouch}
             touchedArtPiece={touchedArtPiece}
             setTouchedArtPiece={setTouchedArtPiece}
           />

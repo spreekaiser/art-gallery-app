@@ -1,6 +1,7 @@
 import { FavoriteButton, ArrowButton } from "..";
 import { useAppDispatch, useAppSelector } from "../../lib/hooks/storeHooks";
 import { selectAlarm, startAlarm } from "../../store/alarm/alarmSlice";
+import { handleTouch } from "../../utils/handleTouch";
 import { ArtPieceContainerProps as Props } from "./ArtPieceContainer.d";
 import {
   StyledImage,
@@ -15,7 +16,6 @@ export function ArtPieceContainer({
   slug,
   handleToggleFavorite,
   artPiecesInfo,
-  //// handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
 }: Props) {
@@ -27,8 +27,9 @@ export function ArtPieceContainer({
     <>
       <HingeAnimation
         className="favoriteDiv"
-        //// onClick={() => handleTouch(slug, setIsAlarm, setTouchedArtPiece)}
-        onClick={() => dispatch(startAlarm())}
+        onClick={() =>
+          handleTouch(slug, dispatch, startAlarm, setTouchedArtPiece)
+        }
         clicked={isAlarm && touchedArtPiece === slug}
         onAnimationEnd={() => setTouchedArtPiece(null)}
       >
