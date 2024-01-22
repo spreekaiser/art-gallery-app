@@ -8,7 +8,6 @@ export function SpotLight({
   pieces,
   handleToggleFavorite,
   artPiecesInfo,
-  // handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
 }: IProps) {
@@ -24,7 +23,6 @@ export function SpotLight({
           piece={pieces[randomIndex]}
           handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
-          // handleTouch={handleTouch}
           touchedArtPiece={touchedArtPiece}
           setTouchedArtPiece={setTouchedArtPiece}
         ></ArtPiecePreview>
