@@ -6,9 +6,7 @@ export function ArtPieces({
   handleToggleFavorite,
   artPiecesInfo,
   isLoading,
-  // isAlarm,
-  // setIsAlarm,
-  handleTouch,
+  // handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
 }: IProps) {
@@ -25,9 +23,7 @@ export function ArtPieces({
             piece={piece}
             handleToggleFavorite={handleToggleFavorite}
             artPiecesInfo={artPiecesInfo}
-            // isAlarm={isAlarm}
-            // setIsAlarm={setIsAlarm}
-            handleTouch={handleTouch}
+            // handleTouch={handleTouch}
             touchedArtPiece={touchedArtPiece}
             setTouchedArtPiece={setTouchedArtPiece}
           />

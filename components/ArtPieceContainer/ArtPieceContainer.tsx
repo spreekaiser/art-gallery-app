@@ -15,8 +15,6 @@ export function ArtPieceContainer({
   slug,
   handleToggleFavorite,
   artPiecesInfo,
-  //// isAlarm,
-  //// setIsAlarm,
   //// handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,

@@ -1,3 +1,4 @@
+import store from "../store";
 import { useState } from "react";
 import GlobalStyle from "../styles";
 import type { AppProps } from "next/app";
@@ -9,7 +10,6 @@ import { Layout, AlarmOverlay, Popup } from "../components";
 import { fetcher, renderErrorMessage } from "../utils/api";
 import { handleTouch } from "../utils/handleTouch";
 import { Provider } from "react-redux";
-import store from "../store";
 
 export default function App({
   Component,
@@ -61,7 +61,6 @@ export default function App({
         <Layout>
           <GlobalStyle />
           <Popup trigger="load" />
-          {/*//// <AlarmOverlay isAlarm={isAlarm} setIsAlarm={setIsAlarm} /> */}
           <AlarmOverlay />
           <Component
             {...pageProps}
@@ -69,8 +68,6 @@ export default function App({
             handleToggleFavorite={handleToggleFavorite}
             artPiecesInfo={artPiecesInfo}
             isLoading={isLoading}
-            // isAlarm={isAlarm}
-            // setIsAlarm={setIsAlarm}
             handleTouch={handleTouch}
             touchedArtPiece={touchedArtPiece}
             setTouchedArtPiece={setTouchedArtPiece}

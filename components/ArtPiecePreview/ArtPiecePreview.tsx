@@ -6,9 +6,7 @@ export function ArtPiecePreview({
   piece,
   handleToggleFavorite,
   artPiecesInfo,
-  // isAlarm,
-  // setIsAlarm,
-  handleTouch,
+  // handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
 }: Props) {
@@ -19,9 +17,7 @@ export function ArtPiecePreview({
         {...piece}
         handleToggleFavorite={handleToggleFavorite}
         artPiecesInfo={artPiecesInfo}
-        // isAlarm={isAlarm}
-        // setIsAlarm={setIsAlarm}
-        handleTouch={handleTouch}
+        // handleTouch={handleTouch}
         touchedArtPiece={touchedArtPiece}
         setTouchedArtPiece={setTouchedArtPiece}
       ></ArtPieceContainer>

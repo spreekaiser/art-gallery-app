@@ -5,8 +5,6 @@ export default function ArtPiecesPage({
   pieces,
   handleToggleFavorite,
   artPiecesInfo,
-  // isAlarm,
-  // setIsAlarm,
   handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
@@ -17,8 +15,6 @@ export default function ArtPiecesPage({
         pieces={pieces}
         handleToggleFavorite={handleToggleFavorite}
         artPiecesInfo={artPiecesInfo}
-        // isAlarm={isAlarm}
-        // setIsAlarm={setIsAlarm}
         handleTouch={handleTouch}
         touchedArtPiece={touchedArtPiece}
         setTouchedArtPiece={setTouchedArtPiece}

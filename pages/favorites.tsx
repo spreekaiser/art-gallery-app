@@ -8,8 +8,6 @@ export default function FavoritesPage({
   handleToggleFavorite,
   artPiecesInfo,
   isLoading,
-  // isAlarm,
-  // setIsAlarm,
   handleTouch,
   touchedArtPiece,
   setTouchedArtPiece,
@@ -29,8 +27,6 @@ export default function FavoritesPage({
                   piece={piece}
                   handleToggleFavorite={handleToggleFavorite}
                   artPiecesInfo={artPiecesInfo}
-                  // isAlarm={isAlarm}
-                  // setIsAlarm={setIsAlarm}
                   handleTouch={handleTouch}
                   touchedArtPiece={touchedArtPiece}
                   setTouchedArtPiece={setTouchedArtPiece}
