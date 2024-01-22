@@ -2,7 +2,6 @@ export type TriggerType = "load" | "touch" | "hover";
 
 export interface IPopupProps extends IPopupBox {
   trigger: TriggerType;
-  setIsAlarm?: Dispatch<SetStateAction<boolean>>;
 }
 
 export interface IPopupBox {

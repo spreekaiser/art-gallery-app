@@ -4,8 +4,12 @@ import { PopupBox, StyledImage, Text } from "./Popup.style";
 import { popupData } from "./utils/popupData";
 import useSetPopupOpenOnInterval from "./utils/useSetPopupOpenOnInterval";
 import { ArrowButton } from "..";
+import { useAppDispatch } from "../../lib/hooks/storeHooks";
+import { stopAlarm } from "../../store/alarm/alarmSlice";
 
-export function Popup({ trigger, setIsAlarm, borderColor }: IProps) {
+export function Popup({ trigger, borderColor }: IProps) {
+  const dispatch = useAppDispatch();
+
   const popupContents = useMemo(() => popupData, []);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +21,7 @@ export function Popup({ trigger, setIsAlarm, borderColor }: IProps) {
     document.body.style.overflow = "visible";
 
     setIsOpen(false);
-    if (setIsAlarm) setIsAlarm(false);
+    dispatch(stopAlarm());
   }
 
   return (
