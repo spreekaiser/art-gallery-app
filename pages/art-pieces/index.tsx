@@ -5,8 +5,6 @@ export default function ArtPiecesPage({
   pieces,
   handleToggleFavorite,
   artPiecesInfo,
-  touchedArtPiece,
-  setTouchedArtPiece,
 }: IProps) {
   return (
     <>
@@ -14,8 +12,6 @@ export default function ArtPiecesPage({
         pieces={pieces}
         handleToggleFavorite={handleToggleFavorite}
         artPiecesInfo={artPiecesInfo}
-        touchedArtPiece={touchedArtPiece}
-        setTouchedArtPiece={setTouchedArtPiece}
       />
     </>
   );

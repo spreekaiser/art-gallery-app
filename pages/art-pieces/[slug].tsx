@@ -6,8 +6,6 @@ export default function DetailsPage({
   pieces,
   handleToggleFavorite,
   artPiecesInfo,
-  touchedArtPiece,
-  setTouchedArtPiece,
 }: IProps) {
   const router = useRouter();
   const { slug } = router.query;
@@ -24,8 +22,6 @@ export default function DetailsPage({
           {...selectedPiece}
           handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
-          touchedArtPiece={touchedArtPiece}
-          setTouchedArtPiece={setTouchedArtPiece}
         />
       </ul>
     </>

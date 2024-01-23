@@ -22,8 +22,6 @@ export interface IArtPiecesProps {
   handleToggleFavorite: (slug: string) => void;
   artPiecesInfo: ArtPiecesInfoType;
   isLoading?: boolean;
-  touchedArtPiece: string | null;
-  setTouchedArtPiece: Dispatch<SetStateAction<string | null>>;
 }
 
 export interface IApiError {

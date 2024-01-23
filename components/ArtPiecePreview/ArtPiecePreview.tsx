@@ -6,8 +6,6 @@ export function ArtPiecePreview({
   piece,
   handleToggleFavorite,
   artPiecesInfo,
-  touchedArtPiece,
-  setTouchedArtPiece,
 }: Props) {
   return (
     <StyledListItem>
@@ -16,8 +14,6 @@ export function ArtPiecePreview({
         {...piece}
         handleToggleFavorite={handleToggleFavorite}
         artPiecesInfo={artPiecesInfo}
-        touchedArtPiece={touchedArtPiece}
-        setTouchedArtPiece={setTouchedArtPiece}
       ></ArtPieceContainer>
     </StyledListItem>
   );

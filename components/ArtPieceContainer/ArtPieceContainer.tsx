@@ -1,6 +1,11 @@
 import { FavoriteButton, ArrowButton } from "..";
 import { useAppDispatch, useAppSelector } from "../../lib/hooks/storeHooks";
 import { selectAlarm, startAlarm } from "../../store/alarm/alarmSlice";
+import {
+  selectTouchedPiece,
+  setTouchedPiece,
+  resetTouchedPiece,
+} from "../../store/touchedPiece/touchedPieceSlice";
 import { handleTouch } from "../../utils/handleTouch";
 import { ArtPieceContainerProps as Props } from "./ArtPieceContainer.d";
 import {
@@ -16,22 +21,19 @@ export function ArtPieceContainer({
   slug,
   handleToggleFavorite,
   artPiecesInfo,
-  touchedArtPiece,
-  setTouchedArtPiece,
 }: Props) {
   //
   const isAlarm = useAppSelector(selectAlarm);
+  const touchedPiece = useAppSelector(selectTouchedPiece);
   const dispatch = useAppDispatch();
 
   return (
     <>
       <HingeAnimation
         className="favoriteDiv"
-        onClick={() =>
-          handleTouch(slug, dispatch, startAlarm, setTouchedArtPiece)
-        }
-        clicked={isAlarm && touchedArtPiece === slug}
-        onAnimationEnd={() => setTouchedArtPiece(null)}
+        onClick={() => handleTouch(slug, dispatch, startAlarm, setTouchedPiece)}
+        clicked={isAlarm && touchedPiece === slug}
+        onAnimationEnd={() => resetTouchedPiece()}
       >
         <FavoriteButton
           slug={slug}
