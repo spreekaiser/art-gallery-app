@@ -1,3 +1,4 @@
+import { MouseEvent, TouchEvent } from "react";
 import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
 import { AppDispatch } from "../store";
 import { ArtPiecesInfoType } from "../types/types";
@@ -10,8 +11,11 @@ export function toggleFavorite(
   setArtPiecesInfoState: ActionCreatorWithPayload<
     string[],
     "artPiecesInfo/setArtPiecesInfoState"
-  >
+  >,
+  event: MouseEvent<SVGElement> | TouchEvent<SVGElement>
 ): void {
+  event.preventDefault();
+
   let newValue: string[] = [];
 
   if (artPiecesInfo.includes(slug)) {

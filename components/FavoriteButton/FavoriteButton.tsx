@@ -1,4 +1,4 @@
-import { HeartIconFilled, HeartIconUnfilled } from "./FavoriteButton.styles";
+import { HeartIconFilled, HeartIconUnfilled } from "./FavoriteButton.style";
 import { IFavoriteButtonProps as IProps } from "./FavoriteButton.d";
 import { toggleFavorite } from "../../utils/toggleFavorite";
 import { useAppDispatch } from "../../lib/hooks/storeHooks";
@@ -17,29 +17,51 @@ export function FavoriteButton({ slug }: IProps) {
     <>
       {artPiecesInfo?.includes(slug) ? (
         <HeartIconFilled
-          className="mandatoryClassName" //!  Styled Comp doesn't work here without className
+          className="mandatoryClassName" // Styled Comp doesn't work here without className
           size={heartIconSize}
-          onClick={() =>
+          onClick={(event) =>
             toggleFavorite(
               slug,
               artPiecesInfo,
               updateArtPiecesInfo,
               dispatch,
-              setArtPiecesInfoState
+              setArtPiecesInfoState,
+              event
+            )
+          }
+          onTouchStart={(event) =>
+            toggleFavorite(
+              slug,
+              artPiecesInfo,
+              updateArtPiecesInfo,
+              dispatch,
+              setArtPiecesInfoState,
+              event
             )
           }
         />
       ) : (
         <HeartIconUnfilled
-          className="mandatoryClassName" //!  Styled Comp doesn't work here without className
+          className="mandatoryClassName" // Styled Comp doesn't work here without className
           size={heartIconSize}
-          onClick={() =>
+          onClick={(event) =>
             toggleFavorite(
               slug,
               artPiecesInfo,
               updateArtPiecesInfo,
               dispatch,
-              setArtPiecesInfoState
+              setArtPiecesInfoState,
+              event
+            )
+          }
+          onTouchStart={(event) =>
+            toggleFavorite(
+              slug,
+              artPiecesInfo,
+              updateArtPiecesInfo,
+              dispatch,
+              setArtPiecesInfoState,
+              event
             )
           }
         />
