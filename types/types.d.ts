@@ -18,7 +18,6 @@ export interface IPiece {
 
 export interface IArtPiecesProps {
   pieces: IPiece[];
-  artPiecesInfo: ArtPiecesInfoType;
   isLoading?: boolean;
 }
 
@@ -26,6 +25,7 @@ export interface IApiError {
   message: string;
 }
 
+// immerLocalStorage types
 export type UseImmerLocalStorageStateReturn<T> = [T, (updater: any) => void];
 
 export type ArtPiecesInfoType = string[];

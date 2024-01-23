@@ -6,5 +6,4 @@ export interface IArtPieceDetailsProps {
   artist: string;
   slug: string;
   colors: string[];
-  artPiecesInfo: string[];
 }

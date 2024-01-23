@@ -21,7 +21,6 @@ export function ArtPieceDetails({
   artist,
   slug,
   colors,
-  artPiecesInfo,
 }: IProps) {
   const isAlarm = useAppSelector(selectAlarm);
   const touchedPiece = useAppSelector(selectTouchedPiece);
@@ -43,7 +42,7 @@ export function ArtPieceDetails({
       >
         <StyledImageContainer>
           <StyledImage src={imageURL} alt={name} width={360} height={240} />
-          <FavoriteButton slug={slug} artPiecesInfo={artPiecesInfo} />
+          <FavoriteButton slug={slug} />
         </StyledImageContainer>
       </HingeAnimation>
       <h4>by {artist}</h4>

@@ -23,6 +23,7 @@ export const artPiecesInfoSlice = createSlice({
 
 export const { setArtPiecesInfoState } = artPiecesInfoSlice.actions;
 
+// useImmerLocalStorageState
 export function useArtPiecesInfo() {
   const [
     artPiecesInfo,
@@ -39,9 +40,5 @@ export function useArtPiecesInfo() {
 
   return { artPiecesInfo, updateArtPiecesInfo };
 }
-
-// Other code such as selectors can use the imported `RootState` type
-export const selectArtPiecesInfo = (state: RootState) =>
-  state.artPiecesInfo.artPiecesInfoState;
 
 export default artPiecesInfoSlice.reducer;

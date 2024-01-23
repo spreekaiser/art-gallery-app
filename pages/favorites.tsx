@@ -2,17 +2,10 @@ import { ArrowButton, ArtPiecePreview, LoadingSpinner } from "../components";
 import { StyledLink } from "../components/ArtPieceContainer/ArtPieceContainer.style";
 import { IArtPiecesProps as IProps } from "../types/types";
 import { StyledH3 } from "../styles/favorites.style";
-import { useDispatch } from "react-redux";
 import { useArtPiecesInfo } from "../store/artPiecesInfoSlice/artPiecesInfoSlice";
 
-export default function FavoritesPage({
-  pieces,
-  // artPiecesInfo,
-  isLoading,
-}: IProps) {
-  // const { artPiecesInfo, updateArtPiecesInfo } = useArtPiecesInfo();
+export default function FavoritesPage({ pieces, isLoading }: IProps) {
   const { artPiecesInfo } = useArtPiecesInfo();
-  //// const dispatch = useDispatch();
 
   if (isLoading) return <LoadingSpinner />;
 
@@ -24,11 +17,7 @@ export default function FavoritesPage({
           {pieces.map((piece) => {
             return (
               artPiecesInfo.includes(piece.slug) && (
-                <ArtPiecePreview
-                  key={piece.slug}
-                  piece={piece}
-                  // artPiecesInfo={artPiecesInfo}
-                />
+                <ArtPiecePreview key={piece.slug} piece={piece} />
               )
             );
           })}
