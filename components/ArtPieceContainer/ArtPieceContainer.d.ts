@@ -5,7 +5,6 @@ export interface IArtPieceContainerProps {
   name: string;
   artist: string;
   slug: string;
-  artPiecesInfo: string[];
 }
 
 export interface IHingeAnimation {

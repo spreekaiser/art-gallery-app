@@ -19,7 +19,6 @@ export function ArtPieceContainer({
   name,
   imageSource: imageURL,
   slug,
-  artPiecesInfo,
 }: IProps) {
   //
   const isAlarm = useAppSelector(selectAlarm);
@@ -39,7 +38,7 @@ export function ArtPieceContainer({
         clicked={isAlarm && touchedPiece === slug}
         onAnimationEnd={() => resetTouchedPiece()}
       >
-        <FavoriteButton slug={slug} artPiecesInfo={artPiecesInfo} />
+        <FavoriteButton slug={slug} />
         <StyledImage src={imageURL} alt={name} width={360} height={240} />
       </HingeAnimation>
       <h4>by {artist}</h4>
