@@ -2,13 +2,13 @@ import store from "../store";
 import GlobalStyle from "../styles";
 import type { AppProps } from "next/app";
 import useSWR from "swr";
-import { useImmerLocalStorageState } from "../lib/hooks/useImmerLocalStorageState";
-import { Draft } from "immer";
+// import { useImmerLocalStorageState } from "../lib/hooks/useImmerLocalStorageState";
+// import { Draft } from "immer";
 import {
-  ArtPiecesInfoType,
+  // ArtPiecesInfoType,
+  // UpdateArtPiecesInfoType,
   IApiError,
   IPiece,
-  UpdateArtPiecesInfoType,
 } from "../types/types";
 import { Layout, AlarmOverlay, Popup } from "../components";
 import { fetcher, renderErrorMessage } from "../utils/api";
@@ -37,10 +37,10 @@ export default function App({
   const isLoading = isLoadingExampleData || isLoadingCarloData;
 
   // userImmerLocalStorageState for isFavorite
-  const [artPiecesInfo, updateArtPiecesInfo]: [
-    ArtPiecesInfoType,
-    UpdateArtPiecesInfoType
-  ] = useImmerLocalStorageState("art-pieces-favorites", { defaultValue: [] });
+  // const [artPiecesInfo, updateArtPiecesInfo]: [
+  //   ArtPiecesInfoType,
+  //   UpdateArtPiecesInfoType
+  // ] = useImmerLocalStorageState("art-pieces-favorites", { defaultValue: [] });
 
   // error handling
   if (exampleDataError) return renderErrorMessage(exampleDataError, "example");
@@ -69,7 +69,7 @@ export default function App({
           <Component
             {...pageProps}
             pieces={pieces}
-            artPiecesInfo={artPiecesInfo}
+            // artPiecesInfo={artPiecesInfo}
             isLoading={isLoading}
           />
         </Layout>
