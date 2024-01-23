@@ -4,7 +4,12 @@ import type { AppProps } from "next/app";
 import useSWR from "swr";
 import { useImmerLocalStorageState } from "../lib/hooks/useImmerLocalStorageState";
 import { Draft } from "immer";
-import { ArtPiecesInfoType, IApiError, IPiece } from "../types/types";
+import {
+  ArtPiecesInfoType,
+  IApiError,
+  IPiece,
+  UpdateArtPiecesInfoType,
+} from "../types/types";
 import { Layout, AlarmOverlay, Popup } from "../components";
 import { fetcher, renderErrorMessage } from "../utils/api";
 import { Provider } from "react-redux";
@@ -34,7 +39,7 @@ export default function App({
   // userImmerLocalStorageState for isFavorite
   const [artPiecesInfo, updateArtPiecesInfo]: [
     ArtPiecesInfoType,
-    (updater: string[] | ((draft: Draft<ArtPiecesInfoType>) => void)) => void
+    UpdateArtPiecesInfoType
   ] = useImmerLocalStorageState("art-pieces-favorites", { defaultValue: [] });
 
   // error handling
@@ -42,13 +47,17 @@ export default function App({
   if (carloDataError) return renderErrorMessage(carloDataError, "carlo");
   if (!pieces.length) return;
 
-  function handleToggleFavorite(slug: string): void {
-    if (artPiecesInfo.includes(slug)) {
-      updateArtPiecesInfo(artPiecesInfo.filter((element) => element !== slug));
-    } else {
-      updateArtPiecesInfo([...artPiecesInfo, slug]);
-    }
-  }
+  // function handleToggleFavorite(
+  //   artPiecesInfo: ArtPiecesInfoType,
+  //   updateArtPiecesInfo: UpdateArtPiecesInfoType,
+  //   slug: string
+  // ): void {
+  //   if (artPiecesInfo.includes(slug)) {
+  //     updateArtPiecesInfo(artPiecesInfo.filter((element) => element !== slug));
+  //   } else {
+  //     updateArtPiecesInfo([...artPiecesInfo, slug]);
+  //   }
+  // }
 
   return (
     <>
@@ -60,7 +69,6 @@ export default function App({
           <Component
             {...pageProps}
             pieces={pieces}
-            handleToggleFavorite={handleToggleFavorite}
             artPiecesInfo={artPiecesInfo}
             isLoading={isLoading}
           />
