@@ -1,5 +1,4 @@
 import store from "../store";
-import { useState } from "react";
 import GlobalStyle from "../styles";
 import type { AppProps } from "next/app";
 import useSWR from "swr";
@@ -31,8 +30,6 @@ export default function App({
 
   const pieces = [...(exampleData || []), ...(carloData || [])];
   const isLoading = isLoadingExampleData || isLoadingCarloData;
-
-  const [touchedArtPiece, setTouchedArtPiece] = useState<string | null>(null);
 
   // userImmerLocalStorageState for isFavorite
   const [artPiecesInfo, updateArtPiecesInfo]: [
@@ -66,8 +63,6 @@ export default function App({
             handleToggleFavorite={handleToggleFavorite}
             artPiecesInfo={artPiecesInfo}
             isLoading={isLoading}
-            touchedArtPiece={touchedArtPiece}
-            setTouchedArtPiece={setTouchedArtPiece}
           />
         </Layout>
       </Provider>

@@ -8,8 +8,6 @@ export default function FavoritesPage({
   handleToggleFavorite,
   artPiecesInfo,
   isLoading,
-  touchedArtPiece,
-  setTouchedArtPiece,
 }: IProps) {
   if (isLoading) return <LoadingSpinner />;
 
@@ -26,8 +24,6 @@ export default function FavoritesPage({
                   piece={piece}
                   handleToggleFavorite={handleToggleFavorite}
                   artPiecesInfo={artPiecesInfo}
-                  touchedArtPiece={touchedArtPiece}
-                  setTouchedArtPiece={setTouchedArtPiece}
                 />
               )
             );
