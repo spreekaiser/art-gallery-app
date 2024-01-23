@@ -31,9 +31,11 @@ export function ArtPieceContainer({
     <>
       <HingeAnimation
         className="favoriteDiv"
-        onClick={() => handleTouch(slug, dispatch, startAlarm, setTouchedPiece)}
-        onTouchStart={() =>
-          handleTouch(slug, dispatch, startAlarm, setTouchedPiece)
+        onClick={(event) =>
+          handleTouch(slug, dispatch, startAlarm, setTouchedPiece, event)
+        }
+        onTouchStart={(event) =>
+          handleTouch(slug, dispatch, startAlarm, setTouchedPiece, event)
         }
         clicked={isAlarm && touchedPiece === slug}
         onAnimationEnd={() => resetTouchedPiece()}

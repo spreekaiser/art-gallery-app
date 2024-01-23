@@ -1,3 +1,4 @@
+import { MouseEvent, TouchEvent } from "react";
 import {
   ActionCreatorWithoutPayload,
   ActionCreatorWithPayload,
@@ -11,8 +12,11 @@ export function handleTouch(
   setTouchedPiece: ActionCreatorWithPayload<
     string,
     "touchedPiece/setTouchedPiece"
-  >
+  >,
+  event: MouseEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>
 ): void {
+  event.preventDefault();
+
   // if no scrollbar visible, prevent from showing one during animation
   const isScrollbarVisible =
     window.innerWidth > document.documentElement.clientWidth;
