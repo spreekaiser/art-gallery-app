@@ -4,11 +4,7 @@ import { getRandomNumber } from "../../lib/utils";
 import useGetRandomPieceOnInterval from "../../lib/hooks/useGetRandomPieceOnInterval";
 import { IArtPiecesProps as IProps } from "../../types/types";
 
-export function SpotLight({
-  pieces,
-  handleToggleFavorite,
-  artPiecesInfo,
-}: IProps) {
+export function SpotLight({ pieces, artPiecesInfo }: IProps) {
   const [randomIndex, setRandomIndex] = useState(getRandomNumber(pieces));
 
   useGetRandomPieceOnInterval(pieces, getRandomNumber, setRandomIndex);
@@ -19,7 +15,6 @@ export function SpotLight({
       <ul>
         <ArtPiecePreview
           piece={pieces[randomIndex]}
-          handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
         ></ArtPiecePreview>
       </ul>

@@ -1,13 +1,12 @@
 import { Dispatch, SetStateAction } from "react";
 
-export type ArtPieceContainerProps = {
+export interface IArtPieceContainerProps {
   imageSource: string;
   name: string;
   artist: string;
   slug: string;
-  handleToggleFavorite: (slug: string) => void;
   artPiecesInfo: string[];
-};
+}
 
 export interface IHingeAnimation {
   clicked: boolean;

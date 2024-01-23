@@ -1,12 +1,7 @@
 import { ArtPiecePreview, LoadingSpinner } from "..";
 import { IArtPiecesProps as IProps } from "../../types/types";
 
-export function ArtPieces({
-  pieces,
-  handleToggleFavorite,
-  artPiecesInfo,
-  isLoading,
-}: IProps) {
+export function ArtPieces({ pieces, artPiecesInfo, isLoading }: IProps) {
   //
   if (isLoading) return <LoadingSpinner />;
 
@@ -18,7 +13,6 @@ export function ArtPieces({
           <ArtPiecePreview
             key={piece.slug}
             piece={piece}
-            handleToggleFavorite={handleToggleFavorite}
             artPiecesInfo={artPiecesInfo}
           />
         ))}

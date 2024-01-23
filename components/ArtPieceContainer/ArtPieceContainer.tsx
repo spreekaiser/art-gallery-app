@@ -7,7 +7,7 @@ import {
   resetTouchedPiece,
 } from "../../store/touchedPiece/touchedPieceSlice";
 import { handleTouch } from "../../utils/handleTouch";
-import { ArtPieceContainerProps as Props } from "./ArtPieceContainer.d";
+import { IArtPieceContainerProps as IProps } from "./ArtPieceContainer.d";
 import {
   StyledImage,
   StyledLink,
@@ -19,9 +19,8 @@ export function ArtPieceContainer({
   name,
   imageSource: imageURL,
   slug,
-  handleToggleFavorite,
   artPiecesInfo,
-}: Props) {
+}: IProps) {
   //
   const isAlarm = useAppSelector(selectAlarm);
   const touchedPiece = useAppSelector(selectTouchedPiece);
@@ -40,11 +39,7 @@ export function ArtPieceContainer({
         clicked={isAlarm && touchedPiece === slug}
         onAnimationEnd={() => resetTouchedPiece()}
       >
-        <FavoriteButton
-          slug={slug}
-          handleToggleFavorite={handleToggleFavorite}
-          artPiecesInfo={artPiecesInfo}
-        />
+        <FavoriteButton slug={slug} artPiecesInfo={artPiecesInfo} />
         <StyledImage src={imageURL} alt={name} width={360} height={240} />
       </HingeAnimation>
       <h4>by {artist}</h4>

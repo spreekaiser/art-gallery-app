@@ -5,7 +5,6 @@ import { StyledH3 } from "../styles/favorites.style";
 
 export default function FavoritesPage({
   pieces,
-  handleToggleFavorite,
   artPiecesInfo,
   isLoading,
 }: IProps) {
@@ -22,7 +21,6 @@ export default function FavoritesPage({
                 <ArtPiecePreview
                   key={piece.slug}
                   piece={piece}
-                  handleToggleFavorite={handleToggleFavorite}
                   artPiecesInfo={artPiecesInfo}
                 />
               )

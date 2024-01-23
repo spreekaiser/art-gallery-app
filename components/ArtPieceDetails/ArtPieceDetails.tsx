@@ -1,7 +1,7 @@
 import { ColorPalette, CommentForm, Comments, FavoriteButton } from "../";
 import { StyledListItem } from "../ArtPiecePreview/ArtPiecePreview.style";
 import { StyledImageContainer } from "../ArtPieceDetails/ArtPieceDetails.style";
-import { ArtPieceDetailsProps as Props } from "./ArtPieceDetails.d";
+import { IArtPieceDetailsProps as IProps } from "./ArtPieceDetails.d";
 import {
   StyledImage,
   HingeAnimation,
@@ -21,9 +21,8 @@ export function ArtPieceDetails({
   artist,
   slug,
   colors,
-  handleToggleFavorite,
   artPiecesInfo,
-}: Props) {
+}: IProps) {
   const isAlarm = useAppSelector(selectAlarm);
   const touchedPiece = useAppSelector(selectTouchedPiece);
   const dispatch = useAppDispatch();
@@ -44,11 +43,7 @@ export function ArtPieceDetails({
       >
         <StyledImageContainer>
           <StyledImage src={imageURL} alt={name} width={360} height={240} />
-          <FavoriteButton
-            slug={slug}
-            handleToggleFavorite={handleToggleFavorite}
-            artPiecesInfo={artPiecesInfo}
-          />
+          <FavoriteButton slug={slug} artPiecesInfo={artPiecesInfo} />
         </StyledImageContainer>
       </HingeAnimation>
       <h4>by {artist}</h4>

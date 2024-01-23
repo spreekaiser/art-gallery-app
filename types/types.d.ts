@@ -15,11 +15,8 @@ export interface IPiece {
   };
 }
 
-export type ArtPiecesInfoType = string[];
-
 export interface IArtPiecesProps {
   pieces: IPiece[];
-  handleToggleFavorite: (slug: string) => void;
   artPiecesInfo: ArtPiecesInfoType;
   isLoading?: boolean;
 }
@@ -27,3 +24,9 @@ export interface IArtPiecesProps {
 export interface IApiError {
   message: string;
 }
+
+export type ArtPiecesInfoType = string[];
+
+export type UpdateArtPiecesInfoType = (
+  updater: string[] | ((draft: Draft<ArtPiecesInfoType>) => void)
+) => void;

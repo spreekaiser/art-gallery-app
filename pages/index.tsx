@@ -3,7 +3,6 @@ import { IArtPiecesProps as IProps } from "../types/types";
 
 export default function SpotlightPage({
   pieces,
-  handleToggleFavorite,
   artPiecesInfo,
   isLoading,
 }: IProps) {
@@ -11,11 +10,7 @@ export default function SpotlightPage({
 
   return (
     <>
-      <SpotLight
-        pieces={pieces}
-        handleToggleFavorite={handleToggleFavorite}
-        artPiecesInfo={artPiecesInfo}
-      />
+      <SpotLight pieces={pieces} artPiecesInfo={artPiecesInfo} />
     </>
   );
 }
