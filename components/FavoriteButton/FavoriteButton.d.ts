@@ -1,5 +1,3 @@
-export type Props = {
-  handleToggleFavorite: (slug: string) => void;
+export interface IFavoriteButtonProps {
   slug: string;
-  artPiecesInfo: string[];
-};
+}

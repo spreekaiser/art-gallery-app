@@ -1,11 +1,9 @@
 import { Dispatch, SetStateAction } from "react";
 
-export type ArtPieceDetailsProps = {
+export interface IArtPieceDetailsProps {
   imageSource: string;
   name: string;
   artist: string;
   slug: string;
   colors: string[];
-  handleToggleFavorite: (slug: string) => void;
-  artPiecesInfo: string[];
-};
+}

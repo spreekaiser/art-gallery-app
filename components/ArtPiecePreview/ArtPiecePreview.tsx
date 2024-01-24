@@ -1,20 +1,12 @@
 import { ArtPieceContainer } from "..";
-import { ArtPiecePreviewProps as Props } from "./ArtPiecePreview.d";
+import { IArtPiecePreviewProps as IProps } from "./ArtPiecePreview.d";
 import { StyledListItem } from "./ArtPiecePreview.style";
 
-export function ArtPiecePreview({
-  piece,
-  handleToggleFavorite,
-  artPiecesInfo,
-}: Props) {
+export function ArtPiecePreview({ piece }: IProps) {
   return (
     <StyledListItem>
       <h3>{piece.name}</h3>
-      <ArtPieceContainer
-        {...piece}
-        handleToggleFavorite={handleToggleFavorite}
-        artPiecesInfo={artPiecesInfo}
-      ></ArtPieceContainer>
+      <ArtPieceContainer {...piece}></ArtPieceContainer>
     </StyledListItem>
   );
 }

@@ -2,11 +2,7 @@ import { useRouter } from "next/router";
 import { ArtPieceDetails } from "../../components";
 import { IArtPiecesProps as IProps } from "../../types/types";
 
-export default function DetailsPage({
-  pieces,
-  handleToggleFavorite,
-  artPiecesInfo,
-}: IProps) {
+export default function DetailsPage({ pieces }: IProps) {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -18,11 +14,7 @@ export default function DetailsPage({
     <>
       <h2>You`re taking a closer look at</h2>
       <ul>
-        <ArtPieceDetails
-          {...selectedPiece}
-          handleToggleFavorite={handleToggleFavorite}
-          artPiecesInfo={artPiecesInfo}
-        />
+        <ArtPieceDetails {...selectedPiece} />
       </ul>
     </>
   );

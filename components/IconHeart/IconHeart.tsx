@@ -1,5 +1,6 @@
-// const HeartIcon = () => (
-export function IconHeart({ size, className, onClick }) {
+import { IIconHeartProps as IProps } from "./IconHeart.d";
+
+export function IconHeart({ size, className, onClick }: IProps) {
   return (
     <svg
       className={className}

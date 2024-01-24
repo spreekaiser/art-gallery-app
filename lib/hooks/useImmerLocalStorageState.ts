@@ -1,7 +1,6 @@
 import { useCallback } from "react";
 import useLocalStorageState from "use-local-storage-state";
-
-type UseImmerLocalStorageStateReturn<T> = [T, (updater: any) => void];
+import { UseImmerLocalStorageStateReturn } from "../../types/types";
 
 export function useImmerLocalStorageState<T>(
   key: string,

@@ -1,3 +1,4 @@
+// import { Draft } from "immer";
 import { Dispatch, SetStateAction } from "react";
 
 export interface IPiece {
@@ -15,15 +16,25 @@ export interface IPiece {
   };
 }
 
-export type ArtPiecesInfoType = string[];
-
 export interface IArtPiecesProps {
   pieces: IPiece[];
-  handleToggleFavorite: (slug: string) => void;
-  artPiecesInfo: ArtPiecesInfoType;
   isLoading?: boolean;
 }
 
 export interface IApiError {
   message: string;
 }
+
+// immerLocalStorage types
+export type UseImmerLocalStorageStateReturn<T> = [T, (updater: any) => void];
+
+export type ArtPiecesInfoType = string[];
+
+export type UpdateArtPiecesInfoType = (
+  updater: string[] | ((draft: Draft<ArtPiecesInfoType>) => void)
+) => void;
+
+export type UseImmerLocalStorageStateType = [
+  ArtPiecesInfoType,
+  UpdateArtPiecesInfoType
+];
