@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 // import rooReducer from "./rootReducer";
+import dataReducer from "./data/dataSlice";
 import alarmReducer from "./alarm/alarmSlice";
 import touchedPieceReducer from "./touchedPiece/touchedPieceSlice";
 import artPiecesInfoReducer from "./artPiecesInfo/artPiecesInfoSlice";
@@ -7,6 +8,7 @@ import artPiecesInfoReducer from "./artPiecesInfo/artPiecesInfoSlice";
 const store = configureStore({
   reducer: {
     // rootReducer,
+    data: dataReducer,
     alarm: alarmReducer,
     touchedPiece: touchedPieceReducer,
     artPiecesInfo: artPiecesInfoReducer,
