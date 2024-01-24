@@ -1,10 +1,8 @@
 import store from "../store";
 import GlobalStyle from "../styles";
 import type { AppProps } from "next/app";
-import useSWR from "swr";
-import { IApiError, IPiece } from "../types/types";
 import { Layout, AlarmOverlay, Popup } from "../components";
-import { fetcher, renderErrorMessage } from "../utils/api";
+import { renderErrorMessage, useFetchData } from "../utils/api";
 import { Provider } from "react-redux";
 
 export default function App({
@@ -16,16 +14,14 @@ export default function App({
     data: exampleData,
     error: exampleDataError,
     isLoading: isLoadingExampleData,
-  } = useSWR<IPiece[], IApiError>(
-    "https://example-apis.vercel.app/api/art",
-    fetcher
-  );
+  } = useFetchData("https://example-apis.vercel.app/api/art");
   const {
     data: carloData,
     error: carloDataError,
     isLoading: isLoadingCarloData,
-  } = useSWR<IPiece[], IApiError>("https://carlo-api.vercel.app", fetcher);
+  } = useFetchData("https://carlo-api.vercel.app");
 
+  // data merging
   const pieces = [...(exampleData || []), ...(carloData || [])];
   const isLoading = isLoadingExampleData || isLoadingCarloData;
 

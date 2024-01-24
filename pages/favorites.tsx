@@ -2,7 +2,7 @@ import { ArrowButton, ArtPiecePreview, LoadingSpinner } from "../components";
 import { StyledLink } from "../components/ArtPieceContainer/ArtPieceContainer.style";
 import { IArtPiecesProps as IProps } from "../types/types";
 import { StyledH3 } from "../styles/favorites.style";
-import { useArtPiecesInfo } from "../store/artPiecesInfoSlice/artPiecesInfoSlice";
+import { useArtPiecesInfo } from "../store/artPiecesInfo/artPiecesInfoSlice";
 
 export default function FavoritesPage({ pieces, isLoading }: IProps) {
   const { artPiecesInfo } = useArtPiecesInfo();
