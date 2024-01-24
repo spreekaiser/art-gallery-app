@@ -5,7 +5,7 @@ import { useAppDispatch } from "../../lib/hooks/storeHooks";
 import {
   setArtPiecesInfoState,
   useArtPiecesInfo,
-} from "../../store/artPiecesInfoSlice/artPiecesInfoSlice";
+} from "../../store/artPiecesInfo/artPiecesInfoSlice";
 
 const heartIconSize = 36;
 
