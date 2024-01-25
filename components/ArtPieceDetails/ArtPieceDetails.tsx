@@ -16,8 +16,6 @@ import {
 import { IPiece } from "../../types/types";
 
 export function ArtPieceDetails({ piece }: { piece: IPiece }) {
-  console.log(piece);
-
   const { name, artist, slug, colors, imageSource: imageURL } = piece;
   const isAlarm = useAppSelector(selectAlarm);
   const touchedPiece = useAppSelector(selectTouchedPiece);

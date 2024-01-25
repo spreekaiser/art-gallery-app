@@ -14,7 +14,7 @@ export default function DetailsPage({ pieces }: IProps) {
     <>
       <h2>You`re taking a closer look at</h2>
       <ul>
-        <ArtPieceDetails {...selectedPiece} />
+        <ArtPieceDetails piece={selectedPiece} />
       </ul>
     </>
   );
