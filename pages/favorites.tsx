@@ -1,7 +1,7 @@
 import { ArrowButton, ArtPiecePreview, LoadingSpinner } from "../components";
-import { StyledLink } from "../components/ArtPieceContainer/ArtPieceContainer.style";
+import { ArrowLink } from "../components/ArtPieceContainer/ArtPieceContainer.style";
 import { IArtPiecesProps as IProps } from "../types/types";
-import { StyledH3 } from "../styles/favorites.style";
+import { H3 } from "../styles/favorites.style";
 import { useArtPiecesInfo } from "../store/artPiecesInfo/artPiecesInfoSlice";
 
 export default function FavoritesPage({ pieces, isLoading }: IProps) {
@@ -25,10 +25,10 @@ export default function FavoritesPage({ pieces, isLoading }: IProps) {
       )}
       {!artPiecesInfo.length && (
         <>
-          <StyledH3>Nothing liked yet...</StyledH3>
-          <StyledLink href="/">
+          <H3>Nothing liked yet...</H3>
+          <ArrowLink href="/">
             <ArrowButton width={12}>Inspire me!</ArrowButton>
-          </StyledLink>
+          </ArrowLink>
         </>
       )}
     </>
