@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledImageContainer = styled.div`
+export const PieceImageContainer = styled.div`
   transition: all 0.5s;
 
   &:hover {

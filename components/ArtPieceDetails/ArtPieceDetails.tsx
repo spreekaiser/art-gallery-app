@@ -1,6 +1,6 @@
 import { ColorPalette, CommentForm, Comments, FavoriteButton } from "../";
 import { ListItem } from "../ArtPiecePreview/ArtPiecePreview.style";
-import { StyledImageContainer } from "../ArtPieceDetails/ArtPieceDetails.style";
+import { PieceImageContainer } from "../ArtPieceDetails/ArtPieceDetails.style";
 import {
   PieceImage,
   HingeAnimation,
@@ -34,10 +34,10 @@ export function ArtPieceDetails({ piece }: { piece: IPiece }) {
         clicked={isAlarm && touchedPiece === slug}
         onAnimationEnd={() => resetTouchedPiece()}
       >
-        <StyledImageContainer>
+        <PieceImageContainer>
           <PieceImage src={imageURL} alt={name} width={360} height={240} />
           <FavoriteButton slug={slug} />
-        </StyledImageContainer>
+        </PieceImageContainer>
       </HingeAnimation>
       <h4>by {artist}</h4>
       <ColorPalette colors={colors} />
