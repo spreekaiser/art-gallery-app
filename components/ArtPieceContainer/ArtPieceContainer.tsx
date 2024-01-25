@@ -9,8 +9,8 @@ import {
 import { IPiece } from "../../types/types";
 import { handleTouch } from "../../utils/handleTouch";
 import {
-  StyledImage,
-  StyledLink,
+  PieceImage,
+  ArrowLink,
   HingeAnimation,
 } from "./ArtPieceContainer.style";
 
@@ -33,12 +33,12 @@ export function ArtPieceContainer({ piece }: { piece: IPiece }) {
         onAnimationEnd={() => resetTouchedPiece()}
       >
         <FavoriteButton slug={slug} />
-        <StyledImage src={imageURL} alt={name} width={360} height={240} />
+        <PieceImage src={imageURL} alt={name} width={360} height={240} />
       </HingeAnimation>
       <h4>by {artist}</h4>
-      <StyledLink href={`art-pieces/${slug}`}>
+      <ArrowLink href={`art-pieces/${slug}`}>
         <ArrowButton width={16}>Take a closer look</ArrowButton>
-      </StyledLink>
+      </ArrowLink>
     </>
   );
 }

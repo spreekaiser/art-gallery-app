@@ -3,7 +3,7 @@ import Link from "next/link";
 import styled, { keyframes } from "styled-components";
 import { IHingeAnimation } from "./ArtPieceContainer.d";
 
-export const StyledImage = styled(Image)`
+export const PieceImage = styled(Image)`
   border: 20px inset darkgoldenrod;
   border-radius: 5px;
   box-shadow: 10px 10px 20px #333;
@@ -16,7 +16,7 @@ export const StyledImage = styled(Image)`
   }
 `;
 
-export const StyledLink = styled(Link)`
+export const ArrowLink = styled(Link)`
   margin-bottom: 1rem;
 
   &:hover {

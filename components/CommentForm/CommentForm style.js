@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const StyledForm = styled.form`
+export const Form = styled.form`
   width: 100%;
   margin: 1rem 0;
 `;
 
-export const StyledFieldset = styled.fieldset`
+export const Fieldset = styled.fieldset`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +16,7 @@ export const StyledFieldset = styled.fieldset`
   border: none;
 `;
 
-export const StyledTextarea = styled.textarea`
+export const Textarea = styled.textarea`
   width: inherit;
   padding: 1rem;
   border-radius: 5px;

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-export const StyledNavbar = styled.nav`
+export const Navbar = styled.nav`
   z-index: 999;
   position: fixed;
   top: 0;
@@ -17,13 +17,13 @@ export const StyledNavbar = styled.nav`
   gap: 1rem;
 `;
 
-export const StyledPageTitle = styled.h1`
+export const PageTitle = styled.h1`
   color: var(--main-color2);
   margin: 0;
   font-style: italic;
 `;
 
-export const StyledPageTitleLink = styled(Link)`
+export const PageTitleLink = styled(Link)`
   background-color: none !important;
   color: red;
 `;

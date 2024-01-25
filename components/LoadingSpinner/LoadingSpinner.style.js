@@ -9,14 +9,14 @@ export const spin = keyframes`
   }
 `;
 
-export const StyledSpinnerContainer = styled.div`
+export const SpinnerContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 `;
 
-export const StyledSpinner = styled.div`
+export const Spinner = styled.div`
   width: 3rem;
   height: 3rem;
   border-width: 0.3rem;

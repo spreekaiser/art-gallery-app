@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledListItem = styled.li`
+export const ListItem = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
