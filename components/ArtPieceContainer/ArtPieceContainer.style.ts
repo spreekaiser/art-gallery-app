@@ -30,6 +30,16 @@ export const HingeAnimation = styled.div<IHingeAnimation>`
   animation: ${(props) => (props.clicked ? hingeAnimation : "none")} 3s ease-out;
   animation-iteration-count: 1;
   transform-origin: top left;
+
+  position: relative;
+  width: 360px;
+  height: 240px;
+
+  &:hover {
+    animation: Shake 1s linear infinite;
+    animation-iteration-count: 1;
+    transform-origin: center;
+  }
 `;
 
 const hingeAnimation = keyframes`

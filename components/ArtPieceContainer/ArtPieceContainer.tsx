@@ -28,7 +28,6 @@ export function ArtPieceContainer({
   return (
     <>
       <HingeAnimation
-        className="favoriteDiv"
         onClick={(event) =>
           handleTouch(slug, dispatch, startAlarm, setTouchedPiece, event)
         }

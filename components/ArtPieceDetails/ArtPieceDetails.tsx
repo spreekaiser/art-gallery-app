@@ -30,7 +30,6 @@ export function ArtPieceDetails({
     <StyledListItem>
       <h3>{name}</h3>
       <HingeAnimation
-        className="favoriteDiv"
         onClick={(event) =>
           handleTouch(slug, dispatch, startAlarm, setTouchedPiece, event)
         }
