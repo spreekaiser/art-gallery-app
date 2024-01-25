@@ -1,4 +1,3 @@
-// import { Draft } from "immer";
 import { Dispatch, SetStateAction } from "react";
 
 export interface IPiece {
@@ -38,3 +37,8 @@ export type UseImmerLocalStorageStateType = [
   ArtPiecesInfoType,
   UpdateArtPiecesInfoType
 ];
+
+// legals
+export interface ILegalPageProps {
+  isLoading: boolean;
+}

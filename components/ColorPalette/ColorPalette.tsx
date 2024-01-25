@@ -1,12 +1,11 @@
-import { StyledColorsList, StyledColorItem } from "./ColorPalette.style";
-import { IColorPaletteProps as IProps } from "./ColorPalette.d";
+import { ColorsList, ColorItem } from "./ColorPalette.style";
 
-export function ColorPalette({ colors }: IProps) {
+export function ColorPalette({ colors }: { colors: string[] }) {
   return (
-    <StyledColorsList>
+    <ColorsList>
       {colors.map((color) => (
-        <StyledColorItem key={color} color={color} />
+        <ColorItem key={color} color={color} />
       ))}
-    </StyledColorsList>
+    </ColorsList>
   );
 }

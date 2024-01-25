@@ -1,5 +1,4 @@
 import { HeartIconFilled, HeartIconUnfilled } from "./FavoriteButton.style";
-import { IFavoriteButtonProps as IProps } from "./FavoriteButton.d";
 import { toggleFavorite } from "../../utils/toggleFavorite";
 import { useAppDispatch } from "../../lib/hooks/storeHooks";
 import {
@@ -9,7 +8,7 @@ import {
 
 const heartIconSize = 36;
 
-export function FavoriteButton({ slug }: IProps) {
+export function FavoriteButton({ slug }: { slug: string }) {
   const { artPiecesInfo, updateArtPiecesInfo } = useArtPiecesInfo();
   const dispatch = useAppDispatch();
 

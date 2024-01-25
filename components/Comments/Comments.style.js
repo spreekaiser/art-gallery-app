@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const StyledCommentList = styled.ul`
+export const CommentList = styled.ul`
   width: 90%;
   max-width: 20rem;
 `;
 
-export const StyledComment = styled.div`
+export const Comment = styled.div`
   margin-top: 1rem;
   padding: 1rem;
   text-align: left;

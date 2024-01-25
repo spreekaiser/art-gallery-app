@@ -3,7 +3,7 @@ import Link from "next/link";
 import styled, { keyframes } from "styled-components";
 import { IHingeAnimation } from "./ArtPieceContainer.d";
 
-export const StyledImage = styled(Image)`
+export const PieceImage = styled(Image)`
   border: 20px inset darkgoldenrod;
   border-radius: 5px;
   box-shadow: 10px 10px 20px #333;
@@ -16,7 +16,7 @@ export const StyledImage = styled(Image)`
   }
 `;
 
-export const StyledLink = styled(Link)`
+export const ArrowLink = styled(Link)`
   margin-bottom: 1rem;
 
   &:hover {
@@ -30,6 +30,16 @@ export const HingeAnimation = styled.div<IHingeAnimation>`
   animation: ${(props) => (props.clicked ? hingeAnimation : "none")} 3s ease-out;
   animation-iteration-count: 1;
   transform-origin: top left;
+
+  position: relative;
+  width: 360px;
+  height: 240px;
+
+  &:hover {
+    animation: Shake 1s linear infinite;
+    animation-iteration-count: 1;
+    transform-origin: center;
+  }
 `;
 
 const hingeAnimation = keyframes`

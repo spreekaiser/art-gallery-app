@@ -29,6 +29,6 @@ export const Text = styled.p`
   margin-top: 0;
 `;
 
-export const StyledImage = styled(Image)`
+export const WatchmanGIF = styled(Image)`
   margin-bottom: 1rem;
 `;

@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { IPopupProps as IProps } from "./Popup.d";
-import { PopupBox, StyledImage, Text } from "./Popup.style";
+import { PopupBox, WatchmanGIF, Text } from "./Popup.style";
 import { popupData } from "./utils/popupData";
 import useSetPopupOpenOnInterval from "./utils/useSetPopupOpenOnInterval";
 import { ArrowButton } from "..";
@@ -9,9 +9,7 @@ import { stopAlarm } from "../../store/alarm/alarmSlice";
 
 export function Popup({ trigger, borderColor }: IProps) {
   const dispatch = useAppDispatch();
-
   const popupContents = useMemo(() => popupData, []);
-
   const [isOpen, setIsOpen] = useState(false);
   const { content, button, watchman } = popupContents[trigger];
 
@@ -19,7 +17,6 @@ export function Popup({ trigger, borderColor }: IProps) {
 
   function handleClick() {
     document.body.style.overflow = "visible";
-
     setIsOpen(false);
     dispatch(stopAlarm());
   }
@@ -29,7 +26,7 @@ export function Popup({ trigger, borderColor }: IProps) {
       {isOpen && (
         <PopupBox borderColor={borderColor}>
           <Text>{content}</Text>
-          <StyledImage
+          <WatchmanGIF
             src={`/images/watchman-${watchman}.gif`}
             height={256}
             width={192}

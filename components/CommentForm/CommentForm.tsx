@@ -4,11 +4,7 @@ import {
   ICommentFormProps as IProps,
   IArtPiecesComments,
 } from "./CommentForm.d";
-import {
-  StyledForm,
-  StyledFieldset,
-  StyledTextarea,
-} from "./CommentForm style";
+import { Form, Fieldset, Textarea } from "./CommentForm style";
 import { ArrowButton } from "../ArrowButton/ArrowButton";
 
 export function CommentForm({ title }: IProps) {
@@ -47,18 +43,18 @@ export function CommentForm({ title }: IProps) {
   }
 
   return (
-    <StyledForm onSubmit={handleSubmit}>
-      <StyledFieldset>
-        <StyledTextarea
+    <Form onSubmit={handleSubmit}>
+      <Fieldset>
+        <Textarea
           id="commentInput"
           name="commentInput"
           placeholder="Add a comment... it's free!"
           onChange={handleInputChange}
-        ></StyledTextarea>
+        ></Textarea>
         <ArrowButton width={8} isDisabled={!isText} type="submit">
           Hit it!
         </ArrowButton>
-      </StyledFieldset>
-    </StyledForm>
+      </Fieldset>
+    </Form>
   );
 }

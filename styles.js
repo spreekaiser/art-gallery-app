@@ -7,7 +7,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
 
     //! for dev only
-    /* outline: 1px dashed salmon; */
+    /* outline: 1px dashed crimson; */
   }
 
   :root {
@@ -31,18 +31,6 @@ export default createGlobalStyle`
     list-style: none;
   }
 
-  .favoriteDiv{
-    position: relative;
-    width: 360px;
-    height: 240px;
-  }
-  .favoriteDiv:hover {
-    animation: Shake 1s linear infinite;
-    animation-iteration-count: 1;
-    transform-origin: center;
-
-  }
-
   img {
     object-fit: cover;
   }
@@ -61,16 +49,6 @@ export default createGlobalStyle`
     transition: all 0.3s ease;
   }
 
-  /* @keyframes MoveUpDown {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-0.25rem);
-    }
-  } */
-
   @keyframes Shake {
     10%, 90% {
       transform: translateX(-3px) rotate(-1deg);
@@ -85,5 +63,4 @@ export default createGlobalStyle`
       transform: translateX(3px) rotate(1deg);
     }
   }
-
 `;

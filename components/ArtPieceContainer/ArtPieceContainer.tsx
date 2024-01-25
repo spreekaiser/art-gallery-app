@@ -6,21 +6,16 @@ import {
   setTouchedPiece,
   resetTouchedPiece,
 } from "../../store/touchedPiece/touchedPieceSlice";
+import { IPiece } from "../../types/types";
 import { handleTouch } from "../../utils/handleTouch";
-import { IArtPieceContainerProps as IProps } from "./ArtPieceContainer.d";
 import {
-  StyledImage,
-  StyledLink,
+  PieceImage,
+  ArrowLink,
   HingeAnimation,
 } from "./ArtPieceContainer.style";
 
-export function ArtPieceContainer({
-  artist,
-  name,
-  imageSource: imageURL,
-  slug,
-}: IProps) {
-  //
+export function ArtPieceContainer({ piece }: { piece: IPiece }) {
+  const { name, artist, slug, imageSource: imageURL } = piece;
   const isAlarm = useAppSelector(selectAlarm);
   const touchedPiece = useAppSelector(selectTouchedPiece);
   const dispatch = useAppDispatch();
@@ -28,7 +23,6 @@ export function ArtPieceContainer({
   return (
     <>
       <HingeAnimation
-        className="favoriteDiv"
         onClick={(event) =>
           handleTouch(slug, dispatch, startAlarm, setTouchedPiece, event)
         }
@@ -39,12 +33,12 @@ export function ArtPieceContainer({
         onAnimationEnd={() => resetTouchedPiece()}
       >
         <FavoriteButton slug={slug} />
-        <StyledImage src={imageURL} alt={name} width={360} height={240} />
+        <PieceImage src={imageURL} alt={name} width={360} height={240} />
       </HingeAnimation>
       <h4>by {artist}</h4>
-      <StyledLink href={`art-pieces/${slug}`}>
+      <ArrowLink href={`art-pieces/${slug}`}>
         <ArrowButton width={16}>Take a closer look</ArrowButton>
-      </StyledLink>
+      </ArrowLink>
     </>
   );
 }
