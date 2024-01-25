@@ -15,15 +15,6 @@ export const StyledNavbar = styled.nav`
 
   padding: 1rem 2.5rem;
   gap: 1rem;
-
-  @media (max-width: 768px) {
-    a {
-      /* margin: 0; */
-    }
-  }
-  @media (max-width: 640px) {
-    /* justify-content: center; */
-  }
 `;
 
 export const StyledPageTitle = styled.h1`
