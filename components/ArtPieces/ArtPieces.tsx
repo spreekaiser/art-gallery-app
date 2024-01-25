@@ -1,10 +1,7 @@
-import { ArtPiecePreview, LoadingSpinner } from "..";
+import { ArtPiecePreview } from "..";
 import { IArtPiecesProps as IProps } from "../../types/types";
 
 export function ArtPieces({ pieces, isLoading }: IProps) {
-  //
-  if (isLoading) return <LoadingSpinner />;
-
   return (
     <>
       <h2>All Art Pieces</h2>
