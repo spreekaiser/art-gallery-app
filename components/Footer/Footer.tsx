@@ -1,10 +1,9 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-export default function Footer() {
+export function Footer() {
   return (
     <StyledDiv>
-      {/* <StyledLink href="/legal#imprint">Imprint</StyledLink> */}
       <StyledLink href="/imprint">Imprint</StyledLink>
       <span>Made with 🍕 in Kreuzkölln</span>
       <StyledLink href="/privacy">Privacy</StyledLink>
@@ -14,14 +13,6 @@ export default function Footer() {
 
 const StyledLink = styled(Link)`
   color: black;
-
-  /* &.anchored-link:target { */
-  /* &section:target { */
-  /* display: block; */
-  /* padding-top: 50px; */
-  /* margin-top: -550px; */
-  /* background-color: gold; */
-  /* } */
 `;
 
 const StyledDiv = styled.div`
@@ -38,13 +29,4 @@ const StyledDiv = styled.div`
 
   padding: 1rem 2.5rem;
   gap: 1rem;
-
-  @media (max-width: 768px) {
-    a {
-      /* margin: 0; */
-    }
-  }
-  @media (max-width: 640px) {
-    /* justify-content: center; */
-  }
 `;
