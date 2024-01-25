@@ -6,21 +6,16 @@ import {
   setTouchedPiece,
   resetTouchedPiece,
 } from "../../store/touchedPiece/touchedPieceSlice";
+import { IPiece } from "../../types/types";
 import { handleTouch } from "../../utils/handleTouch";
-import { IArtPieceContainerProps as IProps } from "./ArtPieceContainer.d";
 import {
   StyledImage,
   StyledLink,
   HingeAnimation,
 } from "./ArtPieceContainer.style";
 
-export function ArtPieceContainer({
-  artist,
-  name,
-  imageSource: imageURL,
-  slug,
-}: IProps) {
-  //
+export function ArtPieceContainer({ piece }: { piece: IPiece }) {
+  const { name, artist, slug, imageSource: imageURL } = piece;
   const isAlarm = useAppSelector(selectAlarm);
   const touchedPiece = useAppSelector(selectTouchedPiece);
   const dispatch = useAppDispatch();

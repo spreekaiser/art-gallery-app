@@ -1,7 +1,6 @@
 import { ColorPalette, CommentForm, Comments, FavoriteButton } from "../";
 import { StyledListItem } from "../ArtPiecePreview/ArtPiecePreview.style";
 import { StyledImageContainer } from "../ArtPieceDetails/ArtPieceDetails.style";
-import { IArtPieceDetailsProps as IProps } from "./ArtPieceDetails.d";
 import {
   StyledImage,
   HingeAnimation,
@@ -14,14 +13,10 @@ import {
   resetTouchedPiece,
   selectTouchedPiece,
 } from "../../store/touchedPiece/touchedPieceSlice";
+import { IPiece } from "../../types/types";
 
-export function ArtPieceDetails({
-  imageSource: imageURL,
-  name,
-  artist,
-  slug,
-  colors,
-}: IProps) {
+export function ArtPieceDetails({ piece }: { piece: IPiece }) {
+  const { name, artist, slug, colors, imageSource: imageURL } = piece;
   const isAlarm = useAppSelector(selectAlarm);
   const touchedPiece = useAppSelector(selectTouchedPiece);
   const dispatch = useAppDispatch();

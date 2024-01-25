@@ -9,9 +9,7 @@ import { stopAlarm } from "../../store/alarm/alarmSlice";
 
 export function Popup({ trigger, borderColor }: IProps) {
   const dispatch = useAppDispatch();
-
   const popupContents = useMemo(() => popupData, []);
-
   const [isOpen, setIsOpen] = useState(false);
   const { content, button, watchman } = popupContents[trigger];
 
@@ -19,7 +17,6 @@ export function Popup({ trigger, borderColor }: IProps) {
 
   function handleClick() {
     document.body.style.overflow = "visible";
-
     setIsOpen(false);
     dispatch(stopAlarm());
   }

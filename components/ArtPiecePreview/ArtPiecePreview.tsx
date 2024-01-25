@@ -1,12 +1,12 @@
 import { ArtPieceContainer } from "..";
-import { IArtPiecePreviewProps as IProps } from "./ArtPiecePreview.d";
+import { IPiece } from "../../types/types";
 import { StyledListItem } from "./ArtPiecePreview.style";
 
-export function ArtPiecePreview({ piece }: IProps) {
+export function ArtPiecePreview({ piece }: { piece: IPiece }) {
   return (
     <StyledListItem>
       <h3>{piece.name}</h3>
-      <ArtPieceContainer {...piece}></ArtPieceContainer>
+      <ArtPieceContainer piece={piece}></ArtPieceContainer>
     </StyledListItem>
   );
 }
