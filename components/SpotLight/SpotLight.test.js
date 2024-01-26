@@ -2,6 +2,8 @@ import { render, screen } from "@testing-library/react";
 import "jest-styled-components";
 import { SpotLight } from "..";
 import { demoPieces } from "../../_testData/testData";
+import { Provider } from "react-redux";
+import store from "../../store";
 
 describe("SpotLight Unit-Tests", () => {
   //
@@ -9,11 +11,13 @@ describe("SpotLight Unit-Tests", () => {
     const handleToggleFavorite = jest.fn();
     const artPiecesInfo = [];
     render(
-      <SpotLight
-        pieces={demoPieces}
-        artPiecesInfo={artPiecesInfo}
-        handleToggleFavorite={handleToggleFavorite}
-      />
+      <Provider store={store}>
+        <SpotLight
+          pieces={demoPieces}
+          artPiecesInfo={artPiecesInfo}
+          handleToggleFavorite={handleToggleFavorite}
+        />
+      </Provider>
     );
     const imageElement = screen.getByRole("img", {
       name: /Orange Red and Green Abstract Painting/i,
@@ -25,11 +29,13 @@ describe("SpotLight Unit-Tests", () => {
     const handleToggleFavorite = jest.fn();
     const artPiecesInfo = [];
     render(
-      <SpotLight
-        pieces={demoPieces}
-        artPiecesInfo={artPiecesInfo}
-        handleToggleFavorite={handleToggleFavorite}
-      />
+      <Provider store={store}>
+        <SpotLight
+          pieces={demoPieces}
+          artPiecesInfo={artPiecesInfo}
+          handleToggleFavorite={handleToggleFavorite}
+        />
+      </Provider>
     );
     const headerElement = screen.getByRole("heading", {
       name: /Steve Johnson/i,

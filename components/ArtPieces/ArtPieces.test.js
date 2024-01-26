@@ -2,11 +2,17 @@ import { render, screen } from "@testing-library/react";
 import "jest-styled-components";
 import { ArtPieces } from "..";
 import { demoPieces } from "../../_testData/testData";
+import { Provider } from "react-redux";
+import store from "../../store";
 
 describe("Art Pieces Unit-Tests", () => {
   //
   it("should be displayed all art pieces as a list", () => {
-    render(<ArtPieces />);
+    render(
+      <Provider store={store}>
+        <ArtPieces />
+      </Provider>
+    );
     const ulElement = screen.getByRole("list");
     expect(ulElement).toBeInTheDocument();
   });
@@ -19,11 +25,13 @@ describe("Art Pieces Integration-Tests", () => {
     const artPiecesInfo = [];
 
     render(
-      <ArtPieces
-        pieces={demoPieces}
-        handleToggleFavorite={handleToggleFavorite}
-        artPiecesInfo={artPiecesInfo}
-      />
+      <Provider store={store}>
+        <ArtPieces
+          pieces={demoPieces}
+          handleToggleFavorite={handleToggleFavorite}
+          artPiecesInfo={artPiecesInfo}
+        />
+      </Provider>
     );
     const imageElement = screen.getByRole("img", {
       name: /Orange Red and Green Abstract Painting/i,
@@ -36,11 +44,13 @@ describe("Art Pieces Integration-Tests", () => {
     const artPiecesInfo = [];
 
     render(
-      <ArtPieces
-        pieces={demoPieces}
-        handleToggleFavorite={handleToggleFavorite}
-        artPiecesInfo={artPiecesInfo}
-      />
+      <Provider store={store}>
+        <ArtPieces
+          pieces={demoPieces}
+          handleToggleFavorite={handleToggleFavorite}
+          artPiecesInfo={artPiecesInfo}
+        />
+      </Provider>
     );
     const headerElement = screen.getByRole("heading", {
       name: /Orange Red and Green Abstract Painting/i,
@@ -53,11 +63,13 @@ describe("Art Pieces Integration-Tests", () => {
     const artPiecesInfo = [];
 
     render(
-      <ArtPieces
-        pieces={demoPieces}
-        handleToggleFavorite={handleToggleFavorite}
-        artPiecesInfo={artPiecesInfo}
-      />
+      <Provider store={store}>
+        <ArtPieces
+          pieces={demoPieces}
+          handleToggleFavorite={handleToggleFavorite}
+          artPiecesInfo={artPiecesInfo}
+        />
+      </Provider>
     );
     const headerElement = screen.getByRole("heading", {
       name: /Steve Johnson/i,
