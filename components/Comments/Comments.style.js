@@ -5,7 +5,7 @@ export const CommentList = styled.ul`
   max-width: 20rem;
 `;
 
-export const Comment = styled.div`
+export const Comment = styled.li`
   margin-top: 1rem;
   padding: 1rem;
   text-align: left;
