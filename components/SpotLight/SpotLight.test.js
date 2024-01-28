@@ -8,15 +8,9 @@ import store from "../../store";
 describe("SpotLight Unit-Tests", () => {
   //
   it("should be displayed the art piece's image", () => {
-    const handleToggleFavorite = jest.fn();
-    const artPiecesInfo = [];
     render(
       <Provider store={store}>
-        <SpotLight
-          pieces={demoPieces}
-          artPiecesInfo={artPiecesInfo}
-          handleToggleFavorite={handleToggleFavorite}
-        />
+        <SpotLight pieces={demoPieces} />
       </Provider>
     );
     const imageElement = screen.getByRole("img", {
@@ -26,15 +20,9 @@ describe("SpotLight Unit-Tests", () => {
   });
 
   it("should be displayed the art piece's artist", () => {
-    const handleToggleFavorite = jest.fn();
-    const artPiecesInfo = [];
     render(
       <Provider store={store}>
-        <SpotLight
-          pieces={demoPieces}
-          artPiecesInfo={artPiecesInfo}
-          handleToggleFavorite={handleToggleFavorite}
-        />
+        <SpotLight pieces={demoPieces} />
       </Provider>
     );
     const headerElement = screen.getByRole("heading", {
