@@ -7,7 +7,7 @@ export function BurgerMenu() {
 
   return (
     <>
-      <Burger onClick={() => setIsOpen(!isOpen)}>
+      <Burger onClick={() => setIsOpen(!isOpen)} data-testid="menu">
         <Line isOpen={isOpen} />
         <Line isOpen={isOpen} />
         <Line isOpen={isOpen} />

@@ -1,93 +1,73 @@
 import { screen, render, fireEvent } from "@testing-library/react";
 import { ArtPieceDetails, ArtPieces, FavoriteButton, SpotLight } from "..";
 import { demoPieces } from "../../_testData/testData";
+import { Provider } from "react-redux";
+import store from "../../store";
 
-const mockHandleToggleFavorite = jest.fn();
+const { slug } = demoPieces[0];
 let mockArtPiecesInfo: string[] = [];
 
 describe("FavoriteButton Integration-Tests", () => {
   //
   it("should display the favorite-button in the spotlight view", () => {
     render(
-      <SpotLight
-        pieces={demoPieces}
-        artPiecesInfo={mockArtPiecesInfo}
-        handleToggleFavorite={mockHandleToggleFavorite}
-      />
+      <Provider store={store}>
+        <SpotLight pieces={demoPieces} />
+      </Provider>
     );
-    const svgElement = screen.getByTestId("favorite-button");
-    expect(svgElement).toBeInTheDocument();
+    const svg = screen.getByTestId("favorite-button");
+    expect(svg).toBeInTheDocument();
   });
 
+  //
   it("should display the favorite-button in each entry in the list view", () => {
     render(
-      <ArtPieces
-        pieces={demoPieces}
-        artPiecesInfo={mockArtPiecesInfo}
-        handleToggleFavorite={mockHandleToggleFavorite}
-      />
+      <Provider store={store}>
+        <ArtPieces pieces={demoPieces} />
+      </Provider>
     );
-    const svgElements = screen.getAllByTestId("favorite-button");
-    expect(svgElements.length).toBe(demoPieces.length);
+    const svgs = screen.getAllByTestId("favorite-button");
+    expect(svgs.length).toBe(demoPieces.length);
   });
 
+  //
   it("should display the favorite-button in the details view", () => {
     render(
-      <ArtPieceDetails
-        {...demoPieces[0]}
-        artPiecesInfo={mockArtPiecesInfo}
-        handleToggleFavorite={mockHandleToggleFavorite}
-      />
+      <Provider store={store}>
+        <ArtPieceDetails piece={demoPieces[0]} />
+      </Provider>
     );
-    const svgElement = screen.getByTestId("favorite-button");
-    expect(svgElement).toBeInTheDocument();
+    const svg = screen.getByTestId("favorite-button");
+    expect(svg).toBeInTheDocument();
   });
 
+  //
   it("should save a non-favorite piece as favorite on click", () => {
     render(
-      <FavoriteButton
-        handleToggleFavorite={mockHandleToggleFavorite}
-        artPiecesInfo={mockArtPiecesInfo}
-        slug={demoPieces[0].slug}
-      />
+      <Provider store={store}>
+        <FavoriteButton slug={slug}></FavoriteButton>
+      </Provider>
     );
-    const svgElement = screen.getByTestId("favorite-button");
-    fireEvent.click(svgElement);
-    mockArtPiecesInfo.push(demoPieces[0].slug);
-    expect(mockHandleToggleFavorite).toHaveBeenCalledTimes(1);
-    expect(mockArtPiecesInfo.includes(demoPieces[0].slug)).toBeTruthy();
+    expect(mockArtPiecesInfo.includes(slug)).toBeFalsy();
+    const svg = screen.getByTestId("favorite-button");
+    fireEvent.click(svg);
+    mockArtPiecesInfo.push(slug);
+    expect(mockArtPiecesInfo.includes(slug)).toBeTruthy();
   });
 
-  // it("should render filled heart icon styled component", async () => {
-  //   render(
-  //     <FavoriteButton
-  //       handleToggleFavorite={mockHandleToggleFavorite}
-  //       artPiecesInfo={mockArtPiecesInfo}
-  //       slug={demoPieces[0].slug}
-  //     />
-  //   );
-  //   const svgElement = screen.getByTestId("favorite-button");
-  //   // await fireEvent.click(svgElement);
-  //   await userEvent.click(svgElement);
-  //   screen.debug();
-  //   expect(svgElement).toHaveClass("favorite-active");
-  // });
   //
   it("should remove a favorite piece from favorites on click", () => {
     render(
-      <FavoriteButton
-        handleToggleFavorite={mockHandleToggleFavorite}
-        artPiecesInfo={mockArtPiecesInfo}
-        slug={demoPieces[0].slug}
-      />
+      <Provider store={store}>
+        <FavoriteButton slug={slug} />
+      </Provider>
     );
-    const svgElement = screen.getByTestId("favorite-button");
-    fireEvent.click(svgElement);
-
+    expect(mockArtPiecesInfo.includes(slug)).toBeTruthy();
+    const svg = screen.getByTestId("favorite-button");
+    fireEvent.click(svg);
     mockArtPiecesInfo = mockArtPiecesInfo.filter(
-      (slug) => slug !== demoPieces[0].slug
+      (savedSlug) => savedSlug !== slug
     );
-    expect(mockHandleToggleFavorite).toHaveBeenCalledTimes(2);
-    expect(mockArtPiecesInfo.includes(demoPieces[0].slug)).toBeFalsy();
+    expect(mockArtPiecesInfo.includes(slug)).toBeFalsy();
   });
 });

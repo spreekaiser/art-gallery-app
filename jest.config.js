@@ -21,6 +21,11 @@ const customJestConfig = {
     "!**/.next/**",
   ],
   coverageReporters: ["lcov", "text"],
+  // fix jest issue with .mp3 files
+  moduleNameMapper: {
+    "^.+.(css|styl|less|sass|scss|png|jpg|ttf|mp3|woff|woff2)$":
+      "jest-transform-stub",
+  },
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
